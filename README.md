@@ -29,4 +29,8 @@ The four third-party training corpora (security-gym-v4, AIT-LDS, linux-apt-2024,
 
 ## Citation (forthcoming)
 
-A preprint DOI (Zenodo community repository) will be added here once posted; arXiv hosting was declined by moderation and will be appealed after journal publication per their policy.
+## Citation
+
+X. Xiong, J. Huang, Z. Wei, Y. Wang, and L. Niu, "ORACLE: Calibrated Parallel Decision Models for Local Alert Triage and Response Action Recommendation," 2026. doi: 10.5281/zenodo.23092472.
+
+Preprint: https://zenodo.org/record/23092472 (CC BY-SA 4.0).
