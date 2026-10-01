@@ -1,0 +1,23 @@
+{
+ "ts": "2026-09-28T21:33:21.747",
+ "event": "human_decision",
+ "window_id": "e4-monitor_probe-20260923-012348-0075",
+ "decision": "confirm",
+ "question_decisions": {
+  "tactic": {
+   "action": "approve"
+  },
+  "urgent": {
+   "action": "veto"
+  },
+  "severity": {
+   "action": "change",
+   "value": "medium"
+  },
+  "action": {
+   "action": "approve"
+  }
+ },
+ "note": "M2 验收测试",
+ "actor": "analyst@ui"
+}

@@ -1,0 +1,132 @@
+{
+  "version": 1,
+  "seed": 42,
+  "suite": "oracle-v1",
+  "holdout_sources": [],
+  "base_revisions": {
+    "Qwen/Qwen3.5-0.8B-Base": "dc7cdfe2ee4154fa7e30f5b51ca41bfa40174e68",
+    "Qwen/Qwen3.5-4B-Base": "1001bb4d826a52d1f399e183466143f4da7b741b"
+  },
+  "trainable_sources": [
+    "ait",
+    "linuxapt",
+    "sg4",
+    "soc"
+  ],
+  "eval_only_sources": [
+    "range-windows",
+    "range-windows-dvwa",
+    "range-windows-normal",
+    "range-windows-ssh",
+    "range-windows-ssh-e3b",
+    "range-windows-web"
+  ],
+  "context": {
+    "max_state": 384,
+    "max_branch": 1024,
+    "max_packed": 2048,
+    "truncate": false
+  },
+  "selection": "ORACLE: open-source backbone (GUIDE/soc) for train; range windows for calib/dev/test only. Mirror windows (web/dvwa same scenario) deduped by scenario segment id. State-level sha256 dedup across partitions.",
+  "objective": "ORACLE four-task decision training; calibration partition = range data only.",
+  "files": {
+    "train.jsonl": {
+      "sha256": "e770a4ed61624a4e77f0e4a50029e8ded8666798e942048e1372b24ad2f2b019",
+      "records": 15041,
+      "questions": 60164
+    },
+    "calibration.jsonl": {
+      "sha256": "801da52b4bfa944b13386c92aa28ea7c44c911d34ad3af8c7fe566f1740e0164",
+      "records": 55,
+      "questions": 220
+    },
+    "development.jsonl": {
+      "sha256": "9f524e4ae155545f6897b576d4e853563b4463558f09ca7e7b134963b7cacfef",
+      "records": 55,
+      "questions": 220
+    },
+    "test.jsonl": {
+      "sha256": "858c5b86208725d54f4bf06b71e73cb804aa61443aca6e6c88b6ccdef8fa6fe2",
+      "records": 439,
+      "questions": 1756
+    }
+  },
+  "oracle": {
+    "calib_source": "range-only",
+    "mirror_dropped": 66,
+    "dedup_dropped": {
+      "train": 2233,
+      "calib": 0,
+      "dev": 0,
+      "test": 10
+    },
+    "truncation": {
+      "tail_lines:3/100": 75,
+      "tail_lines:2/100": 27,
+      "none": 18,
+      "tail_lines:1/100": 2,
+      "tail_lines:4/8": 2,
+      "tail_lines:4/100": 14,
+      "tail_lines:3/6": 1,
+      "tail_lines:5/42": 4,
+      "tail_lines:5/43": 2,
+      "tail_lines:5/47": 3,
+      "tail_lines:5/34": 2,
+      "tail_lines:5/40": 4,
+      "tail_lines:5/52": 3,
+      "tail_lines:5/55": 3,
+      "tail_lines:5/44": 2,
+      "tail_lines:5/61": 1,
+      "tail_lines:5/39": 1,
+      "tail_lines:5/51": 1,
+      "tail_lines:5/9": 1,
+      "tail_lines:5/29": 1,
+      "tail_lines:5/35": 1,
+      "tail_lines:5/45": 1,
+      "tail_lines:5/41": 1,
+      "tail_lines:5/37": 2,
+      "tail_lines:5/36": 2,
+      "tail_lines:5/24": 1,
+      "tail_lines:5/100": 220,
+      "tail_lines:6/100": 186,
+      "tail_lines:3/74": 2,
+      "tail_lines:3/4": 5,
+      "hard_trunc": 1,
+      "tail_lines:3/76": 1,
+      "tail_lines:3/7": 1,
+      "tail_lines:3/13": 1,
+      "tail_lines:6/13": 1,
+      "tail_lines:6/69": 1,
+      "tail_lines:6/73": 1,
+      "tail_lines:6/56": 1,
+      "tail_lines:6/21": 1,
+      "tail_lines:6/85": 1,
+      "tail_lines:6/77": 1,
+      "tail_lines:6/64": 1,
+      "tail_lines:6/8": 1,
+      "tail_lines:6/87": 1,
+      "tail_lines:6/49": 1,
+      "tail_lines:6/38": 1,
+      "tail_lines:6/22": 1,
+      "tail_lines:4/15": 1,
+      "tail_lines:4/40": 1,
+      "tail_lines:4/31": 1,
+      "tail_lines:4/9": 1,
+      "tail_lines:4/11": 1,
+      "tail_lines:4/17": 1,
+      "tail_lines:4/12": 2,
+      "tail_lines:4/7": 3,
+      "tail_lines:4/13": 3,
+      "tail_lines:4/19": 1,
+      "tail_lines:4/25": 3,
+      "tail_lines:4/18": 1,
+      "tail_lines:6/72": 1
+    },
+    "range_split": {
+      "calib": 55,
+      "dev": 55,
+      "test": 439,
+      "total": 559
+    }
+  }
+}

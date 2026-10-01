@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ORACLE Tier-3 Console</title>
+<style>
+:root{
+  --bg:#0b0f14;--panel:#11161d;--panel2:#161d26;--line:#232c38;
+  --fg:#c9d4e0;--dim:#7a8794;--acc:#4cc2ff;
+  --green:#3ddc84;--yellow:#f5c542;--red:#ff5c5c;--purple:#b48cff;
+  --mono:ui-monospace,'Cascadia Code','JetBrains Mono',Consolas,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--fg);font:14px/1.5 -apple-system,'Segoe UI',Roboto,'Noto Sans SC',sans-serif}
+a{color:var(--acc);text-decoration:none}
+header{display:flex;align-items:center;gap:16px;padding:10px 20px;background:var(--panel);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+header h1{font-size:16px;letter-spacing:.5px}
+header h1 b{color:var(--acc)}
+.badge{font:12px var(--mono);padding:2px 8px;border-radius:10px;background:var(--panel2);border:1px solid var(--line);color:var(--dim)}
+.badge.on{color:var(--green);border-color:var(--green)}
+nav{display:flex;gap:4px;margin-left:auto}
+nav button{background:none;border:1px solid transparent;color:var(--dim);padding:6px 14px;border-radius:6px;cursor:pointer;font-size:13px}
+nav button.active{color:var(--acc);border-color:var(--line);background:var(--panel2)}
+main{padding:20px;max-width:1500px;margin:0 auto}
+.hidden{display:none!important}
+table{width:100%;border-collapse:collapse;font-size:13px}
+th{color:var(--dim);text-align:left;font-weight:500;padding:6px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+td{padding:6px 10px;border-bottom:1px solid #1a222c;vertical-align:top}
+tr.click{cursor:pointer}
+tr.click:hover{background:var(--panel2)}
+.chip{display:inline-block;font:11px var(--mono);padding:1px 7px;border-radius:4px;margin:1px 2px;border:1px solid}
+.c-green{color:var(--green);border-color:var(--green);background:rgba(61,220,132,.08)}
+.c-yellow{color:var(--yellow);border-color:var(--yellow);background:rgba(245,197,66,.08)}
+.c-red{color:var(--red);border-color:var(--red);background:rgba(255,92,92,.08)}
+.c-dim{color:var(--dim);border-color:var(--line)}
+.c-purple{color:var(--purple);border-color:var(--purple)}
+.path{font:12px var(--mono);color:var(--purple)}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px 16px;margin-bottom:16px}
+.panel h3{font-size:13px;color:var(--dim);margin-bottom:10px;font-weight:600;letter-spacing:.5px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.kpi{font:26px var(--mono);color:var(--acc)}
+.kpi small{font-size:12px;color:var(--dim)}
+pre{font:12px/1.55 var(--mono);background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:10px;overflow:auto;white-space:pre-wrap;word-break:break-all}
+.hl{background:rgba(245,197,66,.15);border-left:2px solid var(--yellow);padding-left:6px;display:block;margin:1px 0}
+.evd{max-height:340px;overflow:auto}
+select,button.btn,input[type=text],textarea{background:var(--bg);border:1px solid var(--line);color:var(--fg);border-radius:5px;padding:5px 9px;font-size:13px}
+button.btn{cursor:pointer}
+button.btn:hover{border-color:var(--acc)}
+button.primary{background:#0e3a5c;border-color:var(--acc);color:var(--acc);font-weight:600}
+button.ok{border-color:var(--green);color:var(--green)}
+button.no{border-color:var(--red);color:var(--red)}
+.slider{display:flex;align-items:center;gap:10px;margin:8px 0}
+.slider label{width:120px;font:13px var(--mono);color:var(--dim)}
+.slider input[type=range]{flex:1;accent-color:var(--acc)}
+.slider .val{font:14px var(--mono);color:var(--acc);width:56px;text-align:right}
+.bar{height:18px;background:var(--bg);border:1px solid var(--line);border-radius:4px;overflow:hidden;display:flex}
+.bar div{height:100%;font:10px var(--mono);line-height:18px;color:#0b0f14;text-align:center;overflow:hidden;white-space:nowrap}
+.hist{display:flex;align-items:flex-end;gap:1px;height:80px}
+.hist div{background:var(--acc);border-radius:2px 2px 0 0;min-width:3px;flex:1;opacity:.8}
+.hist-row{display:flex;gap:14px;align-items:center;margin:6px 0}
+.hist-row .nm{font:12px var(--mono);color:var(--dim);width:80px}
+.hist-row .v{font:12px var(--mono);color:var(--fg);width:170px}
+.qrow{display:grid;grid-template-columns:90px 1fr 1fr 210px;gap:10px;padding:10px;border:1px solid var(--line);border-radius:6px;margin-bottom:8px;background:var(--panel2)}
+.qrow .qname{font:13px var(--mono);color:var(--purple)}
+.tier{font:12px var(--mono)}
+.decide-opts{display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.decide-opts button{padding:3px 8px;font-size:12px}
+.timeline{position:relative;padding-left:22px}
+.timeline:before{content:'';position:absolute;left:7px;top:4px;bottom:4px;width:1px;background:var(--line)}
+.tl-item{position:relative;margin-bottom:14px}
+.tl-item:before{content:'';position:absolute;left:-19px;top:5px;width:9px;height:9px;border-radius:50%;background:var(--acc)}
+.tl-item.human:before{background:var(--yellow)}
+.tl-item .tl-t{font:11px var(--mono);color:var(--dim)}
+.tl-item .tl-h{font-size:13px;margin:2px 0}
+.toast{position:fixed;right:20px;bottom:20px;background:var(--panel2);border:1px solid var(--green);color:var(--green);padding:10px 16px;border-radius:6px;font-size:13px;z-index:99;opacity:0;transition:opacity .3s}
+.toast.show{opacity:1}
+.tag{font:11px var(--mono);color:var(--dim)}
+.muted{color:var(--dim)}
+label.ck{font-size:13px;display:flex;gap:6px;align-items:center;margin:6px 0}
+.tabs{display:flex;gap:8px;margin-bottom:12px}
+.tabs button{background:none;border:1px solid var(--line);color:var(--dim);padding:4px 12px;border-radius:6px;cursor:pointer;font-size:12px}
+.tabs button.active{color:var(--acc);border-color:var(--acc)}
+h2{font-size:15px;margin-bottom:12px;color:var(--fg)}
+.back{cursor:pointer;color:var(--acc);font-size:13px;margin-bottom:10px;display:inline-block}
+</style>
+</head>
+<body>
+<header>
+  <h1><b>ORACLE</b> · Tier-3 Console</h1>
+  <span class="badge" id="connBadge">SSE 连接中…</span>
+  <span class="badge" id="tauBadge"></span>
+  <nav>
+    <button data-tab="queue" class="active">队列</button>
+    <button data-tab="replay">回放</button>
+    <button data-tab="dashboard">看板</button>
+    <button data-tab="label">标注</button>
+    <button data-tab="about">说明</button>
+  </nav>
+</header>
+<main>
+  <!-- ============ 队列 ============ -->
+  <section id="tab-queue">
+    <div class="panel">
+      <h3>待人工裁决队列（Tier-3）— 置信着色: <span class="c-green">≥τ auto</span> <span class="c-yellow">[τ_h,τ) confirm</span> <span class="c-red">&lt;τ_h escalate</span></h3>
+      <table id="queueTable"><thead><tr>
+        <th>窗 ID</th><th>场景</th><th>来源</th><th>路径</th><th>逐题置信</th><th>状态</th><th>决策</th>
+      </tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <!-- ============ 窗详情 ============ -->
+  <section id="tab-detail" class="hidden">
+    <span class="back" onclick="showTab('queue')">← 返回队列</span>
+    <div id="detailBody"></div>
+  </section>
+
+  <!-- ============ 回放（全部 20 窗审计） ============ -->
+  <section id="tab-replay" class="hidden">
+    <div class="panel">
+      <h3>审计回放 — 全部已完成窗（点击行查看完整决策链）</h3>
+      <table id="replayTable"><thead><tr>
+        <th>ts</th><th>窗 ID</th><th>场景</th><th>路径</th><th>min conf</th><th>人工</th><th>延迟</th>
+      </tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+  <!-- 单窗回放时间线 -->
+  <section id="tab-timeline" class="hidden">
+    <span class="back" onclick="showTab('replay')">← 返回回放</span>
+    <div id="timelineBody"></div>
+  </section>
+
+  <!-- ============ 看板 ============ -->
+  <section id="tab-dashboard" class="hidden">
+    <div class="grid3" style="margin-bottom:16px" id="kpis"></div>
+    <div class="grid2">
+      <div class="panel"><h3>路由路径分布</h3><div id="pathDist"></div>
+        <h3 style="margin-top:16px">逐题路由计数</h3><div id="qRoute"></div></div>
+      <div class="panel"><h3>阈值 τ / τ_h（滑块写运行配置；回放按当前值重门控）</h3>
+        <div class="slider"><label>τ (auto)</label><input type="range" id="tauSlider" min="0.50" max="0.99" step="0.01"><span class="val" id="tauVal"></span></div>
+        <div class="slider"><label>τ_h (confirm)</label><input type="range" id="tauHSlider" min="0.30" max="0.95" step="0.01"><span class="val" id="tauHVal"></span></div>
+        <div style="display:flex;gap:8px;margin-top:10px">
+          <button class="btn primary" id="tauApply">应用并写配置</button>
+          <button class="btn" id="tauPreview">仅预览回放</button>
+        </div>
+        <p class="tag" style="margin-top:8px">应用后：audit.jsonl 追加 threshold_change 事件；路由分布按新阈值实时重算（M3 验收）。</p>
+        <h3 style="margin-top:16px">对比预览（当前 vs 新值）</h3><div id="tauCompare" class="muted" style="font-size:12px">—</div>
+      </div>
+    </div>
+    <div class="panel"><h3>延迟分解（P50 直方图，单位 ms）</h3><div id="latencyPanel"></div></div>
+  </section>
+
+  <!-- ============ 标注 ============ -->
+  <section id="tab-label" class="hidden">
+    <div class="panel">
+      <h3>标注模式 — 模糊窗 correct label（P1-6：导出 labelled replays JSONL 作回放反馈实证物）</h3>
+      <table id="labelTable"><thead><tr>
+        <th>窗 ID</th><th>场景</th><th>管线判定</th><th>min conf</th><th>标注状态</th><th></th>
+      </tr></thead><tbody></tbody></table>
+      <div style="margin-top:12px;display:flex;gap:10px;align-items:center">
+        <button class="btn primary" id="exportLabels">导出 labelled_replays.jsonl</button>
+        <span class="tag" id="exportInfo"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 说明 ============ -->
+  <section id="tab-about" class="hidden">
+    <div class="panel">
+      <h3>ORACLE Tier-3 Console（BS 架构原型）</h3>
+      <p class="muted" style="max-width:760px">FastAPI(8024) 回放 audit.jsonl（append-only 唯一事实源）+ 人工决策写回 + SSE 推送；无数据库 / 无构建步骤。三类人工决策权对应论文 §4.2 Tier-3：① 逐题 approve / veto / 改判 + 整窗 confirm（队列→窗详情） ② 模糊窗标注（标注页） ③ τ / τ_h 阈值调整（看板页滑块）。全部决策以新事件类型追加进 audit.jsonl。</p>
+      <p class="tag">API 文档: <a href="/api/docs" target="_blank">/api/docs</a> · SSE: <a href="/api/stream" target="_blank">/api/stream</a> · 队列: /api/queue · 窗详情: /api/window/{id}</p>
+    </div>
+  </section>
+</main>
+<div class="toast" id="toast"></div>
+
+<script type="module">
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let TAX={tactic:[],severity:[],action:[],urgent:['true','false']};
+let STATE={queue:[],replay:[],dashboard:null,thresholds:{tau:.9,tau_h:.7}};
+let currentDetail=null;
+
+function toast(msg,ok=true){const t=$('#toast');t.textContent=msg;t.style.borderColor=ok?'var(--green)':'var(--red)';t.style.color=ok?'var(--green)':'var(--red)';t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600);}
+async function api(path,opt){const r=await fetch(path,opt);if(!r.ok){let m=r.statusText;try{m=(await r.json()).detail||m}catch{}throw new Error(m);}return r.json();}
+
+function confChip(q,c,tau,tauh){
+  if(c==null)return `<span class="chip c-dim">${esc(q)}</span>`;
+  const cls=c>=tau?'c-green':(c>=tauh?'c-yellow':'c-red');
+  return `<span class="chip ${cls}" title="${esc(q)}">${esc(q)}=${(+c).toFixed(2)}</span>`;
+}
+function pathHtml(p){return `<span class="path">${esc((p||[]).join('→'))}</span>`;}
+
+/* ---------- 队列 & 回放表 ---------- */
+function renderQueue(){
+  const {tau,tau_h}=STATE.thresholds;
+  $('#queueTable tbody').innerHTML = STATE.queue.map(w=>`
+   <tr class="click" onclick="location.hash='detail/${encodeURIComponent(w.window_id)}'">
+    <td class="tag">${esc(w.window_id)}</td>
+    <td>${esc(w.scenario||'-')}${w.kind?`<span class="tag"> /${esc(w.kind)}</span>`:''}</td>
+    <td class="tag">${esc(w.source)}</td>
+    <td>${pathHtml(w.path)}</td>
+    <td>${Object.entries(w.confs).map(([q,c])=>confChip(q,c,tau,tau_h)).join('')}</td>
+    <td>${w.status==='decided'?'<span class="chip c-purple">已决策</span>':'<span class="chip c-yellow">待裁决</span>'}</td>
+    <td class="tag">${w.decision?`${esc(w.decision.decision)} @${esc(w.decision.ts.slice(11,19))}`:'-'}</td>
+   </tr>`).join('')||'<tr><td colspan=7 class="muted">队列为空（无待人工窗）</td></tr>';
+}
+function renderReplay(){
+  $('#replayTable tbody').innerHTML = STATE.replay.map(w=>`
+   <tr class="click" onclick="location.hash='timeline/${encodeURIComponent(w.window_id)}'">
+    <td class="tag">${esc((w.ts||'').slice(5,19))}</td>
+    <td class="tag">${esc(w.window_id)}</td>
+    <td>${esc(w.scenario||'-')}</td>
+    <td>${pathHtml(w.path)}</td>
+    <td>${w.min_conf!=null?`<span class="chip ${w.min_conf>=STATE.thresholds.tau?'c-green':(w.min_conf>=STATE.thresholds.tau_h?'c-yellow':'c-red')}">${w.min_conf.toFixed(2)}</span>`:'<span class="chip c-dim">rule</span>'}</td>
+    <td>${w.human?`<span class="chip c-yellow">✓${w.human.approved?'approve':'reject'}</span>`:'-'}</td>
+    <td class="tag">${w.total_ms>0?w.total_ms.toFixed(0)+'ms':''}</td>
+   </tr>`).join('');
+}
+
+/* ---------- 窗详情（决策工作台） ---------- */
+function decideState(wid,q){
+  const d=currentDetail?.decision?.question_decisions?.[q];
+  return d?d:{action:'approve',value:null};
+}
+function renderDetail(wid){
+  const d=currentDetail;
+  const w=d.window, done=d.window_done, rt=STATE.thresholds;
+  const final=done?.route?.final||{}, qs=done?.route?.questions||{};
+  const qrows=['tactic','urgent','severity','action'].map(q=>{
+    const f=final[q]||{}, t1=qs[q]?.tier1, t2=qs[q]?.tier2, ds=decideState(wid,q);
+    const cls=f.conf==null?'c-dim':(f.conf>=rt.tau?'c-green':(f.conf>=rt.tau_h?'c-yellow':'c-red'));
+    const opts=TAX[q].map(v=>`<option ${String(ds.value)===v?'selected':''} value="${esc(v)}">${esc(v)}</option>`).join('');
+    return `<div class="qrow" id="qr-${q}">
+      <div class="qname">${q}</div>
+      <div class="tier">${t1?`T1: <b>${esc(t1.pred)}</b> <span class="chip ${t1.gate==='auto'?'c-green':(t1.gate==='confirm'?'c-yellow':'c-red')}">${t1.conf?.toFixed(3)}</span>`:'<span class="muted">—</span>'}</div>
+      <div class="tier">${t2?`T2: <b>${esc(t2.pred)}</b> <span class="chip ${t2.gate==='auto'?'c-green':(t2.gate==='confirm'?'c-yellow':'c-red')}">${t2.conf?.toFixed(3)}</span>`:'<span class="muted">—</span>'}</div>
+      <div class="decide-opts">
+        <span class="chip ${cls}">终局 ${esc(f.pred)} ${f.conf!=null?f.conf.toFixed(2):''}</span>
+        <button class="btn ok" data-q="${q}" data-act="approve">✓</button>
+        <button class="btn no" data-q="${q}" data-act="veto">✗</button>
+        ${q==='urgent'
+          ?`<select data-q="${q}" data-act="change"><option value="true">true</option><option value="false">false</option></select>`
+          :`<select data-q="${q}" data-act="change"><option value="">改判…</option>${opts}</option></select>`}
+      </div></div>`;
+  }).join('');
+  $('#detailBody').innerHTML=`
+   <div class="panel"><h3>窗 ${esc(wid)} — ${esc(w.scenario||'')}（源 ${esc(w.source)}）</h3>
+     <p class="tag">${pathHtml(done?.route?.path)} ${done?.route?.rule_hit?`规则: <span class="chip c-purple">${esc(done.route.rule_hit)}</span>`:''} · 总延迟 ${done?(+done.total_ms).toFixed(1):'-'}ms</p>
+     <pre>${esc(done?.narrative||'(规则窗：见路由)')}</pre></div>
+   <div class="grid2">
+     <div class="panel"><h3>逐题对照与决策（Tier1 轻层 vs Tier2 重层，温度校准后置信）</h3>
+       <div id="qdecide">${qrows}</div>
+       <div style="display:flex;gap:8px;margin-top:10px;align-items:center">
+         <button class="btn primary" id="confirmWin">整窗 Confirm（写 audit）</button>
+         <button class="btn no" id="rejectWin">整窗 Reject</button>
+         <input type="text" id="decNote" placeholder="备注（可选）" style="flex:1">
+       </div>
+       ${d.decision?`<p class="tag" style="margin-top:8px">已有决策: ${esc(d.decision.decision)} @ ${esc(d.decision.ts)} note=${esc(d.decision.note||'')}</p>`:''}
+     </div>
+     <div>
+       <div class="panel"><h3>State（384-token 原文）</h3><pre>${esc(w.suite_state)}</pre></div>
+       <div class="panel"><h3>证据关键行高亮</h3><div class="evd"><pre>${(done?.evidence_lines||[]).map(e=>`<span class="hl">${esc(e.line)}</span>`).join('')||'<span class=muted>无命中</span>'}</pre></div></div>
+     </div>
+   </div>`;
+  // 决策交互
+  $$('#qdecide button').forEach(b=>b.onclick=()=>{markDecide(b.dataset.q,b.dataset.act,null);});
+  $$('#qdecide select').forEach(s=>s.onchange=()=>{if(s.value!=='')markDecide(s.dataset.q,'change',s.value==='true'?true:s.value);});
+  $('#confirmWin').onclick=()=>submitDecision('confirm');
+  $('#rejectWin').onclick=()=>submitDecision('reject');
+  paintDecide();
+}
+function markDecide(q,act,val){
+  currentDetail._new=currentDetail._new||{};
+  currentDetail._new[q]={action:act,value:val};
+  paintDecide();
+}
+function paintDecide(){
+  const nd=currentDetail._new||{};
+  ['tactic','urgent','severity','action'].forEach(q=>{
+    const row=$('#qr-'+q); if(!row)return;
+    row.querySelectorAll('button,select').forEach(el=>{
+      const d=nd[q];
+      el.style.outline=(!d)??'';
+      if(d&&el.dataset.act===d.action)el.style.borderColor=d.action==='veto'?'var(--red)':'var(--acc)';
+      else if(el.tagName==='BUTTON')el.style.borderColor='';
+    });
+  });
+}
+async function submitDecision(win){
+  const qd=currentDetail._new||{};
+  if(!Object.keys(qd).length){toast('未做任何逐题决策（默认全部 approve）',false); }
+  const body={window_id:currentDetail.window.id,decision:win,question_decisions:qd,note:$('#decNote')?.value||''};
+  try{
+    await api('/api/decide',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    toast(`已写入 audit.jsonl（${win}）`);
+    await loadDetail(currentDetail.window.id); await refresh();
+  }catch(e){toast('决策失败: '+e.message,false);}
+}
+
+/* ---------- 回放时间线（单窗决策链） ---------- */
+function renderTimeline(wid){
+  const d=currentDetail, evs=d.audit_events, done=d.window_done;
+  const lat=done?.latency_ms||{};
+  const items=[];
+  items.push({t:evs[0]?.ts,h:'State 构建 + 选窗',b:`源 ${esc(d.window.source)} · n_lines=${esc(d.window.window_stats?.n_lines??'?')} failed=${esc(d.window.window_stats?.failed_logins??'?')} acc=${esc(d.window.window_stats?.accepted_logins??'?')}`});
+  if(lat.tier0_ms!=null)items.push({t:'',h:'Tier 0 规则',b:done?.route?.rule_hit?`命中 <span class="chip c-purple">${esc(done.route.rule_hit)}</span> → 直接裁决`:'未命中 → pass-through Tier 1'});
+  if(lat.tier1_ms!=null)items.push({t:'',h:`Tier 1 laya 轻层（${(+lat.tier1_ms).toFixed(1)}ms）`,b:Object.entries(done.route.questions).map(([q,v])=>`${q}: <b>${esc(v.tier1.pred)}</b>(${v.tier1.conf?.toFixed(3)},${v.tier1.gate})`).join(' · ')});
+  if(lat.tier2_ms!=null)items.push({t:'',h:`Tier 2 kev 重层（${(+lat.tier2_ms).toFixed(1)}ms）`,b:Object.entries(done.route.questions).filter(([q,v])=>v.tier2).map(([q,v])=>`${q}: <b>${esc(v.tier2.pred)}</b>(${v.tier2.conf?.toFixed(3)},${v.tier2.gate})`).join(' · ')});
+  items.push({t:'',h:`门控汇总（${(+lat.gate_ms).toFixed(1)}ms）`,b:'窗口级：任一题 &lt;τ_h → 整窗升级 Tier 2；Tier 2 后仍低 → 人工'});
+  if(done?.route?.human)items.push({t:'',h:`Tier 3 人工（CLI ${done.route.human.approved?'approve':'reject'}）`,b:`confirm 题: ${esc(done.route.human.confirm_questions.join(','))||'-'} · escalate 题: ${esc(done.route.human.escalated_questions.join(','))||'-'}`,human:true});
+  for(const e of evs.filter(e=>e.event==='human_decision'||e.event==='label'))
+    items.push({t:e.ts,h:`UI ${e.event==='human_decision'?'人工决策':'标注'}`,b:`${esc(e.decision||'')} ${esc(JSON.stringify(e.question_decisions||e.labels||{}))} ${e.note?`note=${esc(e.note)}`:''}`,human:true});
+  items.push({t:done?.ts,h:'window_done 落 audit.jsonl',b:`总延迟 ${done?(+done.total_ms).toFixed(1):'-'}ms · executed: ${Object.entries(done?.route?.final||{}).map(([q,f])=>`${q}=${esc(f.executed||'-')}`).join(' ')}`});
+  $('#timelineBody').innerHTML=`
+   <div class="panel"><h3>决策链时间线 — ${esc(wid)}</h3><div class="timeline">
+    ${items.map(i=>`<div class="tl-item ${i.human?'human':''}">${i.t?`<div class="tl-t">${esc(i.t)}</div>`:''}<div class="tl-h">${i.h}</div><div class="tag">${i.b}</div></div>`).join('')}
+   </div></div>
+   <div class="panel"><h3>终局逐题</h3><table><tbody>${Object.entries(done?.route?.final||{}).map(([q,f])=>`<tr><td class="tag">${q}</td><td><b>${esc(f.pred)}</b></td><td>${f.conf!=null?f.conf.toFixed(3):''}</td><td><span class="chip ${f.gate==='auto'?'c-green':(f.gate==='confirm'?'c-yellow':(f.gate?'c-red':'c-dim'))}">${esc(f.gate||'rule')}</span></td><td>${esc(f.source)}</td><td>${esc(f.executed||'')}</td></tr>`).join('')}</tbody></table></div>`;
+}
+
+/* ---------- 看板 ---------- */
+const PATHCOLORS=['#4cc2ff','#b48cff','#3ddc84','#f5c542','#ff5c5c','#7a8794'];
+function renderDashboard(){
+  const d=STATE.dashboard;
+  $('#kpis').innerHTML=`
+    <div class="panel"><div class="kpi">${d.n_windows}</div><small class="muted">回放窗总数</small></div>
+    <div class="panel"><div class="kpi" style="color:var(--yellow)">${d.pending}</div><small class="muted">待人工裁决</small></div>
+    <div class="panel"><div class="kpi" style="color:var(--purple)">${d.decided}</div><small class="muted">已决策（UI）</small></div>`;
+  const pd=d.path_distribution, tot=Object.values(pd).reduce((a,b)=>a+b,0)||1;
+  $('#pathDist').innerHTML=`<div class="bar">${Object.entries(pd).map(([k,v],i)=>`<div style="width:${v/tot*100}%;background:${PATHCOLORS[i%6]}" title="${esc(k)}: ${v}">${v>0?v:''}</div>`).join('')}</div>`
+    +Object.entries(pd).map(([k,v],i)=>`<div class="hist-row"><span class="nm" style="color:${PATHCOLORS[i%6]}">■</span><span class="v">${esc(k)} — <b>${v}</b> 窗</span></div>`).join('');
+  $('#qRoute').innerHTML=`<div class="bar">${Object.entries(d.question_route_counts).map(([k,v],i)=>`<div style="width:${v/80*100}%;background:${PATHCOLORS[i%6]}" title="${esc(k)}: ${v}">${v>1?v:''}</div>`).join('')}</div>`
+    +Object.entries(d.question_route_counts).map(([k,v])=>`<div class="hist-row"><span class="nm" style="width:150px;flex:none">${esc(k)}</span><span class="v" style="width:auto;flex:none"><b>${v}</b> 题</span></div>`).join('');
+  const lb=d.latency_breakdown_ms;
+  $('#latencyPanel').innerHTML=Object.entries(lb).map(([k,s])=>{
+    if(!s.n)return '';
+    const vals=s.values||[];const mx=Math.max(...vals,1);
+    return `<div class="hist-row"><span class="nm">${esc(k)}</span>
+      <div class="hist" style="flex:1">${vals.map(v=>`<div style="height:${Math.max(v/mx*100,3)}%" title="${v}ms"></div>`).join('')}</div>
+      <span class="v">P50 ${s.p50} · mean ${s.mean} · max ${s.max}（n=${s.n}）</span></div>`;
+  }).join('');
+  $('#tauSlider').value=STATE.thresholds.tau;$('#tauVal').textContent=STATE.thresholds.tau.toFixed(2);
+  $('#tauHSlider').value=STATE.thresholds.tau_h;$('#tauHVal').textContent=STATE.thresholds.tau_h.toFixed(2);
+  $('#tauBadge').textContent=`τ=${STATE.thresholds.tau.toFixed(2)} τ_h=${STATE.thresholds.tau_h.toFixed(2)}`;
+}
+async function tauPreview(){
+  const tau=+$('#tauSlider').value, tau_h=+$('#tauHSlider').value;
+  try{
+    const cur=STATE.dashboard.question_route_counts;
+    const v=await api(`/api/queue?tau=${tau}&tau_h=${tau_h}`);
+    const nw=v.dashboard.question_route_counts;
+    const keys=[...new Set([...Object.keys(cur),...Object.keys(nw)])];
+    $('#tauCompare').innerHTML=`<table><thead><tr><th>路由</th><th>当前</th><th>新值</th></tr></thead><tbody>${
+      keys.map(k=>`<tr><td class="tag">${esc(k)}</td><td>${cur[k]||0}</td><td${(nw[k]||0)!==(cur[k]||0)?' style="color:var(--yellow)"':''}>${nw[k]||0}</td></tr>`).join('')}</tbody></table>`;
+  }catch(e){toast('预览失败: '+e.message,false);}
+}
+async function tauApply(){
+  const tau=+$('#tauSlider').value, tau_h=+$('#tauHSlider').value;
+  try{
+    await api('/api/threshold',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({tau,tau_h})});
+    toast('阈值已写入运行配置 + audit'); await refresh(); tauPreview();
+  }catch(e){toast('失败: '+e.message,false);}
+}
+
+/* ---------- 标注 ---------- */
+let labelDrafts={};
+function renderLabel(){
+  const {tau,tau_h}=STATE.thresholds;
+  $('#labelTable tbody').innerHTML=STATE.replay.filter(w=>w.path.includes('tier1_laya')).map(w=>{
+    const done=w, lb=labelDrafts[w.window_id];
+    return `<tr>
+     <td class="tag">${esc(w.window_id)}</td><td>${esc(w.scenario||'')}</td>
+     <td>${Object.entries(w.confs).map(([q,c])=>confChip(q,c,tau,tau_h)).join('')}</td>
+     <td><span class="chip ${w.min_conf<tau_h?'c-red':(w.min_conf<tau?'c-yellow':'c-green')}">${w.min_conf.toFixed(2)}</span></td>
+     <td>${w.label_event?`<span class="chip c-purple">已标 ${esc(w.label_event.ts.slice(5,16))}</span>`:(lb?'<span class="chip c-yellow">草稿</span>':'<span class="chip c-dim">未标</span>')}</td>
+     <td><button class="btn" onclick="location.hash='labelwin/${encodeURIComponent(w.window_id)}'">标注 →</button></td>
+    </tr>`;}).join('');
+}
+function renderLabelWin(wid){
+  const d=currentDetail, w=d.window, final=d.window_done?.route?.final||{};
+  const sel=(q,cur)=>TAX[q].map(v=>`<option value="${esc(v)}" ${cur===v?'selected':''}>${esc(v)}</option>`).join('');
+  const init=d.label_init||{};
+  $('#detailBody').innerHTML=`
+   <span class="back" onclick="location.hash='label'">← 返回标注列表</span>
+   <div class="panel"><h3>标注 — ${esc(wid)}（correct label；预填管线判定，可直接改）</h3>
+     <div class="grid2"><div>
+      ${['tactic','severity','action'].map(q=>`<label class="ck">${q} <select id="lb-${q}">${sel(q,init[q]??final[q]?.pred??TAX[q][0])}</select></label>`).join('')}
+      <label class="ck">urgent <select id="lb-urgent"><option value="true" ${String(init.urgent??final.urgent?.pred)==='true'?'selected':''}>true</option><option value="false" ${String(init.urgent??final.urgent?.pred)==='false'?'selected':''}>false</option></select></label>
+      <label class="ck"><input type="checkbox" id="lb-ambig" ${init.ambiguous?'checked':''}> 模糊窗（ambiguous，优先回放反馈）</label>
+      <div style="margin:8px 0"><input type="text" id="lb-note" placeholder="标注备注" style="width:60%" value="${esc(init.note||'')}"></div>
+      <button class="btn primary" id="lb-save">保存标注（写 audit label 事件）</button>
+     </div><div>
+      <h3 class="muted" style="font-size:12px;margin-bottom:6px">State</h3><pre style="max-height:300px">${esc(w.suite_state)}</pre>
+     </div></div></div>`;
+  $('#lb-save').onclick=async()=>{
+    const labels={tactic:$('#lb-tactic').value,severity:$('#lb-severity').value,
+      action:$('#lb-action').value,urgent:$('#lb-urgent').value==='true'};
+    try{await api('/api/label',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({window_id:wid,labels,ambiguous:$('#lb-ambig').checked,note:$('#lb-note').value})});
+      toast('标注已写入 audit'); await refresh(); location.hash='label';
+    }catch(e){toast('失败: '+e.message,false);}
+  };
+}
+
+/* ---------- 路由 / 数据加载 ---------- */
+function showTab(name){
+  $$('main > section').forEach(s=>s.classList.add('hidden'));
+  $('#tab-'+name)?.classList.remove('hidden');
+  $$('nav button').forEach(b=>b.classList.toggle('active',b.dataset.tab===name));
+}
+async function refresh(){
+  const v=await api('/api/queue');
+  STATE.queue=v.queue;STATE.replay=v.replay;STATE.dashboard=v.dashboard;STATE.thresholds=v.thresholds;
+  renderQueue();renderReplay();renderDashboard();renderLabel();
+}
+async function loadDetail(wid){
+  currentDetail=await api('/api/window/'+encodeURIComponent(wid));
+  // 标注页预填：已标事件优先
+  const lab=currentDetail.audit_events.filter(e=>e.event==='label').pop();
+  currentDetail.label_init=lab?{...lab.labels,ambiguous:lab.ambiguous,note:lab.note}:null;
+}
+async function route(){
+  const h=location.hash.slice(1)||'queue';
+  if(h.startsWith('detail/')){const wid=decodeURIComponent(h.slice(7));await loadDetail(wid);showTab('detail');renderDetail(wid);}
+  else if(h.startsWith('timeline/')){const wid=decodeURIComponent(h.slice(9));await loadDetail(wid);showTab('timeline');renderTimeline(wid);}
+  else if(h.startsWith('labelwin/')){const wid=decodeURIComponent(h.slice(9));await loadDetail(wid);showTab('detail');renderLabelWin(wid);}
+  else if(['queue','replay','dashboard','label','about'].includes(h)){showTab(h);}
+  else showTab('queue');
+}
+window.addEventListener('hashchange',route);
+
+/* SSE */
+function connectSSE(){
+  const es=new EventSource('/api/stream');
+  es.onopen=()=>{const b=$('#connBadge');b.textContent='SSE 已连接';b.classList.add('on');};
+  es.onerror=()=>{const b=$('#connBadge');b.textContent='SSE 断线重连…';b.classList.remove('on');};
+  es.addEventListener('audit',e=>{
+    const r=JSON.parse(e.data);
+    refresh();
+    if(r.event==='window_done')toast(`新窗完成: ${r.window_id}`);
+    else if(r.event==='human_decision')toast(`收到决策事件: ${r.window_id} ${r.decision}`);
+    else if(r.event==='label')toast(`收到标注事件: ${r.window_id}`);
+  });
+}
+$('#tauPreview').onclick=tauPreview;
+$('#tauApply').onclick=tauApply;
+$('#exportLabels').onclick=async()=>{
+  try{const r=await api('/api/labels/export');$('#exportInfo').textContent=`已导出 ${r.n} 条 → ${r.path}`;toast(`导出 ${r.n} 条 labelled replays`);}
+  catch(e){toast('导出失败: '+e.message,false);}
+};
+$$('nav button').forEach(b=>b.onclick=()=>{location.hash=b.dataset.tab;});
+
+/* init */
+(async()=>{
+  try{const t=await api('/api/taxonomy');TAX=t.taxonomy;}catch{}
+  await refresh(); await route(); connectSSE();
+})();
+</script>
+</body>
+</html>

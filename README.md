@@ -3,7 +3,13 @@
 Code and data for the paper *"ORACLE: Offense detection with Reasoned Alert triage and Calibrated local Engines"*.
 
 - **What**: A fully local two-tier PDM (parallel decision model) pipeline for SOC alert triage and response recommendation. No data egress, no cloud APIs.
-- **Status**: Artifact release in preparation. This repository currently holds the license and landing page; code, frozen data suites, and evaluation harness will be pushed in step with the preprint posting.
+- **Status**: Code and data artifacts released with the preprint.
+
+## Repository layout
+
+- `oracle-pipeline/` — reference implementation of the full inference pipeline: state construction (Drain3 templating, key-line extraction), Tier-0 rules, light/heavy PDM tiers, per-question confidence gating, append-only audit log, and the Tier-3 browser console (bilingual). See `oracle-pipeline/README-完整使用说明.md` for the full environment guide and current limitations.
+- `suites/` — frozen oracle suite manifest (SHA-256 pinned partitions and provenance).
+- `evaluation/` — evaluation and calibration harness: the unified baseline runner, the four-task evaluator, suite packing (typed-question conversion), and the fitted-temperature (Method A) calibration script.
 - **License**: Apache-2.0 (code); suite labels CC BY-SA 4.0. See [LICENSE](LICENSE).
 
 ## Post-trained checkpoints (ModelScope)
@@ -23,4 +29,4 @@ The four third-party training corpora (security-gym-v4, AIT-LDS, linux-apt-2024,
 
 ## Citation (forthcoming)
 
-The preprint will be announced here once posted.
+A preprint DOI (Zenodo community repository) will be added here once posted; arXiv hosting was declined by moderation and will be appealed after journal publication per their policy.

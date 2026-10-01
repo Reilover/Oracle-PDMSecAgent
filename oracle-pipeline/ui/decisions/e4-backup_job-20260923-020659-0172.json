@@ -1,0 +1,13 @@
+{
+ "ts": "2026-09-28T21:33:45.388",
+ "event": "human_decision",
+ "window_id": "e4-backup_job-20260923-020659-0172",
+ "decision": "confirm",
+ "question_decisions": {
+  "action": {
+   "action": "approve"
+  }
+ },
+ "note": "SSE 测试",
+ "actor": "analyst@ui"
+}

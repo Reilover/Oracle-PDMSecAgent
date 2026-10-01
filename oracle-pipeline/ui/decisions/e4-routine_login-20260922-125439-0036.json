@@ -1,0 +1,18 @@
+{
+ "ts": "2026-09-28T21:35:05.184",
+ "event": "human_decision",
+ "window_id": "e4-routine_login-20260922-125439-0036",
+ "decision": "confirm",
+ "question_decisions": {
+  "tactic": {
+   "action": "approve",
+   "value": null
+  },
+  "action": {
+   "action": "veto",
+   "value": null
+  }
+ },
+ "note": "浏览器 E2E 验证",
+ "actor": "analyst@ui"
+}

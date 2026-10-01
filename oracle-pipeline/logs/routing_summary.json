@@ -1,0 +1,187 @@
+{
+ "n_windows": 20,
+ "path_distribution": {
+  "tier0_rule": 4,
+  "tier1_laya→tier2_kev→tier3_human": 12,
+  "tier1_laya→tier3_human": 4
+ },
+ "windows_with_tier2": 12,
+ "windows_with_human": 16,
+ "windows_rule_hit": 4,
+ "question_route_counts": {
+  "rule/rule_adjudicated": 16,
+  "tier1/auto": 4,
+  "tier1/confirm": 12,
+  "tier2/auto": 6,
+  "tier2/confirm": 26,
+  "tier2/escalate": 16
+ },
+ "latency_breakdown_ms": {
+  "state_ms": {
+   "n": 16,
+   "mean_ms": 0.0,
+   "p50_ms": 0.0,
+   "max_ms": 0.1
+  },
+  "tier0_ms": {
+   "n": 20,
+   "mean_ms": 0.2,
+   "p50_ms": 0.1,
+   "max_ms": 0.7
+  },
+  "tier1_ms": {
+   "n": 16,
+   "mean_ms": 1044.3,
+   "p50_ms": 1026.5,
+   "max_ms": 1281.9
+  },
+  "tier2_ms": {
+   "n": 12,
+   "mean_ms": 235.7,
+   "p50_ms": 189.8,
+   "max_ms": 782.3
+  },
+  "gate_ms": {
+   "n": 20,
+   "mean_ms": 0.0,
+   "p50_ms": 0.0,
+   "max_ms": 0.0
+  }
+ },
+ "thresholds": {
+  "tau": 0.9,
+  "tau_h": 0.7
+ },
+ "pool_sizes": {
+  "rule": 115,
+  "high": 0,
+  "mid": 109,
+  "low": 91
+ },
+ "selection": [
+  {
+   "id": "e3-spray-20260922-143624-0001",
+   "bucket": "rule",
+   "prior_rule_hit": "password_spray(users=7,fail=11)",
+   "laya_prior_min_conf": 0.8522
+  },
+  {
+   "id": "e3-stuffing-20260923-041258-0024",
+   "bucket": "rule",
+   "prior_rule_hit": "password_spray(users=5,fail=10)",
+   "laya_prior_min_conf": 0.8452
+  },
+  {
+   "id": "e3-spray-20260923-025201-0006",
+   "bucket": "rule",
+   "prior_rule_hit": "password_spray(users=8,fail=14)",
+   "laya_prior_min_conf": 0.5064
+  },
+  {
+   "id": "e4-user_typos-20260923-023756-0243",
+   "bucket": "rule",
+   "prior_rule_hit": "bruteforce_success(fail=5,acc=24)",
+   "laya_prior_min_conf": 0.8076
+  },
+  {
+   "id": "e4-monitor_probe-20260923-012348-0075",
+   "bucket": "mid",
+   "prior_rule_hit": null,
+   "laya_prior_min_conf": 0.8417
+  },
+  {
+   "id": "e4-backup_job-20260923-020659-0172",
+   "bucket": "mid",
+   "prior_rule_hit": null,
+   "laya_prior_min_conf": 0.8498
+  },
+  {
+   "id": "e4-routine_login-20260922-125439-0036",
+   "bucket": "mid",
+   "prior_rule_hit": null,
+   "laya_prior_min_conf": 0.8302
+  },
+  {
+   "id": "e4-monitor_probe-20260922-124142-0006",
+   "bucket": "mid",
+   "prior_rule_hit": null,
+   "laya_prior_min_conf": 0.8427
+  },
+  {
+   "id": "e4-routine_login-20260923-011902-0062",
+   "bucket": "mid",
+   "prior_rule_hit": null,
+   "laya_prior_min_conf": 0.8573
+  },
+  {
+   "id": "e4-backup_job-20260923-020625-0171",
+   "bucket": "mid",
+   "prior_rule_hit": null,
+   "laya_prior_min_conf": 0.852
+  },
+  {
+   "id": "e4-routine_login-20260923-012657-0082",
+   "bucket": "mid",
+   "prior_rule_hit": null,
+   "laya_prior_min_conf": 0.8024
+  },
+  {
+   "id": "e1-sshbrute-20260922-130939-0012",
+   "bucket": "mid",
+   "prior_rule_hit": null,
+   "laya_prior_min_conf": 0.8311
+  },
+  {
+   "id": "e2-sqli-20260923-014509-0039",
+   "bucket": "low",
+   "prior_rule_hit": null,
+   "laya_prior_min_conf": 0.4973
+  },
+  {
+   "id": "e2-path_traversal-20260923-010419-0012",
+   "bucket": "low",
+   "prior_rule_hit": null,
+   "laya_prior_min_conf": 0.3657
+  },
+  {
+   "id": "e2-sqli-20260923-013556-0033",
+   "bucket": "low",
+   "prior_rule_hit": null,
+   "laya_prior_min_conf": 0.4615
+  },
+  {
+   "id": "e4-backup_job-20260923-005938-0019",
+   "bucket": "low",
+   "prior_rule_hit": null,
+   "laya_prior_min_conf": 0.4833
+  },
+  {
+   "id": "e1-sshbrute-20260922-130700-0011",
+   "bucket": "low",
+   "prior_rule_hit": null,
+   "laya_prior_min_conf": 0.2353
+  },
+  {
+   "id": "e2-sqli-20260923-015211-0046",
+   "bucket": "low",
+   "prior_rule_hit": null,
+   "laya_prior_min_conf": 0.4806
+  },
+  {
+   "id": "e1-sshbrute-20260922-130335-0008",
+   "bucket": "low",
+   "prior_rule_hit": null,
+   "laya_prior_min_conf": 0.1605
+  },
+  {
+   "id": "e2-sqli-20260923-011952-0021",
+   "bucket": "low",
+   "prior_rule_hit": null,
+   "laya_prior_min_conf": 0.3887
+  }
+ ],
+ "config": {
+  "kev_url": "http://127.0.0.1:8023",
+  "non_interactive": "y"
+ }
+}
