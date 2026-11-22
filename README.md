@@ -41,3 +41,11 @@ The four third-party training corpora (security-gym-v4, AIT-LDS, linux-apt-2024,
 X. Xiong, J. Huang, Z. Wei, Y. Wang, and L. Niu, "ORACLE: Calibrated Parallel Decision Models for Local Alert Triage and Response Action Recommendation," 2026. doi: 10.5281/zenodo.23092472.
 
 Preprint: https://zenodo.org/record/23092472 (CC BY-SA 4.0).
+
+## Supplementary evaluation: baseline dev re-run (unified convention)
+
+`evaluation/baseline-unify-dev/` — the eight baseline systems of the main
+comparison re-evaluated on the 55-window development split under the same
+11-option convention and runner as the test split (the paper's original dev
+columns for these rows came from an earlier 4-option convention). Includes
+per-model predictions, analyses, and an old-vs-new REPORT.
