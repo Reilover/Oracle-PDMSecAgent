@@ -23,6 +23,13 @@ Code and data for the paper *"ORACLE: Offense detection with Reasoned Alert tria
 
 Each checkpoint ships with a bilingual model card (base-model provenance with pinned revisions, training recipe, fitted-temperature usage, evaluation numbers with per-split provenance) and SHA256 manifests. Base weights are not redistributed; fetch them per the card.
 
+## Supplementary evaluation: cloud Jev 1.13 (same-convention re-run)
+
+`evaluation/cloud-jev-439/` — the commercial cloud PDM (Jev 1.13) evaluated on the frozen
+oracle-v3 test split (439 windows / 1,756 questions) and development split (55 windows)
+under the identical eleven-option convention: tactic 0.636 / exact 0.148 on test, with
+per-window raw predictions (`predictions*.jsonl`), per-task analyses, and the runner.
+
 ## Source corpora
 
 The four third-party training corpora (security-gym-v4, AIT-LDS, linux-apt-2024, soc-alert-attack) are public datasets; links and per-corpus notes are maintained here rather than redistributing them.
