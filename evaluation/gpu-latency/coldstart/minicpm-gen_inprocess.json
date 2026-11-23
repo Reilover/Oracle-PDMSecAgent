@@ -1,0 +1,10 @@
+{
+ "method": "minicpm-gen",
+ "split": "test",
+ "env_note": "llama.cpp CUDA build Q8 @ http://127.0.0.1:18481/v1/chat/completions",
+ "proc_start_ts": 435637.99,
+ "ready_ts": 1795405801.7930973,
+ "cold_start_ms": 1794970163803.1,
+ "load_wall_ms": 0.0,
+ "first_window_ms": 193.55535507202148
+}

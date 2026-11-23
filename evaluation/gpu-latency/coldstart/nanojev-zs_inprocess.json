@@ -1,0 +1,10 @@
+{
+ "method": "nanojev-zs",
+ "split": "test",
+ "env_note": "spark2_5 python, GPU fp32\uff08\u540c CPU \u8f6e\u7cbe\u5ea6\uff09",
+ "proc_start_ts": 432932.57,
+ "ready_ts": 1795403128.8662894,
+ "cold_start_ms": 1794970196296.3,
+ "load_wall_ms": 32496.1,
+ "first_window_ms": 1671.12135887146
+}

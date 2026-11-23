@@ -1,0 +1,25 @@
+{
+ "name": "llamacpp-spark-gpu",
+ "pid": 2898957,
+ "cmd": [
+  "/home/xxl/spark-cpu/llama.cpp-spark/build-cuda/bin/llama-server",
+  "-m",
+  "/home/xxl/spark-cpu/models/Spark-X2.5-4B-GGUF/Spark-X2.5-4B-Q8_0.gguf",
+  "--host",
+  "127.0.0.1",
+  "--port",
+  "18480",
+  "-c",
+  "32768",
+  "-t",
+  "18",
+  "-ngl",
+  "99"
+ ],
+ "launch_ts": 1795403890.6486428,
+ "ready_ts": 1795403892.7835114,
+ "cold_start_ms": 2134.9,
+ "timeout": false,
+ "last_err": "HTTP Error 503: Service Unavailable",
+ "env_CUDA_VISIBLE_DEVICES": "0"
+}

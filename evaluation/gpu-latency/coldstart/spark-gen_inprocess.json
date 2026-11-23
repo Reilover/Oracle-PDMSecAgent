@@ -1,0 +1,10 @@
+{
+ "method": "spark-gen",
+ "split": "test",
+ "env_note": "llama.cpp CUDA build Q8 @ http://127.0.0.1:18480/v1/chat/completions",
+ "proc_start_ts": 438155.96,
+ "ready_ts": 1795408319.7621243,
+ "cold_start_ms": 1794970163802.1,
+ "load_wall_ms": 0.0,
+ "first_window_ms": 518.2592868804932
+}

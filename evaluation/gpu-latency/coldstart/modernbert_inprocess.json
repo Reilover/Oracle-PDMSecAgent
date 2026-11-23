@@ -1,0 +1,10 @@
+{
+ "method": "modernbert",
+ "split": "development",
+ "env_note": "kev-repo/.venv python, GPU\uff08bert_baseline.pt\uff1bdev-only\uff0ctokenize \u540c bert_calib_eval\uff1a1024 \u622a\u65ad\uff09",
+ "proc_start_ts": 433630.02,
+ "ready_ts": 1795403799.1513846,
+ "cold_start_ms": 1794970169131.4,
+ "load_wall_ms": 5329.4,
+ "first_window_ms": 204.46205139160156
+}

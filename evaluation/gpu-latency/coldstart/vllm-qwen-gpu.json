@@ -1,0 +1,30 @@
+{
+ "name": "vllm-qwen-gpu",
+ "pid": 2903622,
+ "cmd": [
+  "nice",
+  "-n",
+  "10",
+  "/home/xxl/spark2_5/bin/vllm",
+  "serve",
+  "/disk1/models/Qwen3-8B-SecAgent",
+  "--served-model-name",
+  "qwen3-8b",
+  "--host",
+  "127.0.0.1",
+  "--port",
+  "18483",
+  "--max-model-len",
+  "8192",
+  "--gpu-memory-utilization",
+  "0.25",
+  "--dtype",
+  "bfloat16"
+ ],
+ "launch_ts": 1795404138.5249383,
+ "ready_ts": 1795404171.1068785,
+ "cold_start_ms": 32581.9,
+ "timeout": false,
+ "last_err": "<urlopen error [Errno 111] Connection refused>",
+ "env_CUDA_VISIBLE_DEVICES": "0"
+}

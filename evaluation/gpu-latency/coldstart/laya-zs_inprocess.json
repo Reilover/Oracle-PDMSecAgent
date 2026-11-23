@@ -1,0 +1,10 @@
+{
+ "method": "laya-zs",
+ "split": "test",
+ "env_note": "spark2_5 python, Agent device=cuda\uff08laya-family/laya-base \u540c sha256 \u526f\u672c\uff09",
+ "proc_start_ts": 433236.4,
+ "ready_ts": 1795403405.1872816,
+ "cold_start_ms": 1794970168787.3,
+ "load_wall_ms": 4988.8,
+ "first_window_ms": 909.6384048461914
+}

@@ -1,0 +1,22 @@
+{
+ "name": "kev08-zs",
+ "pid": 2896525,
+ "cmd": [
+  "nice",
+  "-n",
+  "10",
+  "/home/xxl/Mylocllm/kev/kev-repo/.venv/bin/python",
+  "-m",
+  "kev.serve",
+  "--run",
+  "jaredpalmer/kev-0.8b",
+  "--port",
+  "18428"
+ ],
+ "launch_ts": 1795403801.5669503,
+ "ready_ts": 1795403808.5993867,
+ "cold_start_ms": 7032.4,
+ "timeout": false,
+ "last_err": "<urlopen error [Errno 111] Connection refused>",
+ "env_CUDA_VISIBLE_DEVICES": "0"
+}

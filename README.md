@@ -49,3 +49,11 @@ comparison re-evaluated on the 55-window development split under the same
 11-option convention and runner as the test split (the paper's original dev
 columns for these rows came from an earlier 4-option convention). Includes
 per-model predictions, analyses, and an old-vs-new REPORT.
+
+## Supplementary evaluation: GPU latency, CPU degradation, and cold start
+
+`evaluation/gpu-latency/` — every local system re-measured on an idle GPU
+(439-window test split, per-window medians): replaces the earlier CPU-based
+latency column, verifies prediction consistency (HF-precision rows identical;
+llama.cpp/vLLM rows differ only by sampling nondeterminism), and adds measured
+CPU-degradation ratios and cold-start/first-window times.

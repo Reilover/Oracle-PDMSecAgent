@@ -1,0 +1,29 @@
+{
+ "name": "cpuctl-minicpm",
+ "pid": 2700478,
+ "cmd": [
+  "nice",
+  "-n",
+  "19",
+  "/home/xxl/spark-cpu/llama.cpp-spark/build/bin/llama-server",
+  "-m",
+  "/home/xxl/minicpm5-cpu/MiniCPM5-2B-Q8_0.gguf",
+  "--host",
+  "127.0.0.1",
+  "--port",
+  "28481",
+  "-c",
+  "8192",
+  "-t",
+  "18",
+  "--jinja",
+  "-ngl",
+  "0"
+ ],
+ "launch_ts": 1795393929.8337212,
+ "ready_ts": 1795393930.9185212,
+ "cold_start_ms": 1084.8,
+ "timeout": false,
+ "last_err": "HTTP Error 503: Service Unavailable",
+ "env_CUDA_VISIBLE_DEVICES": "0"
+}

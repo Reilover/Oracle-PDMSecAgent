@@ -1,0 +1,10 @@
+{
+ "method": "minicpm-opt",
+ "split": "test",
+ "env_note": "llama.cpp CUDA build Q8 @ http://127.0.0.1:18481/v1/chat/completions\uff0820 \u95ee/\u7a97\uff09",
+ "proc_start_ts": 441840.17,
+ "ready_ts": 1795412003.9714441,
+ "cold_start_ms": 1794970163801.4,
+ "load_wall_ms": 0.0,
+ "first_window_ms": 1470.6015586853027
+}

@@ -1,0 +1,22 @@
+{
+ "name": "kev4b-zs",
+ "pid": 2932528,
+ "cmd": [
+  "nice",
+  "-n",
+  "10",
+  "/home/xxl/Mylocllm/kev/kev-repo/.venv/bin/python",
+  "-m",
+  "kev.serve",
+  "--run",
+  "jaredpalmer/kev-4b",
+  "--port",
+  "18429"
+ ],
+ "launch_ts": 1795405391.8871672,
+ "ready_ts": null,
+ "cold_start_ms": null,
+ "timeout": true,
+ "last_err": "<urlopen error [Errno 111] Connection refused>",
+ "env_CUDA_VISIBLE_DEVICES": "0"
+}

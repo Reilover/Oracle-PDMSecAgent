@@ -1,0 +1,28 @@
+{
+ "name": "cpuctl-spark",
+ "pid": 2700331,
+ "cmd": [
+  "nice",
+  "-n",
+  "19",
+  "/home/xxl/spark-cpu/llama.cpp-spark/build/bin/llama-server",
+  "-m",
+  "/home/xxl/spark-cpu/models/Spark-X2.5-4B-GGUF/Spark-X2.5-4B-Q8_0.gguf",
+  "--host",
+  "127.0.0.1",
+  "--port",
+  "28480",
+  "-c",
+  "32768",
+  "-t",
+  "18",
+  "-ngl",
+  "0"
+ ],
+ "launch_ts": 1795393927.238439,
+ "ready_ts": 1795393929.7519064,
+ "cold_start_ms": 2513.5,
+ "timeout": false,
+ "last_err": "HTTP Error 503: Service Unavailable",
+ "env_CUDA_VISIBLE_DEVICES": "0"
+}

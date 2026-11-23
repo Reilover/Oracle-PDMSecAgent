@@ -1,0 +1,26 @@
+{
+ "name": "llamacpp-minicpm-gpu",
+ "pid": 2900062,
+ "cmd": [
+  "/home/xxl/spark-cpu/llama.cpp-spark/build-cuda/bin/llama-server",
+  "-m",
+  "/home/xxl/minicpm5-cpu/MiniCPM5-2B-Q8_0.gguf",
+  "--host",
+  "127.0.0.1",
+  "--port",
+  "18481",
+  "-c",
+  "8192",
+  "-t",
+  "18",
+  "--jinja",
+  "-ngl",
+  "99"
+ ],
+ "launch_ts": 1795403940.5999148,
+ "ready_ts": 1795403942.1075616,
+ "cold_start_ms": 1507.6,
+ "timeout": false,
+ "last_err": "HTTP Error 503: Service Unavailable",
+ "env_CUDA_VISIBLE_DEVICES": "0"
+}

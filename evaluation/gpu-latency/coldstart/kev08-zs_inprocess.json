@@ -1,0 +1,10 @@
+{
+ "method": "kev08-zs",
+ "split": "test",
+ "env_note": "kev.serve bf16 GPU @ http://127.0.0.1:18428",
+ "proc_start_ts": 433645.57,
+ "ready_ts": 1795403809.373219,
+ "cold_start_ms": 1794970163803.2,
+ "load_wall_ms": 0.0,
+ "first_window_ms": 63.8
+}

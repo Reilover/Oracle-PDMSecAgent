@@ -1,0 +1,10 @@
+{
+ "method": "g2v6-qwen",
+ "split": "test",
+ "env_note": "vLLM 0.28.0 bf16 GPU @ GLR_QWEN_BASE\uff08prefill+few-shot \u6253\u5206\uff0c\u540c v3_baseline_runner run_g2v6\uff09",
+ "proc_start_ts": 434022.4,
+ "ready_ts": 1795404190.4782681,
+ "cold_start_ms": 1794970168078.3,
+ "load_wall_ms": 4283.5,
+ "first_window_ms": 2741.9888973236084
+}
