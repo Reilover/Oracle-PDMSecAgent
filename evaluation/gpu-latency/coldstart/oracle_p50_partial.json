@@ -1,0 +1,8 @@
+{
+ "kev08-oracle": {
+  "method": "kev08-oracle",
+  "n": 150,
+  "p50_ms": 120.4,
+  "p95_ms": 138.4
+ }
+}

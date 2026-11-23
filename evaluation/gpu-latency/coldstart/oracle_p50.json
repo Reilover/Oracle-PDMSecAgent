@@ -1,0 +1,19 @@
+{
+ "kev08-oracle": {
+  "method": "kev08-oracle",
+  "n": 150,
+  "p50_ms": 120.4,
+  "p95_ms": 138.4
+ },
+ "kev4b-oracle": {
+  "method": "kev4b-oracle",
+  "note": "serve hangs at weights loading (3rd attempt, local ckpt); P50 adopted from T1 artifact kev-4b-zs 342ms (same stack/size)"
+ },
+ "nanojev-oracle": {
+  "method": "nanojev-oracle",
+  "load_s": 9.7,
+  "n": 150,
+  "p50_ms": 151.1,
+  "p95_ms": 160.3
+ }
+}
