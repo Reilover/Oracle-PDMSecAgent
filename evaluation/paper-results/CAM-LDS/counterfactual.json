@@ -1,0 +1,145 @@
+{
+  "source": "results_kev4b-v3.jsonl",
+  "model": "kev-4B v3",
+  "n_windows_scored": 551,
+  "n_windows_total": 562,
+  "baseline": {
+    "overall_correct": 132,
+    "overall_recall": 0.2396
+  },
+  "tiers": {
+    "strong": {
+      "n": 203,
+      "correct": 124,
+      "conditional": 0.6108
+    },
+    "weak": {
+      "n": 198,
+      "correct": 6,
+      "conditional": 0.0303
+    },
+    "sparse": {
+      "n": 52,
+      "correct": 2,
+      "conditional": 0.0385
+    },
+    "zero": {
+      "n": 98,
+      "correct": 0,
+      "conditional": 0.0
+    }
+  },
+  "per_class_recall": {
+    "command_and_control": {
+      "n": 37,
+      "correct": 0,
+      "recall": 0.0
+    },
+    "credential_access": {
+      "n": 31,
+      "correct": 3,
+      "recall": 0.0968
+    },
+    "defense_evasion": {
+      "n": 65,
+      "correct": 0,
+      "recall": 0.0
+    },
+    "discovery": {
+      "n": 127,
+      "correct": 6,
+      "recall": 0.0472
+    },
+    "execution": {
+      "n": 104,
+      "correct": 72,
+      "recall": 0.6923
+    },
+    "exfiltration": {
+      "n": 7,
+      "correct": 0,
+      "recall": 0.0
+    },
+    "initial_access": {
+      "n": 27,
+      "correct": 0,
+      "recall": 0.0
+    },
+    "persistence": {
+      "n": 33,
+      "correct": 0,
+      "recall": 0.0
+    },
+    "privilege_escalation": {
+      "n": 52,
+      "correct": 2,
+      "recall": 0.0385
+    },
+    "reconnaissance": {
+      "n": 68,
+      "correct": 49,
+      "recall": 0.7206
+    }
+  },
+  "target_conditionals": {
+    "c_strong": {
+      "value": 0.6108,
+      "derivation": "124/203 (strong tier actual)"
+    },
+    "c_reexec": {
+      "value": 0.7035,
+      "derivation": "121/172 (reconnaissance+execution actual, credential_access excluded)"
+    }
+  },
+  "groups": {
+    "below_strong_348": 348,
+    "weak_198": 198,
+    "zero142_old_definition": 142,
+    "weak_nonzero_206_actual_correct": 8
+  },
+  "counterfactuals": {
+    "A_lift_all_348_below_strong": {
+      "strong_conditional_0.611": 0.6108,
+      "recon_exec_mean_0.703": 0.6694
+    },
+    "B_lift_weak_198_only": {
+      "strong_conditional_0.611": 0.4482,
+      "recon_exec_mean_0.703": 0.4815
+    },
+    "C1_lift_zero142_keep_actual_rest": {
+      "strong_conditional_0.611": 0.397,
+      "recon_exec_mean_0.703": 0.4209
+    },
+    "C2_lift_zero142_zero_the_206": {
+      "strong_conditional_0.611": 0.3825,
+      "recon_exec_mean_0.703": 0.4063
+    },
+    "C3_support_weighted_partial_lift": {
+      "strong_conditional_0.611": 0.3468,
+      "recon_exec_mean_0.703": 0.3638
+    }
+  },
+  "published_numbers": {
+    "v1_claimed": 0.436,
+    "v2_corrected": [
+      0.382,
+      0.406
+    ]
+  },
+  "match_analysis": {
+    "0.382": [
+      [
+        "C2_lift_zero142_zero_the_206",
+        "strong_conditional_0.611",
+        0.3825
+      ]
+    ],
+    "0.406": [
+      [
+        "C2_lift_zero142_zero_the_206",
+        "recon_exec_mean_0.703",
+        0.4063
+      ]
+    ]
+  }
+}

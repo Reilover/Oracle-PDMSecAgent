@@ -1,0 +1,34 @@
+Loading weights:   0%|          | 0/134 [00:00<?, ?it/s]Loading weights: 100%|██████████| 134/134 [00:00<00:00, 10384.43it/s]
+[transformers] [1mModernBertModel LOAD REPORT[0m from: answerdotai/ModernBERT-base
+Key               | Status     |  | 
+------------------+------------+--+-
+head.dense.weight | UNEXPECTED |  | 
+decoder.bias      | UNEXPECTED |  | 
+head.norm.weight  | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+inference device: cuda
+  calibration: 55 窗推理完成
+  test: 439 窗推理完成
+  development: 55 窗推理完成
+  logits_calibration.json 落盘
+  logits_test.json 落盘
+  logits_development.json 落盘
+[dev 复核] tactic 0.6909 (训练报告 0.6909) | exact 0.6727 (0.6727) | tactic ECE15 0.2955 (0.2955)
+[fit] tactic    T = 1.8661  (calib 55 窗, {'aggregation': 'micro', 'points': 121})
+[fit] urgent    T = 2.0000  (calib 55 窗, {'aggregation': 'micro', 'points': 121})
+[fit] severity  T = 2.1435  (calib 55 窗, {'aggregation': 'micro', 'points': 121})
+[fit] action    T = 1.6625  (calib 55 窗, {'aggregation': 'micro', 'points': 121})
+
+[test 439 窗] 校准前 → 校准后（逐头 T）
+head           acc    ECE15     NLL  mean_conf   →        acc    ECE15     NLL  mean_conf
+tactic      0.6811   0.2636  1.9721     0.9344   →     0.6811   0.2765  1.3621     0.7185  (T=1.866)
+urgent      0.7813   0.1720  0.8842     0.9442   →     0.7813   0.1974  0.6084     0.8251  (T=2.000)
+severity    0.6902   0.2754  1.7349     0.9656   →     0.6902   0.2752  1.0492     0.7767  (T=2.144)
+action      0.6879   0.2484  1.2761     0.9025   →     0.6879   0.2322  0.9994     0.7474  (T=1.662)
+exact       0.6811                    →     0.6811
+micro NLL                    1.4668   →                      1.0048
+
+wrote /disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/BERT-CALIB/bert_calib_result.json
+RC=0

@@ -1,0 +1,93 @@
+{
+  "task": "TASK-MODERNBERT-CALIB-20261111",
+  "checkpoint": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/BATCH2-TRAIN/bert-baseline/bert_baseline.pt",
+  "suite": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/suites/oracle-v3",
+  "protocol": {
+    "fit": "Method A (ORACLE 同口径): per-question-type bucket (4 heads, one scalar T each), fitted on oracle-v3 calibration split (55 windows), min micro NLL over 121-point log grid 0.25..4 (kev.metrics.fit_temperature, TEMPERATURE_FIT)",
+    "eval": "oracle-v3 test split, 439 windows; ECE = 15 equal-frequency bins (train_bert_baseline.py convention); argmax/exact are temperature-invariant",
+    "no_retrain": true
+  },
+  "fitted_temperatures": {
+    "tactic": 1.8660659830736146,
+    "urgent": 1.9999999999999998,
+    "severity": 2.1435469250725863,
+    "action": 1.6624757922855755
+  },
+  "dev_sanity": {
+    "tactic_acc": 0.6909090909090909,
+    "exact": 0.6727272727272727,
+    "tactic_ece15": 0.2954520250200623,
+    "matches_train_metrics_json": true
+  },
+  "test": {
+    "n_windows": 439,
+    "raw_T1": {
+      "per_head": {
+        "tactic": {
+          "n": 439,
+          "acc": 0.6810933940774487,
+          "ece15": 0.2636305093673807,
+          "nll": 1.9721173195981592,
+          "mean_conf": 0.934423389533674
+        },
+        "urgent": {
+          "n": 439,
+          "acc": 0.7813211845102506,
+          "ece15": 0.17203000031239993,
+          "nll": 0.8841889069652417,
+          "mean_conf": 0.9442086419851335
+        },
+        "severity": {
+          "n": 439,
+          "acc": 0.6902050113895216,
+          "ece15": 0.27540809501952557,
+          "nll": 1.7349233084590938,
+          "mean_conf": 0.9656131064090471
+        },
+        "action": {
+          "n": 439,
+          "acc": 0.6879271070615034,
+          "ece15": 0.24837880124725598,
+          "nll": 1.276108159599454,
+          "mean_conf": 0.9025276604300795
+        }
+      },
+      "exact": 0.6810933940774487,
+      "micro_nll": 1.466834423655487
+    },
+    "methodA_calibrated": {
+      "per_head": {
+        "tactic": {
+          "n": 439,
+          "acc": 0.6810933940774487,
+          "ece15": 0.2764696705374893,
+          "nll": 1.3621215398588844,
+          "mean_conf": 0.7185086339457895
+        },
+        "urgent": {
+          "n": 439,
+          "acc": 0.7813211845102506,
+          "ece15": 0.19741632131256645,
+          "nll": 0.6084302749110684,
+          "mean_conf": 0.8250947451431446
+        },
+        "severity": {
+          "n": 439,
+          "acc": 0.6902050113895216,
+          "ece15": 0.27516437747522277,
+          "nll": 1.0491724570856538,
+          "mean_conf": 0.7767153728273908
+        },
+        "action": {
+          "n": 439,
+          "acc": 0.6879271070615034,
+          "ece15": 0.23220596835875162,
+          "nll": 0.9994046842278469,
+          "mean_conf": 0.7474359387079399
+        }
+      },
+      "exact": 0.6810933940774487,
+      "micro_nll": 1.0047822390208634
+    }
+  }
+}

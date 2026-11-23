@@ -1,0 +1,67 @@
+[warn] tokenizer 不可用(No module named 'transformers'),退回字符估算
+[1/50] cred_dump_tool gt=credential_access deploy=benign(0.6393) visible=credential_access(0.8846)
+[2/50] cred_dump_tool gt=credential_access deploy=benign(0.8878) visible=benign(0.33)
+[3/50] cred_dump_tool gt=credential_access deploy=benign(0.8815) visible=credential_access(0.8381)
+[4/50] cred_dump_tool gt=credential_access deploy=credential_access(0.5169) visible=credential_access(0.9241)
+[5/50] cred_dump_tool gt=credential_access deploy=benign(0.3287) visible=credential_access(0.9396)
+[6/50] cred_dump_tool gt=credential_access deploy=benign(0.8374) visible=credential_access(0.9301)
+[7/50] cred_dump_tool gt=credential_access deploy=benign(0.6719) visible=credential_access(0.4874)
+[8/50] cred_dump_tool gt=credential_access deploy=benign(0.7961) visible=credential_access(0.7761)
+[9/50] cred_dump_tool gt=credential_access deploy=benign(0.8621) visible=credential_access(0.6049)
+[10/50] cred_dump_tool gt=credential_access deploy=benign(0.8225) visible=credential_access(0.9229)
+[11/50] reverse_shell_path gt=command_and_control deploy=execution(0.5193) visible=execution(0.8615)
+[12/50] reverse_shell_path gt=command_and_control deploy=benign(0.7275) visible=execution(0.6573)
+[13/50] reverse_shell_path gt=command_and_control deploy=execution(0.5777) visible=execution(0.5551)
+[14/50] reverse_shell_path gt=command_and_control deploy=benign(0.5724) visible=execution(0.4942)
+[15/50] reverse_shell_path gt=command_and_control deploy=execution(0.5455) visible=execution(0.5765)
+[16/50] reverse_shell_path gt=command_and_control deploy=execution(0.9708) visible=benign(0.7291)
+[17/50] reverse_shell_path gt=command_and_control deploy=benign(0.8433) visible=execution(0.3337)
+[18/50] reverse_shell_path gt=command_and_control deploy=execution(0.9303) visible=execution(0.7312)
+[19/50] reverse_shell_path gt=command_and_control deploy=execution(0.5851) visible=execution(0.709)
+[20/50] reverse_shell_path gt=command_and_control deploy=benign(0.7298) visible=execution(0.4008)
+[21/50] spray_disguised gt=credential_access deploy=benign(0.5495) visible=benign(0.8217)
+[22/50] spray_disguised gt=credential_access deploy=benign(0.1739) visible=benign(0.1878)
+[23/50] spray_disguised gt=credential_access deploy=benign(0.3611) visible=benign(0.7724)
+[24/50] spray_disguised gt=credential_access deploy=benign(0.2015) visible=benign(0.2503)
+[25/50] spray_disguised gt=credential_access deploy=benign(0.7723) visible=benign(0.4071)
+[26/50] spray_disguised gt=credential_access deploy=benign(0.7304) visible=benign(0.1604)
+[27/50] sqli_in_benign_field gt=initial_access deploy=benign(0.7297) visible=benign(0.7687)
+[28/50] sqli_in_benign_field gt=initial_access deploy=benign(0.3515) visible=benign(0.2811)
+[29/50] sqli_in_benign_field gt=initial_access deploy=benign(0.2413) visible=credential_access(0.7137)
+[30/50] sqli_in_benign_field gt=initial_access deploy=benign(0.2492) visible=benign(0.7548)
+[31/50] sqli_in_benign_field gt=initial_access deploy=credential_access(0.7981) visible=benign(0.4031)
+[32/50] sqli_in_benign_field gt=initial_access deploy=benign(0.7727) visible=benign(0.8175)
+[33/50] sqli_in_benign_field gt=initial_access deploy=execution(0.3826) visible=execution(0.2546)
+[34/50] sqli_in_benign_field gt=initial_access deploy=execution(0.317) visible=credential_access(0.3466)
+[35/50] ssh_bruteforce_payload gt=credential_access deploy=benign(0.4893) visible=benign(0.688)
+[36/50] ssh_bruteforce_payload gt=credential_access deploy=benign(0.8462) visible=benign(0.8708)
+[37/50] ssh_bruteforce_payload gt=credential_access deploy=benign(0.4854) visible=benign(0.9032)
+[38/50] ssh_bruteforce_payload gt=credential_access deploy=benign(0.8236) visible=benign(0.8321)
+[39/50] ssh_bruteforce_payload gt=credential_access deploy=benign(0.8216) visible=benign(0.8392)
+[40/50] ssh_bruteforce_payload gt=credential_access deploy=benign(0.4763) visible=benign(0.1932)
+[41/50] ssh_bruteforce_payload gt=credential_access deploy=benign(0.8806) visible=benign(0.6672)
+[42/50] ssh_bruteforce_payload gt=credential_access deploy=benign(0.8444) visible=benign(0.5662)
+[43/50] ssh_bruteforce_payload gt=credential_access deploy=benign(0.8472) visible=benign(0.6824)
+[44/50] ssh_bruteforce_payload gt=credential_access deploy=benign(0.9081) visible=benign(0.8349)
+[45/50] ssh_bruteforce_payload gt=credential_access deploy=benign(0.8081) visible=benign(0.2658)
+[46/50] ssh_bruteforce_payload gt=credential_access deploy=benign(0.919) visible=benign(0.6786)
+[47/50] xxe_in_config_log gt=initial_access deploy=benign(0.8576) visible=credential_access(0.5128)
+[48/50] xxe_in_config_log gt=initial_access deploy=execution(0.2809) visible=credential_access(0.4699)
+[49/50] xxe_in_config_log gt=initial_access deploy=execution(0.1579) visible=initial_access(0.7409)
+[50/50] xxe_in_config_log gt=initial_access deploy=benign(0.6115) visible=execution(0.4998)
+
+=== deploy(build_state trunc) ===  hits 1/50 = 0.020  benign-miss 38
+  cred_dump_tool: 1/10 = 0.100
+  reverse_shell_path: 0/10 = 0.000
+  spray_disguised: 0/6 = 0.000
+  sqli_in_benign_field: 0/8 = 0.000
+  ssh_bruteforce_payload: 0/12 = 0.000
+  xxe_in_config_log: 0/4 = 0.000
+
+=== visible(payload kept) ===  hits 10/50 = 0.200  benign-miss 25
+  cred_dump_tool: 9/10 = 0.900
+  reverse_shell_path: 0/10 = 0.000
+  spray_disguised: 0/6 = 0.000
+  sqli_in_benign_field: 0/8 = 0.000
+  ssh_bruteforce_payload: 0/12 = 0.000
+  xxe_in_config_log: 1/4 = 0.250

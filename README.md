@@ -57,3 +57,14 @@ per-model predictions, analyses, and an old-vs-new REPORT.
 latency column, verifies prediction consistency (HF-precision rows identical;
 llama.cpp/vLLM rows differ only by sampling nondeterminism), and adds measured
 CPU-degradation ratios and cold-start/first-window times.
+
+## Paper-results bundle
+
+`evaluation/paper-results/` — the per-experiment artifacts backing every number
+in the paper's tables and figures: baseline test/dev re-runs
+(BASELINE-UNIFY, V3-TEST-BASELINE), the four ORACLE training-line reports and
+bench rows (T2/T3/T4), calibration and ModernBERT control (BERT-CALIB),
+cross-domain transfer (CAM-LDS), the laya same-convention re-evaluation
+(LAYA-FAMILY), the local-label gain curve (E3P-TEST-CONFIRM), end-to-end
+cascade simulation (D1-E2E), the adversarial robustness probe
+(ADVERSARIAL-PROBE), and the headline bootstrap intervals (CI-HEADLINE.json).

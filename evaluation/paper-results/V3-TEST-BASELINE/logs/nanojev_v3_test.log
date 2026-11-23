@@ -1,0 +1,56 @@
+Running scope as unit: run-rb0bc2d229e8343cb9a188659570cc4ad.scope
+Traceback (most recent call last):
+  File "/home/xxl/MySecAgent/lab/experiments/oracle/EVAL/V3-TEST-BASELINE/v3_baseline_runner.py", line 346, in <module>
+    main()
+  File "/home/xxl/MySecAgent/lab/experiments/oracle/EVAL/V3-TEST-BASELINE/v3_baseline_runner.py", line 342, in main
+    run_nanojev_v3(recs, a.split)
+  File "/home/xxl/MySecAgent/lab/experiments/oracle/EVAL/V3-TEST-BASELINE/v3_baseline_runner.py", line 284, in run_nanojev_v3
+    eng = ptd.DecisionPredictor(ckpt, precision='bf16', disable_native_triton=True)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/xxl/Mylocllm/NanoJev/scripts/predict_toy_decisions.py", line 197, in __init__
+    from torch._native import triton_utils
+ModuleNotFoundError: No module named 'torch._native'
+nanojev-v3/test: 10 (2s total)
+nanojev-v3/test: 20 (3s total)
+nanojev-v3/test: 30 (5s total)
+nanojev-v3/test: 40 (6s total)
+nanojev-v3/test: 50 (8s total)
+nanojev-v3/test: 60 (9s total)
+nanojev-v3/test: 70 (11s total)
+nanojev-v3/test: 80 (12s total)
+nanojev-v3/test: 90 (14s total)
+nanojev-v3/test: 100 (15s total)
+nanojev-v3/test: 110 (17s total)
+nanojev-v3/test: 120 (18s total)
+nanojev-v3/test: 130 (20s total)
+nanojev-v3/test: 140 (21s total)
+nanojev-v3/test: 150 (23s total)
+nanojev-v3/test: 160 (24s total)
+nanojev-v3/test: 170 (26s total)
+nanojev-v3/test: 180 (27s total)
+nanojev-v3/test: 190 (29s total)
+nanojev-v3/test: 200 (30s total)
+nanojev-v3/test: 210 (32s total)
+nanojev-v3/test: 220 (33s total)
+nanojev-v3/test: 230 (35s total)
+nanojev-v3/test: 240 (36s total)
+nanojev-v3/test: 250 (38s total)
+nanojev-v3/test: 260 (39s total)
+nanojev-v3/test: 270 (41s total)
+nanojev-v3/test: 280 (42s total)
+nanojev-v3/test: 290 (44s total)
+nanojev-v3/test: 300 (46s total)
+nanojev-v3/test: 310 (47s total)
+nanojev-v3/test: 320 (49s total)
+nanojev-v3/test: 330 (50s total)
+nanojev-v3/test: 340 (52s total)
+nanojev-v3/test: 350 (53s total)
+nanojev-v3/test: 360 (55s total)
+nanojev-v3/test: 370 (56s total)
+nanojev-v3/test: 380 (58s total)
+nanojev-v3/test: 390 (59s total)
+nanojev-v3/test: 400 (61s total)
+nanojev-v3/test: 410 (62s total)
+nanojev-v3/test: 420 (64s total)
+nanojev-v3/test: 430 (65s total)
+nanojev-v3/test: +439 ok, 0 err -> /home/xxl/MySecAgent/lab/experiments/oracle/EVAL/V3-TEST-BASELINE/results_nanojev-v3_test.jsonl

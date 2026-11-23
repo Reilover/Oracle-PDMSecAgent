@@ -1,0 +1,9 @@
+{
+ "device": "cuda",
+ "n_windows": 64,
+ "warm_model_resident": true,
+ "p50_ms": 24.8,
+ "p90_ms": 27.6,
+ "mean_ms": 38.0,
+ "note": "steady-state per-window, model resident (excl. load); 与 D1 latency.json tier1(CPU) 对照; GPU 与 serve 8018/8023 共卡"
+}

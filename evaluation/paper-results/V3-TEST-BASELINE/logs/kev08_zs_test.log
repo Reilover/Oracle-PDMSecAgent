@@ -1,0 +1,24 @@
+kev08-zs/test: 20 done
+kev08-zs/test: 40 done
+kev08-zs/test: 60 done
+kev08-zs/test: 80 done
+kev08-zs/test: 100 done
+kev08-zs/test: 120 done
+kev08-zs/test: 140 done
+kev08-zs/test: 160 done
+kev08-zs/test: 180 done
+kev08-zs/test: 200 done
+kev08-zs/test: 220 done
+kev08-zs/test: 240 done
+kev08-zs/test: 260 done
+kev08-zs/test: 280 done
+kev08-zs/test: 300 done
+kev08-zs/test: 320 done
+kev08-zs/test: 340 done
+kev08-zs/test: 360 done
+kev08-zs/test: 380 done
+kev08-zs/test: 400 done
+kev08-zs/test: 420 done
+kev08-zs/test: +439 ok, 0 err -> /home/xxl/MySecAgent/lab/experiments/oracle/EVAL/V3-TEST-BASELINE/results_kev08-zs_test.jsonl
+n_rows=1756  tactic=0.2824601366742597  urgent=0.7608200455580866  sev=0.1776765375854214  exact=0.002277904328018223
+markdown: /home/xxl/MySecAgent/lab/experiments/oracle/EVAL/V3-TEST-BASELINE/analysis_kev08-zs_test_v3.md

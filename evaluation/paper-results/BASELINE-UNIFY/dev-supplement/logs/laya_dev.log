@@ -1,0 +1,5 @@
+/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/BASELINE-UNIFY/dev-supplement/baseline_unify_runner.py:197: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using choice:11+=0.10058280825614929 -> 0.5. Treat confidence from the affected entries as uncalibrated.
+  agent = Agent(LAYA_SNAPSHOT, device=LAYA_DEVICE, token=None, subfolder=None)
+laya-zs/development: 20 (2s)
+laya-zs/development: 40 (3s)
+laya-zs/development: +55 ok, 0 err -> /disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/BASELINE-UNIFY/dev-supplement/results_laya-zs_development.jsonl

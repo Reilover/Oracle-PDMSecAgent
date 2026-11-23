@@ -1,0 +1,9 @@
+minicpm-opt/development: 10 done (118s, ~11.8s/win)
+minicpm-opt/development: 20 done (236s, ~11.8s/win)
+minicpm-opt/development: 30 done (321s, ~10.7s/win)
+minicpm-opt/development: 40 done (321s, ~8.0s/win)
+minicpm-opt/development: 50 done (321s, ~6.4s/win)
+minicpm-opt/development: +55 ok, 0 err -> /disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/BASELINE-UNIFY/dev-supplement/results_minicpm-opt_development.jsonl
+minicpm-opt/development: 10 done (121s, ~12.1s/win)
+minicpm-opt/development: 20 done (234s, ~11.7s/win)
+minicpm-opt/development: +29 ok, 0 err -> /disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/BASELINE-UNIFY/dev-supplement/results_minicpm-opt_development.jsonl

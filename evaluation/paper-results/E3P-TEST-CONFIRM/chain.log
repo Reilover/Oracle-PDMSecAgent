@@ -1,0 +1,7 @@
+[21:26:06] GPU free: 54041MiB
+[E3P] test bench n050 done 21:38:27
+[E3P] test bench n200 done 21:53:11
+[21:53:11] GPU free: 54041MiB
+{"models":[{"name":"kev-latest","description":"Kev pointer head on Qwen/Qwen3.5-4B-Base, serving jaredpalmer/kev-4b at temperature 2.14","release_date":"2026-09-22","run":"jaredpalmer/kev-4b","base":"
+[KEV-ZS] done 21:55:48
+[21:55:53] GPU free: 54041MiB

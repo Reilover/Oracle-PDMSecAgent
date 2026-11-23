@@ -1,0 +1,50 @@
+{
+ "tau": 0.9,
+ "tau_h": 0.7,
+ "n_windows": 439,
+ "window_paths": {
+  "tier0_rule": {
+   "count": 140,
+   "share": 0.3189
+  },
+  "tier1_laya→tier2_kev→tier3_human": {
+   "count": 231,
+   "share": 0.5262
+  },
+  "tier1_laya→tier3_human": {
+   "count": 68,
+   "share": 0.1549
+  }
+ },
+ "question_routes (source/gate)": {
+  "rule/auto": {
+   "count": 560,
+   "share": 0.3189
+  },
+  "tier1/auto": {
+   "count": 60,
+   "share": 0.0342
+  },
+  "tier1/confirm": {
+   "count": 212,
+   "share": 0.1207
+  },
+  "tier2/auto": {
+   "count": 195,
+   "share": 0.111
+  },
+  "tier2/confirm": {
+   "count": 461,
+   "share": 0.2625
+  },
+  "tier2/escalate": {
+   "count": 268,
+   "share": 0.1526
+  }
+ },
+ "questions_sent_to_human": {
+  "count": 941,
+  "share": 0.5359
+ },
+ "windows_with_human": 299
+}

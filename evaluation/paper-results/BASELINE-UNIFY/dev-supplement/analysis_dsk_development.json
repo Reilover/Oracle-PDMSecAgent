@@ -1,0 +1,67 @@
+{
+  "n_rows": 220,
+  "source": "results_dsk_development.jsonl",
+  "tasks": {
+    "tactic": {
+      "n": 55,
+      "acc": 0.6909090909090909,
+      "macro_f1": 0.5769459298871064,
+      "classes": [
+        "benign",
+        "credential_access",
+        "initial_access"
+      ]
+    },
+    "urgent": {
+      "n": 55,
+      "acc": 0.8
+    },
+    "severity": {
+      "n": 55,
+      "acc": 0.7090909090909091,
+      "quadratic_kappa": 0.9007790077900779,
+      "mae": 0.32727272727272727,
+      "by_severity": {
+        "low": {
+          "n": 37,
+          "acc": 0.8108108108108109
+        },
+        "medium": {
+          "n": 9,
+          "acc": 0.5555555555555556
+        },
+        "high": {
+          "n": 8,
+          "acc": 0.5
+        },
+        "critical": {
+          "n": 1,
+          "acc": 0.0
+        }
+      }
+    },
+    "action": {
+      "n": 55,
+      "acc": 0.2545454545454545
+    }
+  },
+  "exact_match": 0.18181818181818182,
+  "ci": {
+    "tactic_acc": {
+      "lo": 0.5636363636363636,
+      "hi": 0.8
+    },
+    "sev_acc": {
+      "lo": 0.5818181818181818,
+      "hi": 0.8181818181818182
+    },
+    "urgent_acc": {
+      "lo": 0.6909090909090909,
+      "hi": 0.9090909090909091
+    }
+  },
+  "e3_subset": {
+    "urgent_acc": 0.5,
+    "n": 2
+  }
+}

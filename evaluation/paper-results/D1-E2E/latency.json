@@ -1,0 +1,48 @@
+{
+ "state_ms": {
+  "n": 439,
+  "p50_ms": 0.0,
+  "p90_ms": 0.0,
+  "mean_ms": 0.0
+ },
+ "tier0_ms": {
+  "n": 439,
+  "p50_ms": 0.0,
+  "p90_ms": 0.1,
+  "mean_ms": 0.1
+ },
+ "tier1_ms": {
+  "n": 299,
+  "p50_ms": 1149.9,
+  "p90_ms": 9063.8,
+  "mean_ms": 2660.9
+ },
+ "tier2_ms": {
+  "n": 231,
+  "p50_ms": 111.0,
+  "p90_ms": 123.4,
+  "mean_ms": 115.2
+ },
+ "gate_ms": {
+  "n": 439,
+  "p50_ms": 0.0,
+  "p90_ms": 0.0,
+  "mean_ms": 0.0
+ },
+ "end_to_end": {
+  "n": 439,
+  "p50_ms": 1061.4,
+  "p90_ms": 8525.2,
+  "mean_ms": 1877.2
+ },
+ "note": "tier1(laya) CPU 口径 P50≈1149.9ms（D1 实测）；GPU 口径 P50=24.8ms/P90=27.6ms（D1b 补测,64 窗批,与 serve 共卡,模型常驻不含加载）——解决 1150ms(CPU) vs 72ms(论文§7 T4口径) 脚注:72ms 为 T4-LAYA 独占评测口径,24.8ms 为共卡口径,三者并列引用。state_ms 计的是取用预构建 state 的开销,非构建耗时。",
+ "tier1_laya_gpu_b64": {
+  "device": "cuda",
+  "n_windows": 64,
+  "warm_model_resident": true,
+  "p50_ms": 24.8,
+  "p90_ms": 27.6,
+  "mean_ms": 38.0,
+  "note": "steady-state per-window, model resident (excl. load); 与 D1 latency.json tier1(CPU) 对照; GPU 与 serve 8018/8023 共卡"
+ }
+}

@@ -1,0 +1,43 @@
+{
+ "laya-base": {
+  "n": 439,
+  "tactic_acc": 0.0251,
+  "urgent_acc": 0.6902,
+  "severity_acc": 0.631,
+  "action_acc": 0.5923,
+  "exact_acc": 0.0091,
+  "latency_p50_ms": 24.8
+ },
+ "laya-multilingual": {
+  "n": 439,
+  "tactic_acc": 0.1071,
+  "urgent_acc": 0.221,
+  "severity_acc": 0.1686,
+  "action_acc": 0.1048,
+  "exact_acc": 0.0046,
+  "latency_p50_ms": 19.6
+ },
+ "laya-td": {
+  "n": 439,
+  "tactic_acc": 0.1162,
+  "urgent_acc": 0.7585,
+  "severity_acc": 0.1412,
+  "action_acc": 0.0866,
+  "exact_acc": 0.0,
+  "latency_p50_ms": 25.2
+ },
+ "ours_laya_ft (T4 后训练版, 论文口径)": {
+  "tactic": 0.657,
+  "exact": 0.472,
+  "note": "early 470 窗 4-option 口径; 与零样本三线同表对照"
+ },
+ "ours_laya_ft (T4 后训练版, oracle-v3 439 窗 11-opt 同口径, E-4 重评)": {
+  "n": 439,
+  "tactic_acc": 0.7244,
+  "urgent_acc": 0.7699,
+  "severity_acc": 0.6446,
+  "action_acc": 0.7403,
+  "exact_acc": 0.5216,
+  "latency_p50_ms": 24.9
+ }
+}

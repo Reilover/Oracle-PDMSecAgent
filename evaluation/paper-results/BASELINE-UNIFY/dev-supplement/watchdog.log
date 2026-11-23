@@ -1,0 +1,33 @@
+[11-22 20:15:50] watchdog started (pid 2019334)
+[11-22 20:17:50] check: analyses=0 transcript_age=1765427373min dir_age=1765427375min gpu_procs=0
+[11-22 20:17:50] STALL DETECTED: no transcript/dir update in 25m (analyses=0 gpu=0)
+[note] 20:18 假STALL修复后重启
+[11-22 20:18:21] watchdog started (pid 2023268)
+[11-22 20:20:21] check: analyses=5 transcript_age=0min dir_age=0min gpu_procs=0
+[11-22 20:22:21] check: analyses=5 transcript_age=2min dir_age=2min gpu_procs=0
+[11-22 20:24:21] check: analyses=5 transcript_age=0min dir_age=4min gpu_procs=0
+[11-22 20:26:21] check: analyses=5 transcript_age=1min dir_age=6min gpu_procs=0
+[11-22 20:28:21] check: analyses=5 transcript_age=3min dir_age=8min gpu_procs=0
+[11-22 20:30:21] check: analyses=5 transcript_age=0min dir_age=10min gpu_procs=0
+[11-22 20:32:21] check: analyses=5 transcript_age=0min dir_age=1min gpu_procs=0
+[11-22 20:34:21] check: analyses=5 transcript_age=1min dir_age=0min gpu_procs=0
+[11-22 20:36:21] check: analyses=5 transcript_age=3min dir_age=2min gpu_procs=0
+[11-22 20:38:22] check: analyses=5 transcript_age=1min dir_age=4min gpu_procs=0
+[11-22 20:40:22] check: analyses=5 transcript_age=3min dir_age=6min gpu_procs=0
+[11-22 20:42:22] check: analyses=5 transcript_age=5min dir_age=8min gpu_procs=0
+[11-22 20:44:22] check: analyses=5 transcript_age=0min dir_age=0min gpu_procs=0
+[11-22 20:46:22] check: analyses=5 transcript_age=2min dir_age=2min gpu_procs=0
+[11-22 20:48:22] check: analyses=5 transcript_age=0min dir_age=4min gpu_procs=0
+[11-22 20:50:22] check: analyses=5 transcript_age=0min dir_age=6min gpu_procs=0
+[11-22 20:52:22] check: analyses=5 transcript_age=0min dir_age=8min gpu_procs=1
+[11-22 20:54:22] check: analyses=5 transcript_age=0min dir_age=10min gpu_procs=1
+[11-22 20:56:22] check: analyses=7 transcript_age=1min dir_age=1min gpu_procs=1
+[11-22 20:58:22] check: analyses=7 transcript_age=3min dir_age=3min gpu_procs=1
+[11-22 21:00:22] check: analyses=7 transcript_age=1min dir_age=5min gpu_procs=1
+[11-22 21:02:22] check: analyses=7 transcript_age=3min dir_age=7min gpu_procs=1
+[11-22 21:04:22] check: analyses=8 transcript_age=0min dir_age=0min gpu_procs=1
+[11-22 21:06:22] check: analyses=8 transcript_age=2min dir_age=2min gpu_procs=1
+[11-22 21:08:22] check: analyses=8 transcript_age=4min dir_age=4min gpu_procs=1
+[11-22 21:10:22] check: analyses=8 transcript_age=6min dir_age=6min gpu_procs=1
+[11-22 21:12:22] check: analyses=8 transcript_age=0min dir_age=0min gpu_procs=1
+[11-22 21:14:22] COMPLETE: REPORT.md done marker found

@@ -1,0 +1,13 @@
+minicpm-opt/test: 10 done (209s, ~20.9s/win)
+minicpm-opt/test: 20 done (436s, ~21.8s/win)
+minicpm-opt/test: 30 done (653s, ~21.8s/win)
+minicpm-opt/test: 40 done (880s, ~22.0s/win)
+minicpm-opt/test: 50 done (1098s, ~22.0s/win)
+minicpm-opt/test: 60 done (1321s, ~22.0s/win)
+minicpm-opt/test: 70 done (1546s, ~22.1s/win)
+minicpm-opt/test: 80 done (1762s, ~22.0s/win)
+minicpm-opt/test: 90 done (1997s, ~22.2s/win)
+minicpm-opt/test: 100 done (2215s, ~22.1s/win)
+minicpm-opt/test: 110 done (2447s, ~22.2s/win)
+minicpm-opt/test: 120 done (2680s, ~22.3s/win)
+minicpm-opt/test: +128 ok, 0 err -> /home/xxl/MySecAgent/lab/experiments/oracle/EVAL/BASELINE-UNIFY/results_minicpm-opt_test.jsonl

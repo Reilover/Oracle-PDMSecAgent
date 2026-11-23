@@ -1,0 +1,26 @@
+{
+ "tau": 0.9,
+ "tau_h": 0.7,
+ "n_windows": 439,
+ "system_tactic_acc": 0.5535,
+ "system_exact_acc": 0.4374,
+ "single_model_baseline (kev-4B, 论文口径)": {
+  "tactic": 0.85,
+  "exact": 0.629
+ },
+ "window_level_detail": {
+  "n_windows": 439,
+  "windows_human": 299,
+  "windows_full_auto": 140,
+  "tactic_acc": 0.5535,
+  "exact_acc(all4)": 0.4374,
+  "auto_only_tactic_acc": 0.3915,
+  "auto_only_exact_acc": 0.1214
+ },
+ "question_level_detail": {
+  "n_questions": 1756,
+  "auto_share": 0.4641,
+  "human_involved_share": 0.5359
+ },
+ "metric_note": "final.pred 口径：人工确认窗沿用模型建议答案（run 时 non-interactive=y 全批准）；exact = tactic/urgent/severity/action 四题全对。"
+}

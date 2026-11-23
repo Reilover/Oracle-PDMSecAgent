@@ -1,0 +1,151 @@
+[
+ {
+  "tau": 0.75,
+  "tau_h": 0.55,
+  "question_level": {
+   "n_questions": 1756,
+   "auto_share": 0.8138,
+   "human_involved_share": 0.1862
+  },
+  "window_level": {
+   "n_windows": 439,
+   "windows_human": 244,
+   "windows_full_auto": 195,
+   "tactic_acc": 0.5308,
+   "exact_acc(all4)": 0.4282,
+   "auto_only_tactic_acc": 0.5267,
+   "auto_only_exact_acc": 0.2359
+  },
+  "approx_replay_windows": 0,
+  "_approx_ids": [],
+  "effective_acc_question_level": 0.432
+ },
+ {
+  "tau": 0.8,
+  "tau_h": 0.6,
+  "question_level": {
+   "n_questions": 1756,
+   "auto_share": 0.7563,
+   "human_involved_share": 0.2437
+  },
+  "window_level": {
+   "n_windows": 439,
+   "windows_human": 296,
+   "windows_full_auto": 143,
+   "tactic_acc": 0.533,
+   "exact_acc(all4)": 0.4351,
+   "auto_only_tactic_acc": 0.523,
+   "auto_only_exact_acc": 0.1189
+  },
+  "approx_replay_windows": 0,
+  "_approx_ids": [],
+  "effective_acc_question_level": 0.4031
+ },
+ {
+  "tau": 0.85,
+  "tau_h": 0.65,
+  "question_level": {
+   "n_questions": 1756,
+   "auto_share": 0.6128,
+   "human_involved_share": 0.3872
+  },
+  "window_level": {
+   "n_windows": 439,
+   "windows_human": 299,
+   "windows_full_auto": 140,
+   "tactic_acc": 0.5353,
+   "exact_acc(all4)": 0.4351,
+   "auto_only_tactic_acc": 0.3947,
+   "auto_only_exact_acc": 0.1214
+  },
+  "approx_replay_windows": 0,
+  "_approx_ids": [],
+  "effective_acc_question_level": 0.328
+ },
+ {
+  "tau": 0.9,
+  "tau_h": 0.7,
+  "question_level": {
+   "n_questions": 1756,
+   "auto_share": 0.4641,
+   "human_involved_share": 0.5359
+  },
+  "window_level": {
+   "n_windows": 439,
+   "windows_human": 299,
+   "windows_full_auto": 140,
+   "tactic_acc": 0.5535,
+   "exact_acc(all4)": 0.4374,
+   "auto_only_tactic_acc": 0.3915,
+   "auto_only_exact_acc": 0.1214
+  },
+  "approx_replay_windows": 0,
+  "_approx_ids": [],
+  "effective_acc_question_level": 0.2569
+ },
+ {
+  "tau": 0.95,
+  "tau_h": 0.75,
+  "question_level": {
+   "n_questions": 1756,
+   "auto_share": 0.3571,
+   "human_involved_share": 0.6429
+  },
+  "window_level": {
+   "n_windows": 439,
+   "windows_human": 299,
+   "windows_full_auto": 140,
+   "tactic_acc": 0.5535,
+   "exact_acc(all4)": 0.4374,
+   "auto_only_tactic_acc": 0.3112,
+   "auto_only_exact_acc": 0.1214
+  },
+  "approx_replay_windows": 43,
+  "_approx_ids": [
+   "e4-monitor_probe-20260923-012209-0071",
+   "e4-backup_job-20260923-074846-0042",
+   "b15-ssh_bruteforce-20260923-074703-0020",
+   "e4-routine_login-20260923-011849-0061",
+   "e4-monitor_probe-20260922-124142-0006",
+   "e4-backup_job-20260923-014946-0135",
+   "e4-backup_job-20260923-012034-0066",
+   "e4-routine_login-20260923-075320-0051",
+   "b15-ssh_bruteforce-20260923-075924-0034",
+   "e4-batch_deploy-20260922-124818-0021",
+   "e4-routine_login-20260923-012051-0067",
+   "e4-batch_deploy-20260923-074716-0037",
+   "e4-monitor_probe-20260923-010622-0034",
+   "e4-backup_job-20260923-012809-0085",
+   "e4-batch_deploy-20260923-011029-0045",
+   "e4-user_typos-20260922-130106-0048",
+   "e4-batch_deploy-20260922-125854-0044",
+   "e4-batch_deploy-20260922-130140-0049",
+   "b15-ssh_bruteforce-20260923-080701-0044",
+   "e4-routine_login-20260923-010559-0033",
+   "e4-backup_job-20260923-073709-0013",
+   "e4-monitor_probe-20260923-022840-0217",
+   "e4-batch_deploy-20260923-024230-0252",
+   "e4-monitor_probe-20260923-024733-0261",
+   "e4-user_typos-20260922-124241-0009",
+   "e4-routine_login-20260922-124155-0007",
+   "e4-monitor_probe-20260923-014446-0123",
+   "e4-monitor_probe-20260922-124709-0019",
+   "e4-routine_login-20260923-011335-0051",
+   "e4-batch_deploy-20260922-125605-0039",
+   "b15-ssh_bruteforce-20260923-072546-0000",
+   "e4-user_typos-20260923-020328-0165",
+   "e4-routine_login-20260923-025035-0267",
+   "e1-sshbrute-20260922-133024-0026",
+   "e1-sshbrute-20260922-131100-0013",
+   "e4-monitor_probe-20260923-024341-0254",
+   "e4-user_typos-20260922-130601-0058",
+   "e4-routine_login-20260923-011821-0060",
+   "e4-monitor_probe-20260923-013530-0102",
+   "e4-routine_login-20260923-014612-0126",
+   "b15-ssh_bruteforce-20260923-075719-0032",
+   "e2-normal-20260923-012841-0027",
+   "e2-sqli-20260922-130303-0003"
+  ],
+  "effective_acc_question_level": 0.1977
+ }
+]

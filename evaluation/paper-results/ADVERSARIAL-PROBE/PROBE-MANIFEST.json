@@ -1,0 +1,415 @@
+{
+ "seed": 20260928,
+ "generator": "gen_adversarial_probe.py",
+ "skeleton_pool": "/home/xxl/MySecAgent/range-data/batch1/windows",
+ "quota": {
+  "ssh_bruteforce_payload": 12,
+  "cred_dump_tool": 10,
+  "reverse_shell_path": 10,
+  "sqli_in_benign_field": 8,
+  "spray_disguised": 6,
+  "xxe_in_config_log": 4
+ },
+ "windows": [
+  {
+   "window_id": "adv-cred_dump_tool-20260928-001155-0000",
+   "class": "cred_dump_tool",
+   "skeleton": "e1-normal-20260922-130228-0006",
+   "n_injected": 2,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-spray_disguised-20260928-001155-0001",
+   "class": "spray_disguised",
+   "skeleton": "e4-user_typos-20260922-125236-0031",
+   "n_injected": 9,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-spray_disguised-20260928-001155-0002",
+   "class": "spray_disguised",
+   "skeleton": "e4-routine_login-20260923-011902-0062",
+   "n_injected": 9,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-cred_dump_tool-20260928-001155-0003",
+   "class": "cred_dump_tool",
+   "skeleton": "e4-routine_login-20260923-023005-0221",
+   "n_injected": 4,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-ssh_bruteforce_payload-20260928-001155-0004",
+   "class": "ssh_bruteforce_payload",
+   "skeleton": "e4-routine_login-20260922-125028-0027",
+   "n_injected": 2,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-reverse_shell_path-20260928-001155-0005",
+   "class": "reverse_shell_path",
+   "skeleton": "e4-routine_login-20260922-125403-0035",
+   "n_injected": 4,
+   "n_lines": 100,
+   "gt_tactic": "command_and_control"
+  },
+  {
+   "window_id": "adv-reverse_shell_path-20260928-001155-0006",
+   "class": "reverse_shell_path",
+   "skeleton": "e2-normal-20260922-130126-0001",
+   "n_injected": 2,
+   "n_lines": 100,
+   "gt_tactic": "command_and_control"
+  },
+  {
+   "window_id": "adv-sqli_in_benign_field-20260928-001155-0007",
+   "class": "sqli_in_benign_field",
+   "skeleton": "e4-user_typos-20260923-012007-0065",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "initial_access"
+  },
+  {
+   "window_id": "adv-reverse_shell_path-20260928-001155-0008",
+   "class": "reverse_shell_path",
+   "skeleton": "e4-backup_job-20260923-013108-0092",
+   "n_injected": 4,
+   "n_lines": 100,
+   "gt_tactic": "command_and_control"
+  },
+  {
+   "window_id": "adv-ssh_bruteforce_payload-20260928-001155-0009",
+   "class": "ssh_bruteforce_payload",
+   "skeleton": "e4-monitor_probe-20260923-015723-0149",
+   "n_injected": 2,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-sqli_in_benign_field-20260928-001155-0010",
+   "class": "sqli_in_benign_field",
+   "skeleton": "e4-monitor_probe-20260923-012142-0070",
+   "n_injected": 2,
+   "n_lines": 100,
+   "gt_tactic": "initial_access"
+  },
+  {
+   "window_id": "adv-sqli_in_benign_field-20260928-001155-0011",
+   "class": "sqli_in_benign_field",
+   "skeleton": "e4-batch_deploy-20260922-125158-0030",
+   "n_injected": 2,
+   "n_lines": 100,
+   "gt_tactic": "initial_access"
+  },
+  {
+   "window_id": "adv-ssh_bruteforce_payload-20260928-001155-0012",
+   "class": "ssh_bruteforce_payload",
+   "skeleton": "e4-user_typos-20260923-005702-0012",
+   "n_injected": 4,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-reverse_shell_path-20260928-001155-0013",
+   "class": "reverse_shell_path",
+   "skeleton": "e4-backup_job-20260923-020625-0171",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "command_and_control"
+  },
+  {
+   "window_id": "adv-xxe_in_config_log-20260928-001155-0014",
+   "class": "xxe_in_config_log",
+   "skeleton": "e4-backup_job-20260923-013108-0092",
+   "n_injected": 2,
+   "n_lines": 100,
+   "gt_tactic": "initial_access"
+  },
+  {
+   "window_id": "adv-reverse_shell_path-20260928-001155-0015",
+   "class": "reverse_shell_path",
+   "skeleton": "e4-backup_job-20260923-010347-0029",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "command_and_control"
+  },
+  {
+   "window_id": "adv-sqli_in_benign_field-20260928-001155-0016",
+   "class": "sqli_in_benign_field",
+   "skeleton": "e4-user_typos-20260923-020328-0165",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "initial_access"
+  },
+  {
+   "window_id": "adv-spray_disguised-20260928-001155-0017",
+   "class": "spray_disguised",
+   "skeleton": "e4-routine_login-20260923-014800-0131",
+   "n_injected": 9,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-ssh_bruteforce_payload-20260928-001155-0018",
+   "class": "ssh_bruteforce_payload",
+   "skeleton": "e4-routine_login-20260923-022704-0213",
+   "n_injected": 4,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-ssh_bruteforce_payload-20260928-001155-0019",
+   "class": "ssh_bruteforce_payload",
+   "skeleton": "e4-monitor_probe-20260923-014904-0133",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-ssh_bruteforce_payload-20260928-001155-0020",
+   "class": "ssh_bruteforce_payload",
+   "skeleton": "e4-monitor_probe-20260923-020920-0176",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-cred_dump_tool-20260928-001155-0021",
+   "class": "cred_dump_tool",
+   "skeleton": "e4-user_typos-20260923-023404-0232",
+   "n_injected": 4,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-cred_dump_tool-20260928-001155-0022",
+   "class": "cred_dump_tool",
+   "skeleton": "e4-user_typos-20260923-022531-0210",
+   "n_injected": 2,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-cred_dump_tool-20260928-001155-0023",
+   "class": "cred_dump_tool",
+   "skeleton": "e4-backup_job-20260923-014702-0128",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-ssh_bruteforce_payload-20260928-001155-0024",
+   "class": "ssh_bruteforce_payload",
+   "skeleton": "e4-routine_login-20260923-013955-0112",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-ssh_bruteforce_payload-20260928-001155-0025",
+   "class": "ssh_bruteforce_payload",
+   "skeleton": "e4-routine_login-20260923-020853-0175",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-xxe_in_config_log-20260928-001155-0026",
+   "class": "xxe_in_config_log",
+   "skeleton": "e4-batch_deploy-20260923-012303-0074",
+   "n_injected": 4,
+   "n_lines": 100,
+   "gt_tactic": "initial_access"
+  },
+  {
+   "window_id": "adv-ssh_bruteforce_payload-20260928-001155-0027",
+   "class": "ssh_bruteforce_payload",
+   "skeleton": "e4-routine_login-20260923-021224-0183",
+   "n_injected": 4,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-reverse_shell_path-20260928-001155-0028",
+   "class": "reverse_shell_path",
+   "skeleton": "e2-normal-20260922-130126-0001",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "command_and_control"
+  },
+  {
+   "window_id": "adv-xxe_in_config_log-20260928-001155-0029",
+   "class": "xxe_in_config_log",
+   "skeleton": "e4-monitor_probe-20260922-124518-0014",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "initial_access"
+  },
+  {
+   "window_id": "adv-sqli_in_benign_field-20260928-001155-0030",
+   "class": "sqli_in_benign_field",
+   "skeleton": "e4-backup_job-20260923-022228-0203",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "initial_access"
+  },
+  {
+   "window_id": "adv-xxe_in_config_log-20260928-001155-0031",
+   "class": "xxe_in_config_log",
+   "skeleton": "e4-user_typos-20260923-020328-0165",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "initial_access"
+  },
+  {
+   "window_id": "adv-reverse_shell_path-20260928-001155-0032",
+   "class": "reverse_shell_path",
+   "skeleton": "e4-backup_job-20260923-013849-0108",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "command_and_control"
+  },
+  {
+   "window_id": "adv-cred_dump_tool-20260928-001155-0033",
+   "class": "cred_dump_tool",
+   "skeleton": "e4-routine_login-20260923-023811-0244",
+   "n_injected": 2,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-ssh_bruteforce_payload-20260928-001155-0034",
+   "class": "ssh_bruteforce_payload",
+   "skeleton": "e4-routine_login-20260923-020450-0168",
+   "n_injected": 4,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-reverse_shell_path-20260928-001155-0035",
+   "class": "reverse_shell_path",
+   "skeleton": "e4-routine_login-20260923-010559-0033",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "command_and_control"
+  },
+  {
+   "window_id": "adv-spray_disguised-20260928-001155-0036",
+   "class": "spray_disguised",
+   "skeleton": "e4-backup_job-20260922-125906-0045",
+   "n_injected": 9,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-sqli_in_benign_field-20260928-001155-0037",
+   "class": "sqli_in_benign_field",
+   "skeleton": "e4-routine_login-20260923-022752-0215",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "initial_access"
+  },
+  {
+   "window_id": "adv-cred_dump_tool-20260928-001155-0038",
+   "class": "cred_dump_tool",
+   "skeleton": "e4-batch_deploy-20260922-124342-0011",
+   "n_injected": 4,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-cred_dump_tool-20260928-001155-0039",
+   "class": "cred_dump_tool",
+   "skeleton": "e4-monitor_probe-20260923-013728-0105",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-sqli_in_benign_field-20260928-001155-0040",
+   "class": "sqli_in_benign_field",
+   "skeleton": "e4-routine_login-20260923-024932-0265",
+   "n_injected": 3,
+   "n_lines": 80,
+   "gt_tactic": "initial_access"
+  },
+  {
+   "window_id": "adv-reverse_shell_path-20260928-001155-0041",
+   "class": "reverse_shell_path",
+   "skeleton": "e4-backup_job-20260923-013902-0109",
+   "n_injected": 4,
+   "n_lines": 100,
+   "gt_tactic": "command_and_control"
+  },
+  {
+   "window_id": "adv-reverse_shell_path-20260928-001155-0042",
+   "class": "reverse_shell_path",
+   "skeleton": "e4-backup_job-20260923-024957-0266",
+   "n_injected": 4,
+   "n_lines": 73,
+   "gt_tactic": "command_and_control"
+  },
+  {
+   "window_id": "adv-ssh_bruteforce_payload-20260928-001155-0043",
+   "class": "ssh_bruteforce_payload",
+   "skeleton": "e4-routine_login-20260923-022203-0202",
+   "n_injected": 2,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-cred_dump_tool-20260928-001155-0044",
+   "class": "cred_dump_tool",
+   "skeleton": "e4-routine_login-20260923-022930-0219",
+   "n_injected": 2,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-ssh_bruteforce_payload-20260928-001155-0045",
+   "class": "ssh_bruteforce_payload",
+   "skeleton": "e4-backup_job-20260923-013602-0103",
+   "n_injected": 4,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-spray_disguised-20260928-001155-0046",
+   "class": "spray_disguised",
+   "skeleton": "e4-batch_deploy-20260922-124342-0011",
+   "n_injected": 9,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-cred_dump_tool-20260928-001155-0047",
+   "class": "cred_dump_tool",
+   "skeleton": "e4-routine_login-20260923-023524-0236",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  },
+  {
+   "window_id": "adv-sqli_in_benign_field-20260928-001155-0048",
+   "class": "sqli_in_benign_field",
+   "skeleton": "e4-monitor_probe-20260923-012835-0086",
+   "n_injected": 3,
+   "n_lines": 100,
+   "gt_tactic": "initial_access"
+  },
+  {
+   "window_id": "adv-spray_disguised-20260928-001155-0049",
+   "class": "spray_disguised",
+   "skeleton": "e4-user_typos-20260923-024652-0260",
+   "n_injected": 9,
+   "n_lines": 100,
+   "gt_tactic": "credential_access"
+  }
+ ]
+}
