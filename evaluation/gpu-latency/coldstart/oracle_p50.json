@@ -23,5 +23,16 @@
   "n": 149,
   "p50_ms": 172.5,
   "p95_ms": 187.7
+ },
+ "laya-zs-bf16": {
+  "method": "laya-zs-bf16",
+  "load_s": 4.7,
+  "n": 149,
+  "p50_ms": 24.7,
+  "p95_ms": 27.6
+ },
+ "laya-oracle": {
+  "method": "laya-oracle",
+  "note": "adopted from LAYA-FAMILY zeroshot_ours_v3.jsonl: 439 windows, Agent cuda, P50 25ms"
  }
 }
