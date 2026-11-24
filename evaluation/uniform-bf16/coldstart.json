@@ -1,0 +1,23 @@
+{
+ "e2-laya": {
+  "launch_to_first_row_s": 10.0
+ },
+ "e1-nanojev": {
+  "launch_to_first_row_s": 15.0
+ },
+ "mb-bf16": {
+  "launch_to_first_row_s": 10.0
+ },
+ "verdict": {
+  "launch_to_first_row_s": 10.0
+ },
+ "c-logprobs": {
+  "launch_to_ready_s": 60.0
+ },
+ "b-gen": {
+  "launch_to_ready_s": 60.0
+ },
+ "h-gen": {
+  "launch_to_ready_s": 60.0
+ }
+}

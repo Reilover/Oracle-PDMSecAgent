@@ -1,0 +1,36 @@
+=== phase3 start 2026年 11月 23日 星期一 23:23:04 CST ===
+2026年 11月 23日 星期一 23:23:04 CST GPU0 free — launching vLLM Spark (spark2_5 venv)
+Running as unit: ua-vllm-spark.service
+serve ready after 60s
+smoke: {
+  "tactic": "Account Takeover Prevention",
+  "urgent": true,
+  "severity": "Hi
+--- h-gen 2026年 11月 23日 星期一 23:24:05 CST
+h-gen/development: 20 done (7s, ~0.37s/win, invalid=0)
+h-gen/development: 40 done (15s, ~0.37s/win, invalid=0)
+h-gen/development: +55 ok (0 invalid-json), 0 err -> /disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_h-gen_development.jsonl
+h-gen/test: 20 done (7s, ~0.37s/win, invalid=0)
+h-gen/test: 40 done (15s, ~0.36s/win, invalid=0)
+h-gen/test: 60 done (22s, ~0.36s/win, invalid=0)
+h-gen/test: 80 done (29s, ~0.36s/win, invalid=0)
+h-gen/test: 100 done (36s, ~0.36s/win, invalid=0)
+h-gen/test: 120 done (43s, ~0.36s/win, invalid=0)
+h-gen/test: 140 done (50s, ~0.36s/win, invalid=0)
+h-gen/test: 160 done (58s, ~0.36s/win, invalid=0)
+h-gen/test: 180 done (65s, ~0.36s/win, invalid=0)
+h-gen/test: 200 done (72s, ~0.36s/win, invalid=0)
+h-gen/test: 220 done (79s, ~0.36s/win, invalid=0)
+h-gen/test: 240 done (86s, ~0.36s/win, invalid=0)
+h-gen/test: 260 done (94s, ~0.36s/win, invalid=0)
+h-gen/test: 280 done (101s, ~0.36s/win, invalid=0)
+h-gen/test: 300 done (108s, ~0.36s/win, invalid=0)
+h-gen/test: 320 done (115s, ~0.36s/win, invalid=0)
+h-gen/test: 340 done (123s, ~0.36s/win, invalid=0)
+h-gen/test: 360 done (130s, ~0.36s/win, invalid=0)
+h-gen/test: 380 done (137s, ~0.36s/win, invalid=0)
+h-gen/test: 400 done (144s, ~0.36s/win, invalid=0)
+h-gen/test: 420 done (152s, ~0.36s/win, invalid=0)
+h-gen/test: +439 ok (0 invalid-json), 0 err -> /disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_h-gen_test.jsonl
+h-gen dev=55 test=439
+=== phase3 end 2026年 11月 23日 星期一 23:27:05 CST ===

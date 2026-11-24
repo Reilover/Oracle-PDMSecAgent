@@ -1,0 +1,67 @@
+{
+  "n_rows": 1756,
+  "source": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_f2-dsk_test.jsonl",
+  "tasks": {
+    "tactic": {
+      "n": 439,
+      "acc": 0.6970387243735763,
+      "macro_f1": 0.596622976982458,
+      "classes": [
+        "benign",
+        "credential_access",
+        "initial_access"
+      ]
+    },
+    "urgent": {
+      "n": 439,
+      "acc": 0.8041002277904328
+    },
+    "severity": {
+      "n": 439,
+      "acc": 0.7425968109339408,
+      "quadratic_kappa": 0.9148902372366626,
+      "mae": 0.28929384965831434,
+      "by_severity": {
+        "low": {
+          "n": 299,
+          "acc": 0.8260869565217391
+        },
+        "medium": {
+          "n": 92,
+          "acc": 0.7282608695652174
+        },
+        "high": {
+          "n": 33,
+          "acc": 0.36363636363636365
+        },
+        "critical": {
+          "n": 15,
+          "acc": 0.0
+        }
+      }
+    },
+    "action": {
+      "n": 439,
+      "acc": 0.20501138952164008
+    }
+  },
+  "exact_match": 0.14123006833712984,
+  "ci": {
+    "tactic_acc": {
+      "lo": 0.6560364464692483,
+      "hi": 0.7403189066059226
+    },
+    "sev_acc": {
+      "lo": 0.7015945330296127,
+      "hi": 0.7813211845102506
+    },
+    "urgent_acc": {
+      "lo": 0.7699316628701595,
+      "hi": 0.8382687927107062
+    }
+  },
+  "e3_subset": {
+    "urgent_acc": 0.3793103448275862,
+    "n": 29
+  }
+}

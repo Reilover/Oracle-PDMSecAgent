@@ -1,0 +1,78 @@
+=== phase1 start 2026年 11月 23日 星期一 22:55:24 CST ===
+Running as unit: ua-e2.service
+UNIT ua-e2 died during smoke
+11月 23 22:55:24 a800-Super-Server systemd[1849]: Started /usr/bin/env CUDA_VISIBLE_DEVICES=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_HOME=/home/xxl/.cache/huggingface LAYA_GPU_FP32=0 /home/xxl/spark2_5/bin/python ./run_uniform.py e2-laya development --limit 1.
+11月 23 22:55:24 a800-Super-Server env[3842652]: /home/xxl/spark2_5/bin/python: can't open file '/home/xxl/./run_uniform.py': [Errno 2] No such file or directory
+11月 23 22:55:24 a800-Super-Server systemd[1849]: ua-e2.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+11月 23 22:55:24 a800-Super-Server systemd[1849]: ua-e2.service: Failed with result 'exit-code'.
+Running as unit: ua-e2.service
+UNIT ua-e2 died during smoke
+11月 23 22:55:24 a800-Super-Server systemd[1849]: Started /usr/bin/env CUDA_VISIBLE_DEVICES=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_HOME=/home/xxl/.cache/huggingface LAYA_GPU_FP32=0 /home/xxl/spark2_5/bin/python ./run_uniform.py e2-laya development --limit 1.
+11月 23 22:55:24 a800-Super-Server env[3842652]: /home/xxl/spark2_5/bin/python: can't open file '/home/xxl/./run_uniform.py': [Errno 2] No such file or directory
+11月 23 22:55:24 a800-Super-Server systemd[1849]: ua-e2.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+11月 23 22:55:24 a800-Super-Server systemd[1849]: ua-e2.service: Failed with result 'exit-code'.
+11月 23 22:55:29 a800-Super-Server systemd[1849]: Started /usr/bin/env CUDA_VISIBLE_DEVICES=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_HOME=/home/xxl/.cache/huggingface LAYA_GPU_FP32=0 /home/xxl/spark2_5/bin/python ./run_uniform.py e2-laya test --limit 1.
+11月 23 22:55:29 a800-Super-Server env[3842777]: /home/xxl/spark2_5/bin/python: can't open file '/home/xxl/./run_uniform.py': [Errno 2] No such file or directory
+11月 23 22:55:29 a800-Super-Server systemd[1849]: ua-e2.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+11月 23 22:55:29 a800-Super-Server systemd[1849]: ua-e2.service: Failed with result 'exit-code'.
+Running as unit: ua-e1.service
+UNIT ua-e1 died during smoke
+11月 23 22:55:34 a800-Super-Server systemd[1849]: Started /usr/bin/env CUDA_VISIBLE_DEVICES=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_HOME=/home/xxl/.cache/huggingface /home/xxl/spark2_5/bin/python ./run_uniform.py e1-nanojev development --limit 1.
+11月 23 22:55:34 a800-Super-Server env[3842944]: /home/xxl/spark2_5/bin/python: can't open file '/home/xxl/./run_uniform.py': [Errno 2] No such file or directory
+11月 23 22:55:34 a800-Super-Server systemd[1849]: ua-e1.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+11月 23 22:55:34 a800-Super-Server systemd[1849]: ua-e1.service: Failed with result 'exit-code'.
+Running as unit: ua-e1.service
+UNIT ua-e1 died during smoke
+11月 23 22:55:34 a800-Super-Server systemd[1849]: Started /usr/bin/env CUDA_VISIBLE_DEVICES=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_HOME=/home/xxl/.cache/huggingface /home/xxl/spark2_5/bin/python ./run_uniform.py e1-nanojev development --limit 1.
+11月 23 22:55:34 a800-Super-Server env[3842944]: /home/xxl/spark2_5/bin/python: can't open file '/home/xxl/./run_uniform.py': [Errno 2] No such file or directory
+11月 23 22:55:34 a800-Super-Server systemd[1849]: ua-e1.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+11月 23 22:55:34 a800-Super-Server systemd[1849]: ua-e1.service: Failed with result 'exit-code'.
+11月 23 22:55:39 a800-Super-Server systemd[1849]: Started /usr/bin/env CUDA_VISIBLE_DEVICES=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_HOME=/home/xxl/.cache/huggingface /home/xxl/spark2_5/bin/python ./run_uniform.py e1-nanojev test --limit 1.
+11月 23 22:55:39 a800-Super-Server env[3843055]: /home/xxl/spark2_5/bin/python: can't open file '/home/xxl/./run_uniform.py': [Errno 2] No such file or directory
+11月 23 22:55:39 a800-Super-Server systemd[1849]: ua-e1.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+11月 23 22:55:39 a800-Super-Server systemd[1849]: ua-e1.service: Failed with result 'exit-code'.
+Running as unit: ua-mb.service
+UNIT ua-mb died during smoke
+11月 23 22:55:44 a800-Super-Server systemd[1849]: Started /usr/bin/env CUDA_VISIBLE_DEVICES=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_HOME=/home/xxl/.cache/huggingface /home/xxl/Mylocllm/kev/kev-repo/.venv/bin/python ./run_uniform.py mb-bf16 development --limit 1.
+11月 23 22:55:44 a800-Super-Server env[3843170]: /home/xxl/Mylocllm/kev/kev-repo/.venv/bin/python: can't open file '/home/xxl/./run_uniform.py': [Errno 2] No such file or directory
+11月 23 22:55:44 a800-Super-Server systemd[1849]: ua-mb.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+11月 23 22:55:44 a800-Super-Server systemd[1849]: ua-mb.service: Failed with result 'exit-code'.
+Running as unit: ua-v.service
+UNIT ua-v died during smoke
+11月 23 22:55:50 a800-Super-Server systemd[1849]: Started /usr/bin/env CUDA_VISIBLE_DEVICES=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 HF_HOME=/home/xxl/.cache/huggingface /home/xxl/spark2_5/bin/python ./run_uniform.py verdict test --limit 1.
+11月 23 22:55:50 a800-Super-Server env[3843430]: /home/xxl/spark2_5/bin/python: can't open file '/home/xxl/./run_uniform.py': [Errno 2] No such file or directory
+11月 23 22:55:50 a800-Super-Server systemd[1849]: ua-v.service: Main process exited, code=exited, status=2/INVALIDARGUMENT
+11月 23 22:55:50 a800-Super-Server systemd[1849]: ua-v.service: Failed with result 'exit-code'.
+=== phase1 end 2026年 11月 23日 星期一 22:55:55 CST ===
+=== phase1 start 2026年 11月 23日 星期一 22:57:36 CST ===
+Running as unit: ua-e2.service
+--- smoke ok e2-laya/development after 11s; full run
+Running as unit: ua-e2.service
+--- done e2-laya/development
+--- OK e2-laya/development (55)
+Running as unit: ua-e2.service
+--- smoke ok e2-laya/test after 10s; full run
+Running as unit: ua-e2.service
+--- done e2-laya/test
+--- OK e2-laya/test (439)
+Running as unit: ua-e1.service
+--- smoke ok e1-nanojev/development after 35s; full run
+Running as unit: ua-e1.service
+--- done e1-nanojev/development
+--- OK e1-nanojev/development (55)
+Running as unit: ua-e1.service
+--- smoke ok e1-nanojev/test after 15s; full run
+Running as unit: ua-e1.service
+--- done e1-nanojev/test
+--- OK e1-nanojev/test (439)
+Running as unit: ua-mb.service
+--- smoke ok mb-bf16/development after 10s; full run
+Running as unit: ua-mb.service
+--- done mb-bf16/development
+--- OK mb-bf16/development (55)
+Running as unit: ua-v.service
+--- smoke ok verdict/test after 10s; full run
+Running as unit: ua-v.service
+--- done verdict/test
+--- OK verdict/test (439)
+=== phase1 end 2026年 11月 23日 星期一 23:04:09 CST ===

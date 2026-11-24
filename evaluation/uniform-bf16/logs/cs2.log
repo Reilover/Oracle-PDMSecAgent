@@ -1,0 +1,244 @@
+=== cs2 start 2026年 11月 23日 星期一 23:32:49 CST ===
+cs2_q8.sh: 行 45: $4: 未绑定的变量
+=== cs2 start 2026年 11月 23日 星期一 23:34:36 CST ===
+cs2_q8.sh: 行 45: $4: 未绑定的变量
+=== cs2 start 2026年 11月 23日 星期一 23:42:35 CST ===
+Running as unit: cs-b.service
+llama b ready after 2s
+--- b-q8-greedy round 1 (have 0/439) 2026年 11月 23日 星期一 23:42:37 CST
+b-q8-greedy/test: 20 done (4s, ~0.21s/win, invalid=0)
+b-q8-greedy/test: 40 done (9s, ~0.21s/win, invalid=0)
+b-q8-greedy/test: 60 done (13s, ~0.22s/win, invalid=0)
+b-q8-greedy/test: 80 done (17s, ~0.21s/win, invalid=0)
+b-q8-greedy/test: 100 done (22s, ~0.22s/win, invalid=0)
+b-q8-greedy/test: 120 done (26s, ~0.22s/win, invalid=0)
+b-q8-greedy/test: 140 done (30s, ~0.22s/win, invalid=0)
+b-q8-greedy/test: +150 ok (0 invalid-json), 0 err -> ../CONFIG-SENSITIVITY/results_b-q8-greedy_test.jsonl
+Running as unit: cs-b.service
+llama b ready after 2s
+--- b-q8-greedy round 2 (have 150/439) 2026年 11月 23日 星期一 23:43:12 CST
+b-q8-greedy/test: 20 done (4s, ~0.21s/win, invalid=0)
+b-q8-greedy/test: 40 done (9s, ~0.21s/win, invalid=0)
+b-q8-greedy/test: 60 done (13s, ~0.21s/win, invalid=0)
+b-q8-greedy/test: 80 done (17s, ~0.21s/win, invalid=0)
+b-q8-greedy/test: 100 done (21s, ~0.21s/win, invalid=0)
+b-q8-greedy/test: 120 done (26s, ~0.22s/win, invalid=0)
+b-q8-greedy/test: 140 done (30s, ~0.22s/win, invalid=0)
+b-q8-greedy/test: +150 ok (0 invalid-json), 0 err -> ../CONFIG-SENSITIVITY/results_b-q8-greedy_test.jsonl
+Running as unit: cs-b.service
+llama b ready after 2s
+--- b-q8-greedy round 3 (have 300/439) 2026年 11月 23日 星期一 23:43:47 CST
+b-q8-greedy/test: 20 done (4s, ~0.22s/win, invalid=0)
+b-q8-greedy/test: 40 done (9s, ~0.22s/win, invalid=0)
+b-q8-greedy/test: 60 done (13s, ~0.22s/win, invalid=0)
+b-q8-greedy/test: 80 done (17s, ~0.22s/win, invalid=0)
+b-q8-greedy/test: 100 done (22s, ~0.22s/win, invalid=0)
+b-q8-greedy/test: 120 done (26s, ~0.22s/win, invalid=0)
+b-q8-greedy/test: +139 ok (0 invalid-json), 0 err -> ../CONFIG-SENSITIVITY/results_b-q8-greedy_test.jsonl
+=== cs2 start 2026年 11月 23日 星期一 23:55:52 CST ===
+Running as unit: cs-c.service
+llama c ready after 2s
+--- c-q8-greedy round 1 (have 0/439) 2026年 11月 23日 星期一 23:55:54 CST
+c-q8-greedy/test: 10 done (3s, ~0.3s/win)
+c-q8-greedy/test: 20 done (7s, ~0.4s/win)
+c-q8-greedy/test: 30 done (11s, ~0.4s/win)
+c-q8-greedy/test: 40 done (15s, ~0.4s/win)
+c-q8-greedy/test: 50 done (18s, ~0.4s/win)
+c-q8-greedy/test: 60 done (22s, ~0.4s/win)
+c-q8-greedy/test: 70 done (26s, ~0.4s/win)
+c-q8-greedy/test: 80 done (30s, ~0.4s/win)
+c-q8-greedy/test: 90 done (33s, ~0.4s/win)
+c-q8-greedy/test: 100 done (37s, ~0.4s/win)
+c-q8-greedy/test: +100 ok, 0 err -> ../CONFIG-SENSITIVITY/results_c-q8-greedy_test.jsonl
+Running as unit: cs-c.service
+llama c ready after 2s
+--- c-q8-greedy round 2 (have 100/439) 2026年 11月 23日 星期一 23:56:34 CST
+c-q8-greedy/test: 10 done (4s, ~0.4s/win)
+c-q8-greedy/test: 20 done (7s, ~0.4s/win)
+c-q8-greedy/test: 30 done (11s, ~0.4s/win)
+c-q8-greedy/test: 40 done (15s, ~0.4s/win)
+c-q8-greedy/test: 50 done (19s, ~0.4s/win)
+c-q8-greedy/test: 60 done (22s, ~0.4s/win)
+c-q8-greedy/test: 70 done (26s, ~0.4s/win)
+c-q8-greedy/test: 80 done (30s, ~0.4s/win)
+c-q8-greedy/test: 90 done (34s, ~0.4s/win)
+c-q8-greedy/test: 100 done (38s, ~0.4s/win)
+c-q8-greedy/test: +100 ok, 0 err -> ../CONFIG-SENSITIVITY/results_c-q8-greedy_test.jsonl
+Running as unit: cs-c.service
+llama c ready after 2s
+--- c-q8-greedy round 3 (have 200/439) 2026年 11月 23日 星期一 23:57:14 CST
+c-q8-greedy/test: 10 done (3s, ~0.3s/win)
+c-q8-greedy/test: 20 done (7s, ~0.4s/win)
+c-q8-greedy/test: 30 done (11s, ~0.4s/win)
+c-q8-greedy/test: 40 done (15s, ~0.4s/win)
+c-q8-greedy/test: 50 done (19s, ~0.4s/win)
+c-q8-greedy/test: 60 done (22s, ~0.4s/win)
+c-q8-greedy/test: 70 done (26s, ~0.4s/win)
+c-q8-greedy/test: 80 done (30s, ~0.4s/win)
+c-q8-greedy/test: 90 done (34s, ~0.4s/win)
+c-q8-greedy/test: 100 done (38s, ~0.4s/win)
+c-q8-greedy/test: +100 ok, 0 err -> ../CONFIG-SENSITIVITY/results_c-q8-greedy_test.jsonl
+Running as unit: cs-c.service
+llama c ready after 2s
+--- c-q8-greedy round 4 (have 300/439) 2026年 11月 23日 星期一 23:57:54 CST
+c-q8-greedy/test: 10 done (3s, ~0.3s/win)
+c-q8-greedy/test: 20 done (7s, ~0.4s/win)
+c-q8-greedy/test: 30 done (11s, ~0.4s/win)
+c-q8-greedy/test: 40 done (15s, ~0.4s/win)
+c-q8-greedy/test: 50 done (18s, ~0.4s/win)
+c-q8-greedy/test: 60 done (22s, ~0.4s/win)
+c-q8-greedy/test: 70 done (26s, ~0.4s/win)
+c-q8-greedy/test: 80 done (29s, ~0.4s/win)
+c-q8-greedy/test: 90 done (33s, ~0.4s/win)
+c-q8-greedy/test: 100 done (37s, ~0.4s/win)
+c-q8-greedy/test: +100 ok, 0 err -> ../CONFIG-SENSITIVITY/results_c-q8-greedy_test.jsonl
+Running as unit: cs-c.service
+llama c ready after 2s
+--- c-q8-greedy round 5 (have 400/439) 2026年 11月 23日 星期一 23:58:34 CST
+c-q8-greedy/test: 10 done (3s, ~0.3s/win)
+c-q8-greedy/test: 20 done (7s, ~0.4s/win)
+c-q8-greedy/test: 30 done (11s, ~0.4s/win)
+c-q8-greedy/test: +39 ok, 0 err -> ../CONFIG-SENSITIVITY/results_c-q8-greedy_test.jsonl
+Running as unit: cs-c.service
+llama c ready after 2s
+--- c-q8-5sam round 1 (have 0/439) 2026年 11月 23日 星期一 23:58:51 CST
+c-q8-5sam/test: 10 done (17s, ~1.7s/win)
+c-q8-5sam/test: 20 done (34s, ~1.7s/win)
+c-q8-5sam/test: 30 done (51s, ~1.7s/win)
+c-q8-5sam/test: 40 done (69s, ~1.7s/win)
+c-q8-5sam/test: 50 done (86s, ~1.7s/win)
+c-q8-5sam/test: 60 done (104s, ~1.7s/win)
+c-q8-5sam/test: +60 ok, 0 err -> ../CONFIG-SENSITIVITY/results_c-q8-5sam_test.jsonl
+Running as unit: cs-c.service
+llama c ready after 2s
+--- c-q8-5sam round 2 (have 60/439) 2026年 11月 24日 星期二 00:00:37 CST
+c-q8-5sam/test: 10 done (17s, ~1.7s/win)
+c-q8-5sam/test: 20 done (34s, ~1.7s/win)
+c-q8-5sam/test: 30 done (51s, ~1.7s/win)
+c-q8-5sam/test: 40 done (68s, ~1.7s/win)
+c-q8-5sam/test: 50 done (85s, ~1.7s/win)
+c-q8-5sam/test: 60 done (102s, ~1.7s/win)
+c-q8-5sam/test: +60 ok, 0 err -> ../CONFIG-SENSITIVITY/results_c-q8-5sam_test.jsonl
+Running as unit: cs-c.service
+llama c ready after 2s
+--- c-q8-5sam round 3 (have 120/439) 2026年 11月 24日 星期二 00:02:22 CST
+c-q8-5sam/test: 10 done (17s, ~1.7s/win)
+c-q8-5sam/test: 20 done (34s, ~1.7s/win)
+c-q8-5sam/test: 30 done (51s, ~1.7s/win)
+c-q8-5sam/test: 40 done (69s, ~1.7s/win)
+c-q8-5sam/test: 50 done (86s, ~1.7s/win)
+c-q8-5sam/test: 60 done (103s, ~1.7s/win)
+c-q8-5sam/test: +60 ok, 0 err -> ../CONFIG-SENSITIVITY/results_c-q8-5sam_test.jsonl
+Running as unit: cs-c.service
+llama c ready after 2s
+--- c-q8-5sam round 4 (have 180/439) 2026年 11月 24日 星期二 00:04:08 CST
+c-q8-5sam/test: 10 done (17s, ~1.7s/win)
+c-q8-5sam/test: 20 done (34s, ~1.7s/win)
+c-q8-5sam/test: 30 done (51s, ~1.7s/win)
+c-q8-5sam/test: 40 done (69s, ~1.7s/win)
+c-q8-5sam/test: 50 done (86s, ~1.7s/win)
+c-q8-5sam/test: 60 done (103s, ~1.7s/win)
+c-q8-5sam/test: +60 ok, 0 err -> ../CONFIG-SENSITIVITY/results_c-q8-5sam_test.jsonl
+Running as unit: cs-c.service
+llama c ready after 2s
+--- c-q8-5sam round 5 (have 240/439) 2026年 11月 24日 星期二 00:05:54 CST
+c-q8-5sam/test: 10 done (17s, ~1.7s/win)
+c-q8-5sam/test: 20 done (35s, ~1.7s/win)
+c-q8-5sam/test: 30 done (52s, ~1.7s/win)
+c-q8-5sam/test: 40 done (69s, ~1.7s/win)
+c-q8-5sam/test: 50 done (86s, ~1.7s/win)
+c-q8-5sam/test: 60 done (104s, ~1.7s/win)
+c-q8-5sam/test: +60 ok, 0 err -> ../CONFIG-SENSITIVITY/results_c-q8-5sam_test.jsonl
+Running as unit: cs-c.service
+llama c ready after 2s
+--- c-q8-5sam round 6 (have 300/439) 2026年 11月 24日 星期二 00:07:41 CST
+c-q8-5sam/test: 10 done (17s, ~1.7s/win)
+c-q8-5sam/test: 20 done (35s, ~1.7s/win)
+c-q8-5sam/test: 30 done (51s, ~1.7s/win)
+c-q8-5sam/test: 40 done (68s, ~1.7s/win)
+c-q8-5sam/test: 50 done (85s, ~1.7s/win)
+c-q8-5sam/test: 60 done (103s, ~1.7s/win)
+c-q8-5sam/test: +60 ok, 0 err -> ../CONFIG-SENSITIVITY/results_c-q8-5sam_test.jsonl
+Running as unit: cs-c.service
+llama c ready after 2s
+--- c-q8-5sam round 7 (have 360/439) 2026年 11月 24日 星期二 00:09:26 CST
+c-q8-5sam/test: 10 done (17s, ~1.7s/win)
+c-q8-5sam/test: 20 done (35s, ~1.7s/win)
+c-q8-5sam/test: 30 done (52s, ~1.7s/win)
+c-q8-5sam/test: 40 done (70s, ~1.7s/win)
+c-q8-5sam/test: 50 done (87s, ~1.7s/win)
+c-q8-5sam/test: 60 done (105s, ~1.7s/win)
+c-q8-5sam/test: +60 ok, 0 err -> ../CONFIG-SENSITIVITY/results_c-q8-5sam_test.jsonl
+Running as unit: cs-c.service
+llama c ready after 2s
+--- c-q8-5sam round 8 (have 420/439) 2026年 11月 24日 星期二 00:11:13 CST
+c-q8-5sam/test: 10 done (17s, ~1.7s/win)
+c-q8-5sam/test: +19 ok, 0 err -> ../CONFIG-SENSITIVITY/results_c-q8-5sam_test.jsonl
+Running as unit: cs-h.service
+llama h ready after 2s
+--- h-q8-greedy round 1 (have 0/439) 2026年 11月 24日 星期二 00:11:49 CST
+h-q8-greedy/test: 20 done (10s, ~0.52s/win, invalid=0)
+h-q8-greedy/test: 40 done (21s, ~0.53s/win, invalid=0)
+h-q8-greedy/test: 60 done (33s, ~0.54s/win, invalid=0)
+h-q8-greedy/test: 80 done (44s, ~0.55s/win, invalid=0)
+h-q8-greedy/test: 100 done (55s, ~0.55s/win, invalid=0)
+h-q8-greedy/test: 120 done (66s, ~0.55s/win, invalid=0)
+h-q8-greedy/test: 140 done (77s, ~0.55s/win, invalid=0)
+h-q8-greedy/test: +150 ok (0 invalid-json), 0 err -> ../CONFIG-SENSITIVITY/results_h-q8-greedy_test.jsonl
+Running as unit: cs-h.service
+llama h ready after 2s
+--- h-q8-greedy round 2 (have 150/439) 2026年 11月 24日 星期二 00:13:14 CST
+h-q8-greedy/test: 20 done (11s, ~0.53s/win, invalid=0)
+h-q8-greedy/test: 40 done (21s, ~0.54s/win, invalid=0)
+h-q8-greedy/test: 60 done (32s, ~0.54s/win, invalid=0)
+h-q8-greedy/test: 80 done (43s, ~0.54s/win, invalid=0)
+h-q8-greedy/test: 100 done (54s, ~0.54s/win, invalid=0)
+h-q8-greedy/test: 120 done (65s, ~0.54s/win, invalid=0)
+h-q8-greedy/test: 140 done (76s, ~0.54s/win, invalid=0)
+h-q8-greedy/test: +150 ok (0 invalid-json), 0 err -> ../CONFIG-SENSITIVITY/results_h-q8-greedy_test.jsonl
+Running as unit: cs-h.service
+llama h ready after 2s
+--- h-q8-greedy round 3 (have 300/439) 2026年 11月 24日 星期二 00:14:38 CST
+h-q8-greedy/test: 20 done (10s, ~0.52s/win, invalid=0)
+h-q8-greedy/test: 40 done (22s, ~0.54s/win, invalid=0)
+h-q8-greedy/test: 60 done (33s, ~0.55s/win, invalid=0)
+h-q8-greedy/test: 80 done (44s, ~0.55s/win, invalid=0)
+h-q8-greedy/test: 100 done (55s, ~0.55s/win, invalid=0)
+h-q8-greedy/test: 120 done (67s, ~0.56s/win, invalid=0)
+h-q8-greedy/test: +139 ok (0 invalid-json), 0 err -> ../CONFIG-SENSITIVITY/results_h-q8-greedy_test.jsonl
+Running as unit: cs-h.service
+llama h ready after 8s
+--- h-bf16gguf-greedy round 1 (have 0/439) 2026年 11月 24日 星期二 00:16:05 CST
+h-bf16gguf-greedy/test: 20 done (11s, ~0.56s/win, invalid=0)
+h-bf16gguf-greedy/test: 40 done (27s, ~0.68s/win, invalid=0)
+h-bf16gguf-greedy/test: 60 done (41s, ~0.68s/win, invalid=0)
+h-bf16gguf-greedy/test: 80 done (52s, ~0.66s/win, invalid=0)
+h-bf16gguf-greedy/test: 100 done (67s, ~0.67s/win, invalid=0)
+h-bf16gguf-greedy/test: 120 done (78s, ~0.65s/win, invalid=0)
+h-bf16gguf-greedy/test: 140 done (89s, ~0.64s/win, invalid=0)
+h-bf16gguf-greedy/test: +150 ok (0 invalid-json), 0 err -> ../CONFIG-SENSITIVITY/results_h-bf16gguf-greedy_test.jsonl
+Running as unit: cs-h.service
+llama h ready after 4s
+--- h-bf16gguf-greedy round 2 (have 150/439) 2026年 11月 24日 星期二 00:17:45 CST
+h-bf16gguf-greedy/test: 20 done (11s, ~0.55s/win, invalid=0)
+h-bf16gguf-greedy/test: 40 done (23s, ~0.56s/win, invalid=0)
+h-bf16gguf-greedy/test: 60 done (34s, ~0.57s/win, invalid=0)
+h-bf16gguf-greedy/test: 80 done (47s, ~0.59s/win, invalid=0)
+h-bf16gguf-greedy/test: 100 done (59s, ~0.59s/win, invalid=0)
+h-bf16gguf-greedy/test: 120 done (71s, ~0.59s/win, invalid=0)
+h-bf16gguf-greedy/test: 140 done (82s, ~0.59s/win, invalid=0)
+h-bf16gguf-greedy/test: +150 ok (0 invalid-json), 0 err -> ../CONFIG-SENSITIVITY/results_h-bf16gguf-greedy_test.jsonl
+Running as unit: cs-h.service
+llama h ready after 4s
+--- h-bf16gguf-greedy round 3 (have 300/439) 2026年 11月 24日 星期二 00:19:17 CST
+h-bf16gguf-greedy/test: 20 done (11s, ~0.56s/win, invalid=0)
+h-bf16gguf-greedy/test: 40 done (23s, ~0.57s/win, invalid=0)
+h-bf16gguf-greedy/test: 60 done (34s, ~0.57s/win, invalid=0)
+h-bf16gguf-greedy/test: 80 done (45s, ~0.57s/win, invalid=0)
+h-bf16gguf-greedy/test: 100 done (57s, ~0.57s/win, invalid=0)
+h-bf16gguf-greedy/test: 120 done (68s, ~0.57s/win, invalid=0)
+h-bf16gguf-greedy/test: +139 ok (0 invalid-json), 0 err -> ../CONFIG-SENSITIVITY/results_h-bf16gguf-greedy_test.jsonl
+b-q8-greedy=439 c-q8-greedy=439
+c-q8-5sam=439 h-q8-greedy=439
+h-bf16gguf-greedy=439
+=== cs2 end 2026年 11月 24日 星期二 00:20:37 CST ===

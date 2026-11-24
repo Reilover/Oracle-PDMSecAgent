@@ -1,0 +1,690 @@
+{
+ "summary": {
+  "b-gen": {
+   "development": {
+    "accs": {
+     "tactic": 0.09090909090909091,
+     "urgent": 0.509090909090909,
+     "severity": 0.4,
+     "action": 0.09090909090909091,
+     "exact": 0.03636363636363636
+    },
+    "p50_ms": 309.1,
+    "n": 220,
+    "analysis": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/analysis_b-gen_development.json",
+    "results": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_b-gen_development.jsonl"
+   },
+   "test": {
+    "accs": {
+     "tactic": 0.13211845102505695,
+     "urgent": 0.5466970387243736,
+     "severity": 0.4054669703872437,
+     "action": 0.1252847380410023,
+     "exact": 0.05239179954441914
+    },
+    "p50_ms": 268.8,
+    "n": 1756,
+    "analysis": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/analysis_b-gen_test.json",
+    "results": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_b-gen_test.jsonl"
+   }
+  },
+  "c-logprobs": {
+   "development": {
+    "accs": {
+     "tactic": 0.6727272727272727,
+     "urgent": 0.23636363636363636,
+     "severity": 0.6909090909090909,
+     "action": 0.16363636363636364,
+     "exact": 0.0
+    },
+    "p50_ms": 1139.4,
+    "n": 220,
+    "analysis": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/analysis_c-logprobs_development.json",
+    "results": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_c-logprobs_development.jsonl"
+   },
+   "test": {
+    "accs": {
+     "tactic": 0.6765375854214123,
+     "urgent": 0.23006833712984054,
+     "severity": 0.6560364464692483,
+     "action": 0.1070615034168565,
+     "exact": 0.0
+    },
+    "p50_ms": 1144.5,
+    "n": 1756,
+    "analysis": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/analysis_c-logprobs_test.json",
+    "results": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_c-logprobs_test.jsonl"
+   }
+  },
+  "e1-nanojev": {
+   "development": {
+    "accs": {
+     "tactic": 0.18181818181818182,
+     "urgent": 0.23636363636363636,
+     "severity": 0.14545454545454545,
+     "action": 0.0,
+     "exact": 0.0
+    },
+    "p50_ms": 136.9,
+    "n": 220,
+    "analysis": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/analysis_e1-nanojev_development.json",
+    "results": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_e1-nanojev_development.jsonl"
+   },
+   "test": {
+    "accs": {
+     "tactic": 0.1366742596810934,
+     "urgent": 0.23006833712984054,
+     "severity": 0.1070615034168565,
+     "action": 0.0,
+     "exact": 0.0
+    },
+    "p50_ms": 137.9,
+    "n": 1756,
+    "analysis": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/analysis_e1-nanojev_test.json",
+    "results": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_e1-nanojev_test.jsonl"
+   }
+  },
+  "e2-laya": {
+   "development": {
+    "accs": {
+     "tactic": 0.05454545454545454,
+     "urgent": 0.7090909090909091,
+     "severity": 0.6363636363636364,
+     "action": 0.5818181818181818,
+     "exact": 0.05454545454545454
+    },
+    "p50_ms": 24.8,
+    "n": 220,
+    "analysis": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/analysis_e2-laya_development.json",
+    "results": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_e2-laya_development.jsonl"
+   },
+   "test": {
+    "accs": {
+     "tactic": 0.025056947608200455,
+     "urgent": 0.6902050113895216,
+     "severity": 0.6309794988610479,
+     "action": 0.592255125284738,
+     "exact": 0.009111617312072893
+    },
+    "p50_ms": 24.8,
+    "n": 1756,
+    "analysis": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/analysis_e2-laya_test.json",
+    "results": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_e2-laya_test.jsonl"
+   }
+  },
+  "f1-glm": {
+   "development": {
+    "accs": {
+     "tactic": 0.5818181818181818,
+     "urgent": 0.8545454545454545,
+     "severity": 0.7272727272727273,
+     "action": 0.2,
+     "exact": 0.05454545454545454
+    },
+    "p50_ms": 1723.0,
+    "n": 220,
+    "analysis": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/analysis_f1-glm_development.json",
+    "results": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_f1-glm_development.jsonl"
+   },
+   "test": {
+    "accs": {
+     "tactic": 0.6378132118451025,
+     "urgent": 0.8542141230068337,
+     "severity": 0.6947608200455581,
+     "action": 0.13439635535307518,
+     "exact": 0.03416856492027335
+    },
+    "p50_ms": 1697.4,
+    "n": 1756,
+    "analysis": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/analysis_f1-glm_test.json",
+    "results": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_f1-glm_test.jsonl"
+   }
+  },
+  "f2-dsk": {
+   "development": {
+    "accs": {
+     "tactic": 0.6545454545454545,
+     "urgent": 0.7636363636363637,
+     "severity": 0.6909090909090909,
+     "action": 0.23636363636363636,
+     "exact": 0.14545454545454545
+    },
+    "p50_ms": 854.4,
+    "n": 220,
+    "analysis": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/analysis_f2-dsk_development.json",
+    "results": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_f2-dsk_development.jsonl"
+   },
+   "test": {
+    "accs": {
+     "tactic": 0.6970387243735763,
+     "urgent": 0.8041002277904328,
+     "severity": 0.7425968109339408,
+     "action": 0.20501138952164008,
+     "exact": 0.14123006833712984
+    },
+    "p50_ms": 774.8,
+    "n": 1756,
+    "analysis": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/analysis_f2-dsk_test.json",
+    "results": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_f2-dsk_test.jsonl"
+   }
+  },
+  "h-gen": {
+   "development": {
+    "accs": {
+     "tactic": 0.0,
+     "urgent": 0.32727272727272727,
+     "severity": 0.2727272727272727,
+     "action": 0.18181818181818182,
+     "exact": 0.0
+    },
+    "p50_ms": 365.4,
+    "n": 220,
+    "analysis": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/analysis_h-gen_development.json",
+    "results": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_h-gen_development.jsonl"
+   },
+   "test": {
+    "accs": {
+     "tactic": 0.00683371298405467,
+     "urgent": 0.3211845102505695,
+     "severity": 0.15034168564920272,
+     "action": 0.0888382687927107,
+     "exact": 0.002277904328018223
+    },
+    "p50_ms": 362.6,
+    "n": 1756,
+    "analysis": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/analysis_h-gen_test.json",
+    "results": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_h-gen_test.jsonl"
+   }
+  },
+  "mb-bf16": {
+   "development": {
+    "accs": {
+     "tactic": 0.6909090909090909,
+     "urgent": 0.7818181818181819,
+     "severity": 0.6909090909090909,
+     "action": 0.6727272727272727,
+     "exact": 0.6727272727272727
+    },
+    "p50_ms": 13.7,
+    "n": 220,
+    "analysis": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/analysis_mb-bf16_development.json",
+    "results": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_mb-bf16_development.jsonl",
+    "bert_calib_old": {
+     "task": "TASK-MODERNBERT-CALIB-20261111",
+     "checkpoint": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/BATCH2-TRAIN/bert-baseline/bert_baseline.pt",
+     "suite": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/suites/oracle-v3",
+     "protocol": {
+      "fit": "Method A (ORACLE 同口径): per-question-type bucket (4 heads, one scalar T each), fitted on oracle-v3 calibration split (55 windows), min micro NLL over 121-point log grid 0.25..4 (kev.metrics.fit_temperature, TEMPERATURE_FIT)",
+      "eval": "oracle-v3 test split, 439 windows; ECE = 15 equal-frequency bins (train_bert_baseline.py convention); argmax/exact are temperature-invariant",
+      "no_retrain": true
+     },
+     "fitted_temperatures": {
+      "tactic": 1.8660659830736146,
+      "urgent": 1.9999999999999998,
+      "severity": 2.1435469250725863,
+      "action": 1.6624757922855755
+     },
+     "dev_sanity": {
+      "tactic_acc": 0.6909090909090909,
+      "exact": 0.6727272727272727,
+      "tactic_ece15": 0.2954520250200623,
+      "matches_train_metrics_json": true
+     },
+     "test": {
+      "n_windows": 439,
+      "raw_T1": {
+       "per_head": {
+        "tactic": {
+         "n": 439,
+         "acc": 0.6810933940774487,
+         "ece15": 0.2636305093673807,
+         "nll": 1.9721173195981592,
+         "mean_conf": 0.934423389533674
+        },
+        "urgent": {
+         "n": 439,
+         "acc": 0.7813211845102506,
+         "ece15": 0.17203000031239993,
+         "nll": 0.8841889069652417,
+         "mean_conf": 0.9442086419851335
+        },
+        "severity": {
+         "n": 439,
+         "acc": 0.6902050113895216,
+         "ece15": 0.27540809501952557,
+         "nll": 1.7349233084590938,
+         "mean_conf": 0.9656131064090471
+        },
+        "action": {
+         "n": 439,
+         "acc": 0.6879271070615034,
+         "ece15": 0.24837880124725598,
+         "nll": 1.276108159599454,
+         "mean_conf": 0.9025276604300795
+        }
+       },
+       "exact": 0.6810933940774487,
+       "micro_nll": 1.466834423655487
+      },
+      "methodA_calibrated": {
+       "per_head": {
+        "tactic": {
+         "n": 439,
+         "acc": 0.6810933940774487,
+         "ece15": 0.2764696705374893,
+         "nll": 1.3621215398588844,
+         "mean_conf": 0.7185086339457895
+        },
+        "urgent": {
+         "n": 439,
+         "acc": 0.7813211845102506,
+         "ece15": 0.19741632131256645,
+         "nll": 0.6084302749110684,
+         "mean_conf": 0.8250947451431446
+        },
+        "severity": {
+         "n": 439,
+         "acc": 0.6902050113895216,
+         "ece15": 0.27516437747522277,
+         "nll": 1.0491724570856538,
+         "mean_conf": 0.7767153728273908
+        },
+        "action": {
+         "n": 439,
+         "acc": 0.6879271070615034,
+         "ece15": 0.23220596835875162,
+         "nll": 0.9994046842278469,
+         "mean_conf": 0.7474359387079399
+        }
+       },
+       "exact": 0.6810933940774487,
+       "micro_nll": 1.0047822390208634
+      }
+     }
+    }
+   }
+  },
+  "verdict": {
+   "test": {
+    "accs": {
+     "tactic": 0.0,
+     "urgent": 0.1480637813211845,
+     "severity": 0.6605922551252847,
+     "action": 0.1480637813211845,
+     "exact": 0.0
+    },
+    "p50_ms": 262.9,
+    "n": 1756,
+    "analysis": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/analysis_verdict_test.json",
+    "results": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_verdict_test.jsonl"
+   }
+  }
+ },
+ "compare": {
+  "e2-laya/test": {
+   "tactic": {
+    "old": 0.02050113895216401,
+    "new": 0.025056947608200455,
+    "delta": 0.004555808656036445
+   },
+   "urgent": {
+    "old": 0.6902050113895216,
+    "new": 0.6902050113895216,
+    "delta": 0.0
+   },
+   "severity": {
+    "old": 0.6287015945330297,
+    "new": 0.6309794988610479,
+    "delta": 0.002277904328018221
+   },
+   "action": {
+    "old": 0.592255125284738,
+    "new": 0.592255125284738,
+    "delta": 0.0
+   },
+   "exact": {
+    "old": 0.009111617312072893,
+    "new": 0.009111617312072893,
+    "delta": 0.0
+   }
+  },
+  "e2-laya/development": {
+   "tactic": {
+    "old": 0.05454545454545454,
+    "new": 0.05454545454545454,
+    "delta": 0.0
+   },
+   "urgent": {
+    "old": 0.7090909090909091,
+    "new": 0.7090909090909091,
+    "delta": 0.0
+   },
+   "severity": {
+    "old": 0.6363636363636364,
+    "new": 0.6363636363636364,
+    "delta": 0.0
+   },
+   "action": {
+    "old": 0.5818181818181818,
+    "new": 0.5818181818181818,
+    "delta": 0.0
+   },
+   "exact": {
+    "old": 0.05454545454545454,
+    "new": 0.05454545454545454,
+    "delta": 0.0
+   }
+  },
+  "e1-nanojev/test": {
+   "tactic": {
+    "old": 0.1366742596810934,
+    "new": 0.1366742596810934,
+    "delta": 0.0
+   },
+   "urgent": {
+    "old": 0.23006833712984054,
+    "new": 0.23006833712984054,
+    "delta": 0.0
+   },
+   "severity": {
+    "old": 0.1070615034168565,
+    "new": 0.1070615034168565,
+    "delta": 0.0
+   },
+   "action": {
+    "old": 0.0,
+    "new": 0.0,
+    "delta": 0.0
+   },
+   "exact": {
+    "old": 0.0,
+    "new": 0.0,
+    "delta": 0.0
+   }
+  },
+  "c-logprobs/test": {
+   "tactic": {
+    "old": 0.6810933940774487,
+    "new": 0.6765375854214123,
+    "delta": -0.004555808656036442
+   },
+   "urgent": {
+    "old": 0.23006833712984054,
+    "new": 0.23006833712984054,
+    "delta": 0.0
+   },
+   "severity": {
+    "old": 0.6788154897494305,
+    "new": 0.6560364464692483,
+    "delta": -0.02277904328018221
+   },
+   "action": {
+    "old": 0.1070615034168565,
+    "new": 0.1070615034168565,
+    "delta": 0.0
+   },
+   "exact": {
+    "old": 0.0,
+    "new": 0.0,
+    "delta": 0.0
+   }
+  },
+  "c-logprobs/development": {
+   "tactic": {
+    "old": 0.6727272727272727,
+    "new": 0.6727272727272727,
+    "delta": 0.0
+   },
+   "urgent": {
+    "old": 0.23636363636363636,
+    "new": 0.23636363636363636,
+    "delta": 0.0
+   },
+   "severity": {
+    "old": 0.6727272727272727,
+    "new": 0.6909090909090909,
+    "delta": 0.018181818181818188
+   },
+   "action": {
+    "old": 0.18181818181818182,
+    "new": 0.16363636363636364,
+    "delta": -0.018181818181818188
+   },
+   "exact": {
+    "old": 0.0,
+    "new": 0.0,
+    "delta": 0.0
+   }
+  },
+  "b-gen/test": {
+   "tactic": {
+    "old": 0.12984054669703873,
+    "new": 0.13211845102505695,
+    "delta": 0.002277904328018221
+   },
+   "urgent": {
+    "old": 0.7380410022779044,
+    "new": 0.5466970387243736,
+    "delta": -0.19134396355353078
+   },
+   "severity": {
+    "old": 0.5444191343963554,
+    "new": 0.4054669703872437,
+    "delta": -0.13895216400911165
+   },
+   "action": {
+    "old": 0.14123006833712984,
+    "new": 0.1252847380410023,
+    "delta": -0.015945330296127547
+   },
+   "exact": {
+    "old": 0.04555808656036447,
+    "new": 0.05239179954441914,
+    "delta": 0.00683371298405467
+   }
+  },
+  "b-gen/development": {
+   "tactic": {
+    "old": 0.09090909090909091,
+    "new": 0.09090909090909091,
+    "delta": 0.0
+   },
+   "urgent": {
+    "old": 0.7454545454545455,
+    "new": 0.509090909090909,
+    "delta": -0.23636363636363644
+   },
+   "severity": {
+    "old": 0.5272727272727272,
+    "new": 0.4,
+    "delta": -0.1272727272727272
+   },
+   "action": {
+    "old": 0.14545454545454545,
+    "new": 0.09090909090909091,
+    "delta": -0.054545454545454536
+   },
+   "exact": {
+    "old": 0.03636363636363636,
+    "new": 0.03636363636363636,
+    "delta": 0.0
+   }
+  },
+  "h-gen/test": {
+   "tactic": {
+    "old": 0.00683371298405467,
+    "new": 0.00683371298405467,
+    "delta": 0.0
+   },
+   "urgent": {
+    "old": 0.3234624145785877,
+    "new": 0.3211845102505695,
+    "delta": -0.002277904328018221
+   },
+   "severity": {
+    "old": 0.1548974943052392,
+    "new": 0.15034168564920272,
+    "delta": -0.00455580865603647
+   },
+   "action": {
+    "old": 0.10022779043280182,
+    "new": 0.0888382687927107,
+    "delta": -0.011389521640091119
+   },
+   "exact": {
+    "old": 0.002277904328018223,
+    "new": 0.002277904328018223,
+    "delta": 0.0
+   }
+  },
+  "h-gen/development": {
+   "tactic": {
+    "old": 0.0,
+    "new": 0.0,
+    "delta": 0.0
+   },
+   "urgent": {
+    "old": 0.36363636363636365,
+    "new": 0.32727272727272727,
+    "delta": -0.036363636363636376
+   },
+   "severity": {
+    "old": 0.3090909090909091,
+    "new": 0.2727272727272727,
+    "delta": -0.036363636363636376
+   },
+   "action": {
+    "old": 0.18181818181818182,
+    "new": 0.18181818181818182,
+    "delta": 0.0
+   },
+   "exact": {
+    "old": 0.0,
+    "new": 0.0,
+    "delta": 0.0
+   }
+  },
+  "f1-glm/test": {
+   "tactic": {
+    "old": 0.6788154897494305,
+    "new": 0.6378132118451025,
+    "delta": -0.04100227790432798
+   },
+   "urgent": {
+    "old": 0.8451025056947609,
+    "new": 0.8542141230068337,
+    "delta": 0.009111617312072884
+   },
+   "severity": {
+    "old": 0.7061503416856492,
+    "new": 0.6947608200455581,
+    "delta": -0.011389521640091105
+   },
+   "action": {
+    "old": 0.1366742596810934,
+    "new": 0.13439635535307518,
+    "delta": -0.002277904328018221
+   },
+   "exact": {
+    "old": 0.03189066059225513,
+    "new": 0.03416856492027335,
+    "delta": 0.002277904328018221
+   }
+  },
+  "f1-glm/development": {
+   "tactic": {
+    "old": 0.6111111111111112,
+    "new": 0.5818181818181818,
+    "delta": -0.02929292929292937
+   },
+   "urgent": {
+    "old": 0.8333333333333334,
+    "new": 0.8545454545454545,
+    "delta": 0.021212121212121127
+   },
+   "severity": {
+    "old": 0.7222222222222222,
+    "new": 0.7272727272727273,
+    "delta": 0.005050505050505083
+   },
+   "action": {
+    "old": 0.2222222222222222,
+    "new": 0.2,
+    "delta": -0.0222222222222222
+   },
+   "exact": {
+    "old": 0.07407407407407407,
+    "new": 0.05454545454545454,
+    "delta": -0.019528619528619527
+   }
+  },
+  "f2-dsk/test": {
+   "tactic": {
+    "old": 0.5808656036446469,
+    "new": 0.6970387243735763,
+    "delta": 0.11617312072892938
+   },
+   "urgent": {
+    "old": 0.7972665148063781,
+    "new": 0.8041002277904328,
+    "delta": 0.006833712984054663
+   },
+   "severity": {
+    "old": 0.6104783599088838,
+    "new": 0.7425968109339408,
+    "delta": 0.13211845102505704
+   },
+   "action": {
+    "old": 0.5170842824601367,
+    "new": 0.20501138952164008,
+    "delta": -0.3120728929384966
+   },
+   "exact": {
+    "old": 0.4305239179954442,
+    "new": 0.14123006833712984,
+    "delta": -0.2892938496583144
+   }
+  },
+  "f2-dsk/development": {
+   "tactic": {
+    "old": 0.6909090909090909,
+    "new": 0.6545454545454545,
+    "delta": -0.036363636363636376
+   },
+   "urgent": {
+    "old": 0.8,
+    "new": 0.7636363636363637,
+    "delta": -0.036363636363636376
+   },
+   "severity": {
+    "old": 0.7090909090909091,
+    "new": 0.6909090909090909,
+    "delta": -0.018181818181818188
+   },
+   "action": {
+    "old": 0.2545454545454545,
+    "new": 0.23636363636363636,
+    "delta": -0.01818181818181816
+   },
+   "exact": {
+    "old": 0.18181818181818182,
+    "new": 0.14545454545454545,
+    "delta": -0.036363636363636376
+   }
+  }
+ },
+ "gate": {
+  "e1-nanojev/test": {
+   "max_abs_delta": 0.0,
+   "pass": true
+  },
+  "e2-laya/test": {
+   "max_abs_delta": 0.004555808656036445,
+   "pass": true
+  },
+  "e2-laya/development": {
+   "max_abs_delta": 0.0,
+   "pass": true
+  }
+ }
+}

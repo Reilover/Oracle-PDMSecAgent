@@ -1,0 +1,5 @@
+=== pilot start 2026年 11月 23日 星期一 19:40:48 CST ===
+Running as unit: pilot-vllm.service
+serve ready after 106s
+{"model": "minicpm", "n": 30, "ok": 30, "err": 0, "json_note": "greedy 30\u7a97\u5b8c\u6210"}
+=== pilot done 2026年 11月 23日 星期一 19:43:34 CST ===

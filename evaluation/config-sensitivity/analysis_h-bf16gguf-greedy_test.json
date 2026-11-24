@@ -1,0 +1,67 @@
+{
+  "n_rows": 1756,
+  "source": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/CONFIG-SENSITIVITY/results_h-bf16gguf-greedy_test.jsonl",
+  "tasks": {
+    "tactic": {
+      "n": 439,
+      "acc": 0.00683371298405467,
+      "macro_f1": 0.013071895424836602,
+      "classes": [
+        "benign",
+        "credential_access",
+        "initial_access"
+      ]
+    },
+    "urgent": {
+      "n": 439,
+      "acc": 0.31890660592255127
+    },
+    "severity": {
+      "n": 439,
+      "acc": 0.15261958997722094,
+      "quadratic_kappa": -1.222339172493296,
+      "mae": 1.4715261958997723,
+      "by_severity": {
+        "low": {
+          "n": 299,
+          "acc": 0.13043478260869565
+        },
+        "medium": {
+          "n": 92,
+          "acc": 0.0
+        },
+        "high": {
+          "n": 33,
+          "acc": 0.8484848484848485
+        },
+        "critical": {
+          "n": 15,
+          "acc": 0.0
+        }
+      }
+    },
+    "action": {
+      "n": 439,
+      "acc": 0.09339407744874716
+    }
+  },
+  "exact_match": 0.002277904328018223,
+  "ci": {
+    "tactic_acc": {
+      "lo": 0.0,
+      "hi": 0.015945330296127564
+    },
+    "sev_acc": {
+      "lo": 0.12072892938496584,
+      "hi": 0.18906605922551253
+    },
+    "urgent_acc": {
+      "lo": 0.27790432801822323,
+      "hi": 0.36446469248291574
+    }
+  },
+  "e3_subset": {
+    "urgent_acc": 0.6206896551724138,
+    "n": 29
+  }
+}

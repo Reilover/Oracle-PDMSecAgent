@@ -1,0 +1,50 @@
+=== cs3 start 2026年 11月 24日 星期二 00:21:57 CST ===
+Running as unit: cs-kevfp32.service
+kev08 fp32 ready after 10s
+kev08/test: 20 done
+kev08/test: 40 done
+kev08/test: 60 done
+kev08/test: 80 done
+kev08/test: 100 done
+kev08/test: 120 done
+kev08/test: 140 done
+kev08/test: 160 done
+kev08/test: 180 done
+kev08/test: 200 done
+kev08/test: 220 done
+kev08/test: 240 done
+kev08/test: 260 done
+kev08/test: 280 done
+kev08/test: 300 done
+kev08/test: 320 done
+kev08/test: 340 done
+kev08/test: 360 done
+kev08/test: 380 done
+kev08/test: 400 done
+kev08/test: 420 done
+kev08/test: +439 ok, 0 err -> ../CONFIG-SENSITIVITY/results_kev08_fp32_test.jsonl
+Running as unit: cs-e1fp32.service
+E1FP32_SMOKE_FAIL
+11月 24 00:23:08 a800-Super-Server systemd[1849]: Started /usr/bin/env CUDA_VISIBLE_DEVICES=0 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 /home/xxl/spark2_5/bin/python /disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/run_uniform.py e1-nanojev-fp32 test --limit 1 --outdir ../CONFIG-SENSITIVITY.
+11月 24 00:23:19 a800-Super-Server env[3982507]: Traceback (most recent call last):
+11月 24 00:23:19 a800-Super-Server env[3982507]:   File "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/run_uniform.py", line 754, in <module>
+11月 24 00:23:19 a800-Super-Server env[3982507]:     main()
+11月 24 00:23:19 a800-Super-Server env[3982507]:   File "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/run_uniform.py", line 721, in main
+11月 24 00:23:19 a800-Super-Server env[3982507]:     run_e1_nanojev(recs, a.split, a.tag, a.outdir, 'fp32', 'e1-nanojev-fp32')
+11月 24 00:23:19 a800-Super-Server env[3982507]:   File "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/run_uniform.py", line 241, in run_e1_nanojev
+11月 24 00:23:19 a800-Super-Server env[3982507]:     with open(out, 'a') as fh:
+11月 24 00:23:19 a800-Super-Server env[3982507]:          ^^^^^^^^^^^^^^
+11月 24 00:23:19 a800-Super-Server env[3982507]: FileNotFoundError: [Errno 2] No such file or directory: '../CONFIG-SENSITIVITY/results_e1-nanojev-fp32_test.jsonl'
+11月 24 00:23:19 a800-Super-Server systemd[1849]: cs-e1fp32.service: Main process exited, code=exited, status=1/FAILURE
+11月 24 00:23:19 a800-Super-Server systemd[1849]: cs-e1fp32.service: Failed with result 'exit-code'.
+11月 24 00:23:19 a800-Super-Server systemd[1849]: cs-e1fp32.service: Consumed 29.010s CPU time.
+=== cs3 start 2026年 11月 24日 星期二 00:29:14 CST ===
+Running as unit: cs-kevfp32.service
+kev08 fp32 ready after 11s
+kev08/test: +0 ok, 0 err -> /home/xxl/MySecAgent/lab/experiments/oracle/EVAL/CONFIG-SENSITIVITY/results_kev08_fp32_test.jsonl
+Running as unit: cs-e1fp32.service
+Running as unit: cs-e1fp32.service
+Failed to stop cs-e1fp32.service: Unit cs-e1fp32.service not loaded.
+Running as unit: cs-mbcpu.service
+kev-fp32=439 e1-fp32=439 mb-cpu=55
+=== cs3 end 2026年 11月 24日 星期二 00:34:46 CST ===

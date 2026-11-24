@@ -1,0 +1,23 @@
+=== cs1 noise start 2026年 11月 23日 星期一 23:27:33 CST ===
+Running as unit: cs-kev.service
+kev08 bf16 ready after 15s
+kev08/test: 20 done
+kev08/test: +30 ok, 0 err -> ../CONFIG-SENSITIVITY/results_kev08_r1_test.jsonl
+kev08/test: 20 done
+kev08/test: +30 ok, 0 err -> ../CONFIG-SENSITIVITY/results_kev08_r2_test.jsonl
+Running as unit: cs-mcp.service
+llama mcp ready after 14s
+b-q8-greedy/test: 20 done (4s, ~0.22s/win, invalid=0)
+b-q8-greedy/test: +30 ok (0 invalid-json), 0 err -> ../CONFIG-SENSITIVITY/results_b-q8-greedy_r1_test.jsonl
+b-q8-greedy/test: 20 done (4s, ~0.22s/win, invalid=0)
+b-q8-greedy/test: +30 ok (0 invalid-json), 0 err -> ../CONFIG-SENSITIVITY/results_b-q8-greedy_r2_test.jsonl
+Running as unit: cs-spk.service
+llama spk ready after 22s
+h-q8-greedy/test: 20 done (11s, ~0.56s/win, invalid=0)
+h-q8-greedy/test: +30 ok (0 invalid-json), 0 err -> ../CONFIG-SENSITIVITY/results_h-q8-greedy_r1_test.jsonl
+h-q8-greedy/test: 20 done (11s, ~0.57s/win, invalid=0)
+h-q8-greedy/test: +30 ok (0 invalid-json), 0 err -> ../CONFIG-SENSITIVITY/results_h-q8-greedy_r2_test.jsonl
+kev r1=30 r2=30
+mcp r1=30 r2=30
+spk r1=30 r2=30
+=== cs1 end 2026年 11月 23日 星期一 23:29:22 CST ===

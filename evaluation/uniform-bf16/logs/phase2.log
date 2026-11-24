@@ -1,0 +1,111 @@
+=== phase2 start 2026年 11月 23日 星期一 23:05:08 CST ===
+2026年 11月 23日 星期一 23:05:08 CST GPU0 free — launching vLLM MiniCPM
+Running as unit: ua-vllm-mcp.service
+serve ready after 66s
+smoke: {
+  "tactic": "Isolate the IP and review access logs",
+  "urgent": true,
+  "seve
+--- c-logprobs pilot 30 2026年 11月 23日 星期一 23:06:15 CST
+Traceback (most recent call last):
+  File "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/run_uniform.py", line 754, in <module>
+    main()
+  File "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/run_uniform.py", line 729, in main
+    run_c_logprobs(recs, a.split, a.tag, a.outdir)
+  File "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/run_uniform.py", line 436, in run_c_logprobs
+    from transformers import AutoTokenizer
+ModuleNotFoundError: No module named 'transformers'
+pilot valid rows: 0/30
+PILOT GATE FAIL (C logprobs)
+=== phase2 start 2026年 11月 23日 星期一 23:08:34 CST ===
+2026年 11月 23日 星期一 23:08:34 CST GPU0 free — launching vLLM MiniCPM
+Running as unit: ua-vllm-mcp.service
+serve ready after 60s
+smoke: {
+  "tactic": "Isolate the IP and review access logs",
+  "urgent": true,
+  "seve
+--- c-logprobs pilot 30 2026年 11月 23日 星期一 23:09:35 CST
+c-logprobs/development: 10 done (11s)
+c-logprobs/development: 20 done (23s)
+c-logprobs/development: 30 done (34s)
+c-logprobs/development: +30 ok, 0 err -> /disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_c-logprobs_development.jsonl
+pilot valid rows: 30/30
+pilot distribution check OK (30 rows, 4 tasks, sum~=1)
+--- c-logprobs full 2026年 11月 23日 星期一 23:10:14 CST
+c-logprobs/development: 10 done (11s)
+c-logprobs/development: 20 done (22s)
+c-logprobs/development: +25 ok, 0 err -> /disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_c-logprobs_development.jsonl
+c-logprobs/test: 10 done (12s)
+c-logprobs/test: 20 done (23s)
+c-logprobs/test: 30 done (35s)
+c-logprobs/test: 40 done (46s)
+c-logprobs/test: 50 done (58s)
+c-logprobs/test: 60 done (69s)
+c-logprobs/test: 70 done (81s)
+c-logprobs/test: 80 done (92s)
+c-logprobs/test: 90 done (104s)
+c-logprobs/test: 100 done (115s)
+c-logprobs/test: 110 done (127s)
+c-logprobs/test: 120 done (139s)
+c-logprobs/test: 130 done (150s)
+c-logprobs/test: 140 done (161s)
+c-logprobs/test: 150 done (173s)
+c-logprobs/test: 160 done (184s)
+c-logprobs/test: 170 done (195s)
+c-logprobs/test: 180 done (207s)
+c-logprobs/test: 190 done (219s)
+c-logprobs/test: 200 done (230s)
+c-logprobs/test: 210 done (241s)
+c-logprobs/test: 220 done (253s)
+c-logprobs/test: 230 done (264s)
+c-logprobs/test: 240 done (275s)
+c-logprobs/test: 250 done (287s)
+c-logprobs/test: 260 done (298s)
+c-logprobs/test: 270 done (310s)
+c-logprobs/test: 280 done (322s)
+c-logprobs/test: 290 done (333s)
+c-logprobs/test: 300 done (345s)
+c-logprobs/test: 310 done (356s)
+c-logprobs/test: 320 done (367s)
+c-logprobs/test: 330 done (379s)
+c-logprobs/test: 340 done (390s)
+c-logprobs/test: 350 done (402s)
+c-logprobs/test: 360 done (414s)
+c-logprobs/test: 370 done (425s)
+c-logprobs/test: 380 done (436s)
+c-logprobs/test: 390 done (448s)
+c-logprobs/test: 400 done (459s)
+c-logprobs/test: 410 done (470s)
+c-logprobs/test: 420 done (481s)
+c-logprobs/test: 430 done (493s)
+c-logprobs/test: +439 ok, 0 err -> /disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_c-logprobs_test.jsonl
+--- b-gen 2026年 11月 23日 星期一 23:19:15 CST
+b-gen/development: 20 done (7s, ~0.33s/win, invalid=0)
+b-gen/development: 40 done (12s, ~0.31s/win, invalid=0)
+b-gen/development: +55 ok (0 invalid-json), 0 err -> /disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_b-gen_development.jsonl
+b-gen/test: 20 done (5s, ~0.26s/win, invalid=0)
+b-gen/test: 40 done (10s, ~0.26s/win, invalid=0)
+b-gen/test: 60 done (16s, ~0.26s/win, invalid=0)
+b-gen/test: 80 done (21s, ~0.27s/win, invalid=0)
+b-gen/test: 100 done (27s, ~0.27s/win, invalid=0)
+b-gen/test: 120 done (32s, ~0.27s/win, invalid=0)
+b-gen/test: 140 done (38s, ~0.27s/win, invalid=0)
+b-gen/test: 160 done (43s, ~0.27s/win, invalid=0)
+b-gen/test: 180 done (49s, ~0.27s/win, invalid=0)
+b-gen/test: 200 done (54s, ~0.27s/win, invalid=0)
+b-gen/test: 220 done (59s, ~0.27s/win, invalid=0)
+b-gen/test: 240 done (65s, ~0.27s/win, invalid=0)
+b-gen/test: 260 done (71s, ~0.27s/win, invalid=0)
+b-gen/test: 280 done (76s, ~0.27s/win, invalid=0)
+b-gen/test: 300 done (81s, ~0.27s/win, invalid=0)
+b-gen/test: 320 done (87s, ~0.27s/win, invalid=0)
+b-gen/test: 340 done (92s, ~0.27s/win, invalid=0)
+b-gen/test: 360 done (97s, ~0.27s/win, invalid=0)
+b-gen/test: 380 done (103s, ~0.27s/win, invalid=0)
+b-gen/test: 400 done (108s, ~0.27s/win, invalid=0)
+b-gen/test: 420 done (114s, ~0.27s/win, invalid=0)
+b-gen/test: +439 ok (0 invalid-json), 0 err -> /disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/UNIFORM-BF16/results_b-gen_test.jsonl
+c-logprobs dev=55 test=439
+b-gen dev=55 test=439
+=== phase2 end 2026年 11月 23日 星期一 23:21:32 CST ===

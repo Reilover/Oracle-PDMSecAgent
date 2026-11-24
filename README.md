@@ -68,3 +68,10 @@ cross-domain transfer (CAM-LDS), the laya same-convention re-evaluation
 (LAYA-FAMILY), the local-label gain curve (E3P-TEST-CONFIRM), end-to-end
 cascade simulation (D1-E2E), the adversarial robustness probe
 (ADVERSARIAL-PROBE), and the headline bootstrap intervals (CI-HEADLINE.json).
+
+
+## evaluation/uniform-bf16 — Unified-convention re-evaluation (Table 2)
+All Table 2 baseline rows re-run under one inference convention (same runner, 55/439 windows, bf16 local serving on idle GPU, deterministic decoding, cloud APIs at temperature 0) with accuracy, per-window latency, and ECE logged in the same run. Includes the E1/E2 reproduction gates (max |delta| <= 0.005) and a full old-vs-new cell-level diff (REPORT.md section 2).
+
+## evaluation/config-sensitivity — Configuration-sensitivity audit (paper Appendix)
+Factor-by-factor audit on the 439-window test split: reproducibility noise floor (local rows re-run 100% window-identical; cloud temperature-0 reruns agree on only 63-78% of windows), Q8-vs-bf16 quantization, fp32-vs-bf16, CPU-vs-GPU, co-tenancy, sampled-vs-greedy decoding, scoring protocol (5-sample counting vs prefill logprobs), and serving stack (llama.cpp vs vLLM). Backs the appendix table `tab:configsens`.
