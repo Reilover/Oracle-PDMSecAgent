@@ -1,0 +1,62 @@
+{
+ "kev-4B": {
+  "n": 55,
+  "flip": 12,
+  "flip_rate": 0.2182,
+  "harmful_flip": 5,
+  "both_correct": 36,
+  "both_correct_rate": 0.6545,
+  "dconf_mean": 0.1573,
+  "dconf_median": 0.1179,
+  "dconf_p90": 0.3026,
+  "dconf_max": 0.484,
+  "flip_below_tau_h": 12,
+  "conf_orig_mean": 0.629,
+  "conf_rev_mean": 0.515
+ },
+ "kev-0.8B": {
+  "n": 55,
+  "flip": 19,
+  "flip_rate": 0.3455,
+  "harmful_flip": 16,
+  "both_correct": 9,
+  "both_correct_rate": 0.1636,
+  "dconf_mean": 0.2407,
+  "dconf_median": 0.2005,
+  "dconf_p90": 0.4836,
+  "dconf_max": 0.6153,
+  "flip_below_tau_h": 19,
+  "conf_orig_mean": 0.5635,
+  "conf_rev_mean": 0.6439
+ },
+ "laya": {
+  "n": 55,
+  "flip": 12,
+  "flip_rate": 0.2182,
+  "harmful_flip": 6,
+  "both_correct": 25,
+  "both_correct_rate": 0.4545,
+  "dconf_mean": 0.0819,
+  "dconf_median": 0.0187,
+  "dconf_p90": 0.3207,
+  "dconf_max": 0.6363,
+  "flip_below_tau_h": 3,
+  "conf_orig_mean": 0.7783,
+  "conf_rev_mean": 0.7991
+ },
+ "NanoJev": {
+  "n": 55,
+  "flip": 0,
+  "flip_rate": 0.0,
+  "harmful_flip": 0,
+  "both_correct": 35,
+  "both_correct_rate": 0.6364,
+  "dconf_mean": 0.0,
+  "dconf_median": 0.0,
+  "dconf_p90": 0.0,
+  "dconf_max": 0.0,
+  "flip_below_tau_h": 0,
+  "conf_orig_mean": 0.1908,
+  "conf_rev_mean": 0.1908
+ }
+}
