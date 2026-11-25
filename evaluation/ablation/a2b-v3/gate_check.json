@@ -1,0 +1,12 @@
+{
+ "n_windows": 439,
+ "pred_full_match_vs_zeroshot_ours_v3": true,
+ "n_mismatch": 0,
+ "mismatch_examples": [],
+ "tactic_acc": 0.7244,
+ "exact_acc": 0.5216,
+ "expected": {
+  "tactic_acc": 0.724,
+  "exact_acc": 0.522
+ }
+}

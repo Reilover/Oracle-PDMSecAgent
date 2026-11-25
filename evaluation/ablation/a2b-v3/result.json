@@ -1,0 +1,33 @@
+{
+ "model": "laya-421M oracle-v3 (T4-LAYA/laya-oracle-v3)",
+ "data": "a2b-v3/results_439.jsonl 439 窗（oracle-v3 test, 11-opt tactic, 与 O3 现役 zeroshot_ours_v3 同口径同 pred）",
+ "temperatures": {
+  "fitted_raw": [
+   4.843,
+   9.042,
+   9.223
+  ],
+  "effective_clamped": [
+   4.843,
+   5.0,
+   5.0
+  ],
+  "note": "仅 choice 桶（4.843）实际影响 choice 题 probs；score/noul 超 5 被 clamp"
+ },
+ "with_calibration (T_choice=4.84)": {
+  "n_windows": 439,
+  "tactic_acc": 0.7244,
+  "exact_acc": 0.5399,
+  "exact_acc_all4_suppl": 0.5216,
+  "ece_3choiceq": 0.1104,
+  "mean_conf": 0.7784
+ },
+ "without_calibration (T=1)": {
+  "n_windows": 439,
+  "tactic_acc": 0.7244,
+  "exact_acc": 0.5399,
+  "exact_acc_all4_suppl": 0.5216,
+  "ece_3choiceq": 0.2221,
+  "mean_conf": 0.9252
+ }
+}

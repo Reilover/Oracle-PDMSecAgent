@@ -1,0 +1,25 @@
+/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/ABLATION/a2b-v3/infer_probs.py:53: RuntimeWarning: laya: this checkpoint ships invalid temperatures or values outside [0.5, 5]; using temperature[1]=9.042235374450684 -> 5, temperature[2]=9.223044395446777 -> 5. Treat confidence from the affected entries as uncalibrated.
+  agent = Agent(CKPT, device="cuda")
+a2b-v3 infer: 40 new 4s
+a2b-v3 infer: 80 new 5s
+a2b-v3 infer: 120 new 7s
+a2b-v3 infer: 160 new 9s
+a2b-v3 infer: 200 new 11s
+a2b-v3 infer: 240 new 12s
+a2b-v3 infer: 280 new 14s
+a2b-v3 infer: 320 new 15s
+a2b-v3 infer: 360 new 17s
+a2b-v3 infer: 400 new 19s
+infer done: +439 new in 20s -> /disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/ABLATION/a2b-v3/results_439.jsonl
+{
+ "n_windows": 439,
+ "pred_full_match_vs_zeroshot_ours_v3": true,
+ "n_mismatch": 0,
+ "mismatch_examples": [],
+ "tactic_acc": 0.7244,
+ "exact_acc": 0.5216,
+ "expected": {
+  "tactic_acc": 0.724,
+  "exact_acc": 0.522
+ }
+}

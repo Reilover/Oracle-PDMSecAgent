@@ -1,0 +1,25 @@
+{
+ "model": "laya-421M oracle-v3, 门控回放协议与 D1 同款 (tau=0.90, tau_h=0.70)",
+ "data": "a2b-v3/results_439.jsonl 439 窗 choice 三题 (tactic/severity/action；urgent 无存档概率不参与)",
+ "note": "choice 桶 T=4.843 为实际生效温度（score/noul 桶超 5 被 clamp，与 choice 题无关）；conf=max prob",
+ "with_calibration (T_choice=4.84)": {
+  "n_windows": 439,
+  "n_questions": 1317,
+  "question_level": {
+   "auto_share": 0.2172,
+   "confirm_share": 0.5429,
+   "escalate_share": 0.2399
+  },
+  "window_level_escalate_share(任一题escalate→整窗升Tier2)": 0.4761
+ },
+ "without_calibration (T=1)": {
+  "n_windows": 439,
+  "n_questions": 1317,
+  "question_level": {
+   "auto_share": 0.792,
+   "confirm_share": 0.0676,
+   "escalate_share": 0.1405
+  },
+  "window_level_escalate_share(任一题escalate→整窗升Tier2)": 0.3052
+ }
+}
