@@ -114,5 +114,5 @@
   "folds": 5,
   "seed": 0,
   "note": "argmax and accuracy are temperature-invariant; workload is in-sample, workload_oof is the held-out estimate",
-  "rows": "/home/xxl/MySecAgent/lab/experiments/oracle/T1-KEV4B/round3-v3/bench-calib/rows.json"
+  "rows": "/home/user/MySecAgent/lab/experiments/oracle/T1-KEV4B/round3-v3/bench-calib/rows.json"
 }

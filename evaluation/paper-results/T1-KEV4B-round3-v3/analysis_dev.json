@@ -1,6 +1,6 @@
 {
   "n_rows": 220,
-  "source": "/home/xxl/MySecAgent/lab/experiments/oracle/T1-KEV4B/round3-v3/bench/rows.json",
+  "source": "/home/user/MySecAgent/lab/experiments/oracle/T1-KEV4B/round3-v3/bench/rows.json",
   "tasks": {
     "tactic": {
       "n": 55,
