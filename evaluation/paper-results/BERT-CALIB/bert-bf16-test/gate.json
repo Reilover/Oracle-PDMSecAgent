@@ -1,0 +1,9 @@
+{
+  "fp32_tactic_tempered_ece": 0.2764696705374893,
+  "bf16_tactic_tempered_ece": 0.2758904626933163,
+  "abs_delta_tactic": 0.0005792078441729798,
+  "fp32_micro_tempered_ece": 0.24531408442100755,
+  "bf16_micro_tempered_ece": 0.24612712249540228,
+  "abs_delta_micro": 0.0008130380743947285,
+  "pass": true
+}

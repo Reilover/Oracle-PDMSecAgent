@@ -1,0 +1,18 @@
+{
+  "task": "D10-VLLM-COLDSTART-PRECISE-20261125",
+  "protocol": "systemd-run --user --collect -p MemoryMax=infinity, GPU0, bfloat16, max-model-len 8192, gpu-mem-util 0.35, HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1; readiness probed every 2s via curl -sf /v1/models; first_request_ms = one real chat completion (60 max tokens, temp 0) measured right after ready; unit stopped after each measurement",
+  "minicpm": {
+    "launch_to_ready_s": 72.3,
+    "first_request_ms": 769.3,
+    "n_probes": 37,
+    "probe_interval_s": 2.0,
+    "first_request_content": "{\n  \"tactic\": \"Isolate the IP and review access logs\",\n  \"urgent\": true,\n  \"severity\": \"High\",\n  \"action\": \"Block 203.0."
+  },
+  "spark": {
+    "launch_to_ready_s": 52.2,
+    "first_request_ms": 470.9,
+    "n_probes": 27,
+    "probe_interval_s": 2.0,
+    "first_request_content": "{\n  \"tactic\": \"Account Takeover Prevention\",\n  \"urgent\": true,\n  \"severity\": \"High\",\n  \"action\": \"Immediately lock the r"
+  }
+}

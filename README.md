@@ -75,3 +75,8 @@ All Table 2 baseline rows re-run under one inference convention (same runner, 55
 
 ## evaluation/config-sensitivity — Configuration-sensitivity audit (paper Appendix)
 Factor-by-factor audit on the 439-window test split: reproducibility noise floor (local rows re-run 100% window-identical; cloud temperature-0 reruns agree on only 63-78% of windows), Q8-vs-bf16 quantization, fp32-vs-bf16, CPU-vs-GPU, co-tenancy, sampled-vs-greedy decoding, scoring protocol (5-sample counting vs prefill logprobs), and serving stack (llama.cpp vs vLLM). Backs the appendix table `tab:configsens`.
+
+## evaluation/RESULTS-SUMMARY.md — One-page results ledger
+The single entry point for every headline number in the paper: the current Table 2 values (dev/test accuracy, ECE, P50 for all 19 rows), reproduction gates, noise-floor and precision checks, the audit trail of corrected stale values, and the full latency ladder — each traceable to the directories below.
+
+**Latest additions (2026-11-25):** MB temperature-stage bf16 re-test (`paper-results/BERT-CALIB/bert-bf16-test/`), vLLM cold-start precise measurement (`gpu-latency/coldstart/vllm-coldstart-precise.json`), and the kev-4B zero-shot 55-window dev re-evaluation (`paper-results/V3-TEST-BASELINE/`).

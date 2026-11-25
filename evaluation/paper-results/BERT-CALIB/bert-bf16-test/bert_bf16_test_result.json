@@ -1,0 +1,98 @@
+{
+  "task": "TASK-MODERNBERT-CALIB-BF16-TEST-20261125",
+  "checkpoint": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/BATCH2-TRAIN/bert-baseline/bert_baseline.pt",
+  "suite": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/suites/oracle-v3",
+  "protocol": {
+    "inference": "GPU cuda bf16 (model.eval(), dropout off), logits cast fp32 on output; tokenization/batching identical to fp32 run (bs16, max_length 1024)",
+    "temperatures": "adopted from fp32 Method-A fit (calib 55 windows), NOT refitted",
+    "eval": "oracle-v3 test split, 439 windows; ECE = 15 equal-frequency bins; argmax/exact temperature-invariant",
+    "fp32_reference": "/disk1/models/datacollect/xxl-data/projects/MySecAgent/lab/experiments/oracle/EVAL/BERT-CALIB/bert_calib_result.json"
+  },
+  "fitted_temperatures_adopted": {
+    "tactic": 1.8660659830736146,
+    "urgent": 1.9999999999999998,
+    "severity": 2.1435469250725863,
+    "action": 1.6624757922855755
+  },
+  "test": {
+    "n_windows": 439,
+    "raw_T1": {
+      "per_head": {
+        "tactic": {
+          "n": 439,
+          "acc": 0.6810933940774487,
+          "ece15": 0.26292464441986585,
+          "nll": 1.9695189898259344,
+          "mean_conf": 0.9349177060473265
+        },
+        "urgent": {
+          "n": 439,
+          "acc": 0.7813211845102506,
+          "ece15": 0.17224866150612964,
+          "nll": 0.8868411925829217,
+          "mean_conf": 0.9448124830326532
+        },
+        "severity": {
+          "n": 439,
+          "acc": 0.6902050113895216,
+          "ece15": 0.28254402077921026,
+          "nll": 1.7336808572595508,
+          "mean_conf": 0.9655059585036736
+        },
+        "action": {
+          "n": 439,
+          "acc": 0.6879271070615034,
+          "ece15": 0.2487007374575708,
+          "nll": 1.2743061327110399,
+          "mean_conf": 0.9025897418913215
+        }
+      },
+      "exact": 0.6810933940774487,
+      "micro_nll": 1.4660867930948616,
+      "micro_ece15": 0.24160451604069413,
+      "micro_mean_conf": 0.9369564723687437
+    },
+    "tempered": {
+      "per_head": {
+        "tactic": {
+          "n": 439,
+          "acc": 0.6810933940774487,
+          "ece15": 0.2758904626933163,
+          "nll": 1.359768702176093,
+          "mean_conf": 0.7193507505214867
+        },
+        "urgent": {
+          "n": 439,
+          "acc": 0.7813211845102506,
+          "ece15": 0.19663103275486862,
+          "nll": 0.6087463225296464,
+          "mean_conf": 0.8261930176679725
+        },
+        "severity": {
+          "n": 439,
+          "acc": 0.6902050113895216,
+          "ece15": 0.28472030295544326,
+          "nll": 1.0491289576426719,
+          "mean_conf": 0.7762492785539004
+        },
+        "action": {
+          "n": 439,
+          "acc": 0.6879271070615034,
+          "ece15": 0.227266691577981,
+          "nll": 0.9981990383396266,
+          "mean_conf": 0.747536381099654
+        }
+      },
+      "exact": 0.6810933940774487,
+      "micro_nll": 1.0039607551720096,
+      "micro_ece15": 0.24612712249540228,
+      "micro_mean_conf": 0.7673323569607533
+    }
+  },
+  "argmax_match_vs_fp32_per_head": {
+    "tactic": 1.0,
+    "urgent": 1.0,
+    "severity": 1.0,
+    "action": 1.0
+  }
+}

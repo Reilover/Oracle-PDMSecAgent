@@ -50,6 +50,8 @@ llama.cpp 纯 CPU 冷启动对照（原 CPU build、-ngl 0、同 ctx/线程标�
 
 > 注：表中 HTTP 服务（kev/vLLM/llama.cpp）的 cold_start/first_window 若取自等待期（user01 占卡）为争用条件下测量，延迟阶段（GPU1 空闲自动跑）会用干净测量覆盖 `coldstart/*.json` 并重渲染本表；进程内模型（E1/E2/ModernBERT）的冷启动由 full 运行进程原生记录，无此问题。
 
+> **vLLM 冷启动精测（2026-11-25，GPU0 空闲 17 MiB 干净条件，`coldstart/vllm-coldstart-precise.json`）**：就绪探测改为每 2 秒 `curl -sf /v1/models`（替代原 5 s 轮询上界口径）。MiniCPM5-2B（系统 vLLM，bf16，max-len 8192，gpu-mem-util 0.35）launch→ready = **72.3 s**，就绪后首个真实请求（chat 60 tokens，temp 0）= **769 ms**；Spark-X2.5-4B（spark2_5 venv vLLM 0.28.0，同参）launch→ready = **52.2 s**，首请求 = **471 ms**。两端点均 `systemd-run --user --collect -p MemoryMax=infinity` 拉起、测后即停，离线 env（HF_HUB_OFFLINE=1/TRANSFORMERS_OFFLINE=1）。原正文 "up to ~1 minute" 的粗粒度上界可据此写实数：MiniCPM ~72 s、Spark ~52 s。
+
 ## 4. 预测一致性抽检（30 窗/模型，seed 42，dev+test 混合；单卷模型全取该卷）
 
 | 行 | 模型 | GPU vs 旧 results | CPU 对照* | 判定 |
