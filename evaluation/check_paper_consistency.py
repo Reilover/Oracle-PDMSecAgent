@@ -52,7 +52,7 @@ for name, dv, tv, ed, et, p50, note in R:
     gen[name.split()[0]] = (dv, tv, ed, et, p50)
 
 def cellv(s):
-    s = s.replace('\\textbf{','').replace('}','').replace('$^{\\P}$','').replace('$^{\\ddagger}$','').replace('\\,','')
+    s = s.replace('\\textbf{','').replace('$^{\\P}$','').replace('$^{\\parallel}$','').replace('$^{\\ddagger}$','').replace('}','').replace('\\,','')
     s = s.replace('\\,ms','').replace('\\,s','').replace('~','').strip()
     return [None if ('--' in x or not x.replace('.','').isdigit()) else float(x) for x in s.split('/')]
 def has_bold(s): return '\\textbf{' in s
@@ -194,6 +194,10 @@ WIRE = [
  ('§6.2-Verdict塌缩', SEC['sec6-experiments'], 'collapses 438/439 windows'),
  ('§6.2-Verdict-ECE', SEC['sec6-experiments'], 'one class\nat 0.342 ECE'),
  ('§6.2-29x', SEC['sec6-experiments'], 'domain gain from post-training alone'),
+ ('表注-ECE口径', SEC['sec6-experiments'], 'Acceptance-basis ECE, on neither development nor test'),
+ ('§6.3-OOF-0.8B', SEC['sec6-experiments'], 'ECE moves 0.112$\\to$0.102'),
+ ('§6.3-OOF-4B', SEC['sec6-experiments'], '0.140$\\to$0.150'),
+ ('§6.3-over-soften', SEC['sec6-experiments'], 'raw ECE 0.180'),
  ('§6.3-4B主域', SEC['sec6-experiments'], 'reconnaissance 0.72, execution 0.69'),
  ('§7-阶梯', SEC['sec789-tail'], 'NanoJev 154\\,ms $<$ zero-shot Kev-4B 173\\,ms $<$\nDeepSeek-chat 775\\,ms $<$ GLM-5.3 1{,}697\\,ms $<$ Qwen3-8B 2{,}726\\,ms'),
  ('§7-端到端', SEC['sec789-tail'], 'P50 over the 439-window split is 1{,}061\\,ms'),
