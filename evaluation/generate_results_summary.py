@@ -87,6 +87,36 @@ def ms(x, unit='ms'):
 R = []  # (row_name, accs_dev, accs_test, ece_dev, ece_test, p50_ms_or_note, source_note)
 
 # ---- 基线行 ----
+
+def ece_equifreq(pairs, bins=15):
+    pairs = sorted(pairs, key=lambda x: x[0]); n = len(pairs); tot = 0.0
+    for b in range(bins):
+        grp = pairs[b*n//bins:(b+1)*n//bins if b < bins-1 else n]
+        if not grp: continue
+        acc = sum(c for _, c in grp)/len(grp); conf = sum(p for p, _ in grp)/len(grp)
+        tot += len(grp)/n*abs(acc-conf)
+    return round(tot, 4)
+def _gold(path):
+    out = {}
+    for l in open(path):
+        r = json.loads(l); out[r['_meta']['id']] = r['questions']['tactic']['label']
+    return out
+def kev_ece(path, gold):
+    pairs = []
+    for l in open(path):
+        r = json.loads(l); pr = r['prediction']['probabilities']['tactic']
+        pred = max(pr, key=pr.get)
+        pairs.append((pr[pred], pred == gold[r['id']]))
+    return ece_equifreq(pairs)
+def row_ece(path):
+    pairs = []
+    for l in open(path):
+        r = json.loads(l); pr = (r.get('probs') or {}).get('tactic')
+        if isinstance(pr, dict) and r.get('label') and r.get('pred'):
+            pred = r['pred']['tactic']
+            pairs.append((pr.get(pred, pr[max(pr, key=pr.get)]), pred == r['label']['tactic']))
+    return ece_equifreq(pairs)
+
 def add(name, devp=None, testp=None, ece=None, p50=None, note='', dev_jsonl=None, test_jsonl=None):
     dv = accs_from_json(devp) if devp else (accs_from_jsonl(dev_jsonl) if dev_jsonl else None)
     tv = accs_from_json(testp) if testp else (accs_from_jsonl(test_jsonl) if test_jsonl else None)
@@ -116,7 +146,11 @@ add('H Spark-gen',       f'{UNI}/analysis_h-gen_development.json', f'{UNI}/analy
 add('I1 kev08-zs',       f'{BASE}/T2-KEV08/analysis_zeroshot_v3_dev.json', f'{V3}/analysis_kev08-zs_test_v3.json', p50=p50_from_jsonl(f'{GL}/results/results_kev08-zs_test_gpu.jsonl'))
 add('I2 kev4b-zs',       f'{V3}/analysis_kev4b-zs_dev_v3.json', f'{V3}/analysis_kev4b-zs_test_v3.json',
     p50=jload(f'{GL}/coldstart/oracle_p50.json')['kev4b-zs-fresh']['p50_ms'], note='P50=coldstart/oracle_p50 kev4b-zs-fresh')
-add('MB ModernBERT(dev)', f'{UNI}/analysis_mb-bf16_development.json', None, p50=p50_from_jsonl(f'{UNI}/results_mb-bf16_development.jsonl'))
+MBt = accs_from_jsonl(f'{UNI}/results_mb-bf16_test.jsonl')
+R.append(('MB ModernBERT', accs_from_json(f'{UNI}/analysis_mb-bf16_development.json'), MBt,
+          row_ece(f'{UNI}/results_mb-bf16_development.jsonl'), row_ece(f'{UNI}/results_mb-bf16_test.jsonl'),
+          p50_from_jsonl(f'{UNI}/results_mb-bf16_test.jsonl'),
+          'dev=UNIFORM analysis_mb-bf16_development; test=UNIFORM results_mb-bf16_test(2026-11-25 补跑 439 窗现算); ECE=等频15bin raw 现算'))
 Vdev = accs_from_jsonl(f'{UNI}/results_verdict_v-dev_development.jsonl')
 Vec = flat(jload(f'{EVAL}/VERDICT-151M/analysis.json'))['ece_tactic']
 R.append(('V Verdict-151M', Vdev, accs_from_json(f'{UNI}/analysis_verdict_test.json'), None, Vec,
@@ -148,24 +182,31 @@ def calc_from_predictions(pred_p, suite_p):
 S = f'{BASE}/suites/oracle-v3'
 O1d = calc_from_predictions(f'{BASE}/T1-KEV4B/round3-v3/bench/predictions.jsonl', f'{S}/development.jsonl')
 O1t = calc_from_predictions(f'{BASE}/T1-KEV4B/round3-v3/bench-test/predictions.jsonl', f'{S}/test.jsonl')
-O1e = flat(jload(f'{EVAL}/CALIB-METHOD-B/calib-methodB-kev4b-v3.json'))['arms.shipped.ece']
-R.append(('O1 ORACLE Kev-4B', O1d, O1t, O1e, None,
+_GOLD_D = _gold(f'{BASE}/suites/oracle-v3/development.jsonl')
+_GOLD_T = _gold(f'{BASE}/suites/oracle-v3/test.jsonl')
+R.append(('O1 ORACLE Kev-4B', O1d, O1t,
+          kev_ece(f'{BASE}/T1-KEV4B/round3-v3/bench/predictions.jsonl', _GOLD_D),
+          kev_ece(f'{BASE}/T1-KEV4B/round3-v3/bench-test/predictions.jsonl', _GOLD_T),
           jload(f'{GL}/coldstart/oracle_p50.json')['kev4b-oracle']['p50_ms'],
-          'acc=T1 bench(-test) predictions 现算; ECE(.140)=CALIB-METHOD-B arms.shipped(OOF 口径); P50=oracle_p50'))
+          'acc/ECE=T1 bench(-test) predictions 现算(等频15bin,部署温度口径); P50=oracle_p50'))
 O2d = calc_from_predictions(f'{BASE}/T2-KEV08/v3-bench/predictions.jsonl', f'{S}/development.jsonl')
 O2t = calc_from_predictions(f'{BASE}/T2-KEV08/v3-bench-test/predictions.jsonl', f'{S}/test.jsonl')
-O2e = flat(jload(f'{EVAL}/CALIB-METHOD-B/calib-methodB-kev08-v3.json'))['arms.shipped.ece']
-R.append(('O2 ORACLE Kev-0.8B', O2d, O2t, O2e, None,
+R.append(('O2 ORACLE Kev-0.8B', O2d, O2t,
+          kev_ece(f'{BASE}/T2-KEV08/v3-bench/predictions.jsonl', _GOLD_D),
+          kev_ece(f'{BASE}/T2-KEV08/v3-bench-test/predictions.jsonl', _GOLD_T),
           jload(f'{GL}/coldstart/oracle_p50.json')['kev08-oracle']['p50_ms'],
-          'acc=T2 v3-bench(-test) predictions 现算; ECE(.112)=CALIB-METHOD-B arms.shipped; P50=oracle_p50'))
+          'acc/ECE=T2 v3-bench(-test) predictions 现算(等频15bin); P50=oracle_p50'))
 O3d = accs_from_jsonl(f'{BASE}/T4-LAYA/results_v3suite_dev.jsonl')
 O3t = accs_from_jsonl(f'{EVAL}/LAYA-FAMILY/zeroshot_ours_v3.jsonl')
 O3p50 = p50_from_jsonl(f'{EVAL}/LAYA-FAMILY/zeroshot_ours_v3.jsonl')
-R.append(('O3 ORACLE laya', O3d, O3t, 0.123, None, O3p50 or 25, 'dev=T4 results_v3suite(55窗)/test=LAYA-FAMILY zeroshot_ours_v3(439窗) 现算; ECE(dev)=.123 溯源 T4 REPORT-V3 RLCD 原生口径'))
+R.append(('O3 ORACLE laya', O3d, O3t,
+          row_ece(f'{BASE}/T4-LAYA/results_v3suite_dev.jsonl'),
+          row_ece(f'{EVAL}/ABLATION/a2b-v3/results_439.jsonl'),
+          O3p50 or 25, 'dev=T4 results_v3suite/test=LAYA-FAMILY zeroshot_ours_v3(或 a2b-v3 439/439 同 pred) 现算; ECE dev/test=等频15bin 现算'))
 O4t = accs_from_jsonl(f'{V3}/results_nanojev-v3_test.jsonl')
 O4d = dict(tactic=0.673, urgent=0.782, severity=0.673, action=0.600, exact=None)
-R.append(('O4 ORACLE NanoJev', O4d, O4t, None, None, 151.4,
-          'test=V3 results_nanojev-v3 现算; dev=T3 REPORT-V3.md 四任务表(md 报告源); P50=oracle_p50 151.4(表沿用 T3 154 为既往决策)'))
+R.append(('O4 ORACLE NanoJev', O4d, O4t, None, row_ece(f'{V3}/results_nanojev-v3_test.jsonl'), 151.4,
+          'test=V3 results_nanojev-v3 现算(含 ECE 等频15bin); dev=T3 REPORT-V3.md 四任务表(md 报告源); P50=oracle_p50 151.4(表沿用 T3 154 为既往决策)'))
 
 # ---- 生成 markdown ----
 L = ['# ORACLE 实验结果总汇总（RESULTS-SUMMARY）',

@@ -81,7 +81,10 @@ for l in lines:
         cells[f + '_d'] = (cs[0], dv and dv.get(f))
         cells[f + '_t'] = (cs[1], tv and tv.get(f))
     ec = cellv(p[8])
-    cells['ece_d'] = (ec[0], ed if ed is not None else et)
+    if len(ec) == 1:
+        cells['ece_d'] = (ec[0], ed if ed is not None else et)
+    else:
+        cells['ece_d'] = (ec[0], ed)
     cells['ece_t'] = (ec[1] if len(ec) > 1 else ec[0], et if et is not None else ed)
     for cname, (paper, art) in cells.items():
         if paper is None and art is None: continue
@@ -145,7 +148,7 @@ name2key = {'Rule':'A','Rule engine':'A','Rules':'A','Kev-0.8B (zs)':'I1','Kev-4
             'Spark-X2.5-4B (gen)':'H','Spark (gen)':'H','MiniCPM-2B (gen)':'B','MiniCPM-2B (opt)':'C',
             'GLM-5.3 (cloud)':'F1','GLM-5.3':'F1','DeepSeek (cloud)':'F2','DeepSeek-chat':'F2',
             'Jev 1.13 (cloud)':'D','ORACLE laya-421M':'O3','ORACLE Kev-0.8B':'O2',
-            'ORACLE Kev-4B':'O1','ORACLE NanoJev-0.6B':'O4','ORACLE NanoJev':'O4','Verdict-151M':'V'}
+            'ORACLE Kev-4B':'O1','ORACLE NanoJev-0.6B':'O4','ORACLE NanoJev':'O4','Verdict-151M':'V','ModernBERT (control)':'MB'}
 nfig = 0
 for lat, acc, mk, name in pts:
     k = name2key.get(name)
@@ -183,20 +186,22 @@ WIRE = [
  ('§6.2-例外severity', SEC['sec6-experiments'], 'severity (DeepSeek-chat, 0.743 vs.\\ 0.724)'),
  ('§6.2-GLM-noaction', SEC['sec6-experiments'], 'in 2/439 windows'),
  ('§6.2-0.8B行', SEC['sec6-experiments'], 'posts 0.763 [0.722, 0.804] / 0.595'),
- ('§6.2-MB句', SEC['sec6-experiments'], 'reaches dev tactic 0.691 / exact 0.673'),
+ ('§6.2-MB句', SEC['sec6-experiments'], 'reaches 0.691/0.681 tactic and 0.673/0.681 exact'),
  ('§6.2-MB-NLL', SEC['sec6-experiments'], 'NLL drops from 1.466 to 1.004'),
  ('§6.2-MB-ECE', SEC['sec6-experiments'], 'tactic ECE stays at 0.276'),
- ('§6.2-MB-未校准', SEC['sec6-experiments'], '0.263 (test) /\n0.281 (development)'),
+ ('§6.2-MB-未校准', SEC['sec6-experiments'], '0.264 (test) /\n0.281 (development)'),
  ('§6.2-laya句', SEC['sec6-experiments'], 'reaches exact 0.522 on the same split at 25\\,ms'),
  ('§6.2-云exact', SEC['sec6-experiments'], '(Jev 1.13, 0.148; DeepSeek-chat 0.141)'),
  ('§6.2-NanoJev', SEC['sec6-experiments'], 'NanoJev posts exact 0.567'),
+ ('§6.2-例外exact', SEC['sec6-experiments'], 'exact match (the non-PDM\nModernBERT control, 0.681)'),
+ ('syscmp-18系统', SEC['sec6-experiments'], 'eighteen systems of Table~\\ref{tab:main}'),
+ ('MB-ECE对比', SEC['sec6-experiments'], 'more than twice the kev-4B line'),
  ('§6.2-NanoJev延迟', SEC['sec6-experiments'], 'at 154\\,ms'),
  ('§6.2-rules区间', SEC['sec6-experiments'], 'fall to 0.400--0.446'),
  ('§6.2-laya族区间', SEC['sec6-experiments'], 'score 0.025--0.116 tactic'),
  ('§6.2-Verdict塌缩', SEC['sec6-experiments'], 'collapses 438/439 windows'),
  ('§6.2-Verdict-ECE', SEC['sec6-experiments'], 'one class\nat 0.342 ECE'),
  ('§6.2-29x', SEC['sec6-experiments'], 'domain gain from post-training alone'),
- ('表注-ECE口径', SEC['sec6-experiments'], 'Acceptance-basis ECE, on neither development nor test'),
  ('§6.3-laya重放ECE', SEC['sec6-experiments'], 'doubles\n(0.110$\\to$0.222'),
  ('§6.3-auto-share', SEC['sec6-experiments'], 'triples (0.217$\\to$0.792)'),
  ('§6.3-escalation', SEC['sec6-experiments'], '(0.476$\\to$0.305)---errors'),
