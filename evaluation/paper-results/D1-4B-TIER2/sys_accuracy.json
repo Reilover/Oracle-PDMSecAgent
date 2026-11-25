@@ -1,0 +1,32 @@
+{
+ "tau": 0.9,
+ "tau_h": 0.7,
+ "n_windows": 439,
+ "tier2_model": "kev-4B v3 @8018",
+ "system_tactic_acc": 0.6219,
+ "system_exact_acc": 0.4579,
+ "single_model_baseline (kev-4B, 论文口径)": {
+  "tactic": 0.85,
+  "exact": 0.629
+ },
+ "d1_system_08_tier2 (对照)": {
+  "tactic": 0.554,
+  "exact": 0.437
+ },
+ "window_level_detail": {
+  "n_windows": 439,
+  "windows_human": 299,
+  "windows_full_auto": 140,
+  "tier2_4b_engaged_windows": 231,
+  "tactic_acc": 0.6219,
+  "exact_acc(all4)": 0.4579,
+  "auto_only_tactic_acc": 0.3027,
+  "auto_only_exact_acc": 0.1214
+ },
+ "question_level_detail": {
+  "n_questions": 1756,
+  "auto_share": 0.4448,
+  "human_involved_share": 0.5552
+ },
+ "metric_note": "final.pred 口径同 D1: 人工确认窗沿用模型建议答案; exact=四题全对; tier2 输出整体替换为 kev-4B(同 state/同模板/同内嵌温度), rule/tier1 不变。"
+}

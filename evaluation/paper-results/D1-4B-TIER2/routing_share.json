@@ -1,0 +1,51 @@
+{
+ "tau": 0.9,
+ "tau_h": 0.7,
+ "n_windows": 439,
+ "tier2_model": "kev-4B v3 @8018 (全 439 窗逐题输出, 精确回放)",
+ "window_paths": {
+  "tier0_rule": {
+   "count": 140,
+   "share": 0.3189
+  },
+  "tier1_laya→tier2_kev→tier3_human": {
+   "count": 231,
+   "share": 0.5262
+  },
+  "tier1_laya→tier3_human": {
+   "count": 68,
+   "share": 0.1549
+  }
+ },
+ "question_routes (source/gate)": {
+  "rule/auto": {
+   "count": 560,
+   "share": 0.3189
+  },
+  "tier1/auto": {
+   "count": 60,
+   "share": 0.0342
+  },
+  "tier1/confirm": {
+   "count": 212,
+   "share": 0.1207
+  },
+  "tier2/auto": {
+   "count": 161,
+   "share": 0.0917
+  },
+  "tier2/confirm": {
+   "count": 410,
+   "share": 0.2335
+  },
+  "tier2/escalate": {
+   "count": 353,
+   "share": 0.201
+  }
+ },
+ "questions_sent_to_human": {
+  "count": 975,
+  "share": 0.5552
+ },
+ "windows_with_human": 299
+}

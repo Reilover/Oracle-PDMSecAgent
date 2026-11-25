@@ -1,0 +1,139 @@
+{
+ "n_dual_output_windows": 231,
+ "n_full_4b_windows": 439,
+ "note": "D2 同款归因矩阵, L2 整体替换为 kev-4B v3@8018(全 439 窗逐题, 同 state/同模板/同内嵌温度); L1=D1 tier1(laya) 不变; 0.8B 对照引自 D2-ESCALATION/matrix.json",
+ "quadrant_tactic (231 escalated)": {
+  "l1_only_correct": 3,
+  "both_wrong": 43,
+  "both_correct": 141,
+  "l2_only_correct": 44
+ },
+ "quadrant_exact (231 escalated)": {
+  "l1_only_correct": 10,
+  "both_wrong": 92,
+  "both_correct": 89,
+  "l2_only_correct": 40
+ },
+ "quadrant_dual_layer_299_tactic": {
+  "l1_only_correct": 4,
+  "both_wrong": 44,
+  "both_correct": 202,
+  "l2_only_correct": 49
+ },
+ "quadrant_dual_layer_299_exact": {
+  "l1_only_correct": 17,
+  "both_wrong": 99,
+  "both_correct": 137,
+  "l2_only_correct": 46
+ },
+ "quadrant_dual_layer_299_tactic_pct": {
+  "l1_only_correct": 0.0134,
+  "both_wrong": 0.1472,
+  "both_correct": 0.6756,
+  "l2_only_correct": 0.1639
+ },
+ "quadrant_dual_layer_299_exact_pct": {
+  "l1_only_correct": 0.0569,
+  "both_wrong": 0.3311,
+  "both_correct": 0.4582,
+  "l2_only_correct": 0.1538
+ },
+ "per_gt_class_tactic_dual_layer_299": {
+  "benign/both_correct": 173,
+  "benign/both_wrong": 15,
+  "benign/l1_only_correct": 3,
+  "benign/l2_only_correct": 7,
+  "credential_access/both_correct": 28,
+  "credential_access/both_wrong": 5,
+  "credential_access/l1_only_correct": 1,
+  "credential_access/l2_only_correct": 13,
+  "initial_access/both_correct": 1,
+  "initial_access/both_wrong": 24,
+  "initial_access/l2_only_correct": 29
+ },
+ "configs": {
+  "L1_only": {
+   "n": 299,
+   "tactic": 0.689,
+   "exact": 0.5151
+  },
+  "L1_to_L2_cascade (4B)": {
+   "n": 299,
+   "tactic": 0.8261,
+   "exact": 0.6154
+  },
+  "L2_only_4b (231 escalated)": {
+   "n": 231,
+   "tactic": 0.8009,
+   "exact": 0.5584
+  },
+  "L2_only_4b (non-rule 299)": {
+   "n": 299,
+   "tactic": 0.8395,
+   "exact": 0.612
+  },
+  "L2_only_4b (full 439)": {
+   "n": 439,
+   "tactic": 0.8519,
+   "exact": 0.631
+  }
+ },
+ "complementarity_299": {
+  "l2_wins_l1_loses_tactic": 49,
+  "l1_wins_l2_loses_tactic": 4,
+  "tie": 246,
+  "initial_access_total_windows_439": 67,
+  "initial_access_both_wrong_299": 24
+ },
+ "compare_08 (D2 matrix 原文)": {
+  "quadrant_dual_layer_299_tactic": {
+   "l1_only_correct": 5,
+   "both_wrong": 74,
+   "both_correct": 201,
+   "l2_only_correct": 19
+  },
+  "quadrant_dual_layer_299_exact": {
+   "l1_only_correct": 13,
+   "both_wrong": 113,
+   "both_correct": 141,
+   "l2_only_correct": 32
+  },
+  "configs": {
+   "L1_only": {
+    "n": 299,
+    "tactic": 0.689,
+    "exact": 0.5151
+   },
+   "L1_to_L2_cascade": {
+    "n": 299,
+    "tactic": 0.7258,
+    "exact": 0.5853
+   },
+   "L2_only(conditional,231 escalated windows)": {
+    "n": 231,
+    "tactic": 0.671,
+    "exact": 0.5195
+   },
+   "L2_only(non-rule 299, dual-layer)": {
+    "n": 299,
+    "tactic": 0.7358,
+    "exact": 0.5786
+   },
+   "L2_only(full 439, E-2 backfilled)": {
+    "n": 439,
+    "tactic": 0.7631,
+    "exact": 0.5923
+   }
+  },
+  "complementarity": {
+   "escalated_windows_L2_rescues_tactic": 16,
+   "escalated_windows_L2_loses_tactic": 5,
+   "net_tactic_gain_on_escalated": -11,
+   "net_tactic_gain_share": -0.0476,
+   "full439_dual_layer_windows": 299,
+   "full439_l2_wins_l1_loses_tactic": 19,
+   "full439_l1_wins_l2_loses_tactic": 5,
+   "full439_tie_or_both_same_tactic": 275
+  }
+ }
+}

@@ -1,0 +1,107 @@
+[
+ {
+  "tau": 0.75,
+  "tau_h": 0.55,
+  "question_level": {
+   "n_questions": 1756,
+   "auto_share": 0.7722,
+   "human_involved_share": 0.2278
+  },
+  "window_level": {
+   "n_windows": 439,
+   "windows_human": 273,
+   "windows_full_auto": 166,
+   "tier2_4b_engaged_windows": 113,
+   "tactic_acc": 0.59,
+   "exact_acc(all4)": 0.4419,
+   "auto_only_tactic_acc": 0.5833,
+   "auto_only_exact_acc": 0.241
+  },
+  "approx_replay_windows": 0,
+  "effective_acc_question_level": 0.4556
+ },
+ {
+  "tau": 0.8,
+  "tau_h": 0.6,
+  "question_level": {
+   "n_questions": 1756,
+   "auto_share": 0.7175,
+   "human_involved_share": 0.2825
+  },
+  "window_level": {
+   "n_windows": 439,
+   "windows_human": 298,
+   "windows_full_auto": 141,
+   "tier2_4b_engaged_windows": 130,
+   "tactic_acc": 0.5968,
+   "exact_acc(all4)": 0.451,
+   "auto_only_tactic_acc": 0.5718,
+   "auto_only_exact_acc": 0.1206
+  },
+  "approx_replay_windows": 0,
+  "effective_acc_question_level": 0.4282
+ },
+ {
+  "tau": 0.85,
+  "tau_h": 0.65,
+  "question_level": {
+   "n_questions": 1756,
+   "auto_share": 0.5803,
+   "human_involved_share": 0.4197
+  },
+  "window_level": {
+   "n_windows": 439,
+   "windows_human": 299,
+   "windows_full_auto": 140,
+   "tier2_4b_engaged_windows": 142,
+   "tactic_acc": 0.5991,
+   "exact_acc(all4)": 0.4556,
+   "auto_only_tactic_acc": 0.4009,
+   "auto_only_exact_acc": 0.1214
+  },
+  "approx_replay_windows": 0,
+  "effective_acc_question_level": 0.3477
+ },
+ {
+  "tau": 0.9,
+  "tau_h": 0.7,
+  "question_level": {
+   "n_questions": 1756,
+   "auto_share": 0.4448,
+   "human_involved_share": 0.5552
+  },
+  "window_level": {
+   "n_windows": 439,
+   "windows_human": 299,
+   "windows_full_auto": 140,
+   "tier2_4b_engaged_windows": 231,
+   "tactic_acc": 0.6219,
+   "exact_acc(all4)": 0.4579,
+   "auto_only_tactic_acc": 0.3027,
+   "auto_only_exact_acc": 0.1214
+  },
+  "approx_replay_windows": 0,
+  "effective_acc_question_level": 0.2766
+ },
+ {
+  "tau": 0.95,
+  "tau_h": 0.75,
+  "question_level": {
+   "n_questions": 1756,
+   "auto_share": 0.3741,
+   "human_involved_share": 0.6259
+  },
+  "window_level": {
+   "n_windows": 439,
+   "windows_human": 299,
+   "windows_full_auto": 140,
+   "tier2_4b_engaged_windows": 274,
+   "tactic_acc": 0.6287,
+   "exact_acc(all4)": 0.4579,
+   "auto_only_tactic_acc": 0.2809,
+   "auto_only_exact_acc": 0.1214
+  },
+  "approx_replay_windows": 0,
+  "effective_acc_question_level": 0.2352
+ }
+]

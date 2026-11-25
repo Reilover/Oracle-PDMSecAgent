@@ -1,0 +1,154 @@
+{
+ "n_dual_output_windows": 231,
+ "n_full_backfilled_windows": 439,
+ "note": "四象限原口径=D1 逐题输出零 GPU 回放(231 升级窗); E-2 已补 208 窗 kev-0.8B@8023 同 serve 推理(kev208.jsonl,与 D1 tier2 同协议同模型,探针 conf 逐位一致),L2 全量 439 窗口径齐",
+ "backfill_source": "kev208.jsonl (kev-0.8B v3 @8023, D1 tier2 同 serve/同协议; 140 规则窗 + 68 非规则未升级窗)",
+ "quadrant_tactic": {
+  "l1_only_correct": 5,
+  "both_wrong": 71,
+  "both_correct": 139,
+  "l2_only_correct": 16
+ },
+ "quadrant_exact": {
+  "l1_only_correct": 7,
+  "both_wrong": 104,
+  "both_correct": 92,
+  "l2_only_correct": 28
+ },
+ "quadrant_tactic_pct": {
+  "l1_only_correct": 0.0216,
+  "both_wrong": 0.3074,
+  "both_correct": 0.6017,
+  "l2_only_correct": 0.0693
+ },
+ "quadrant_exact_pct": {
+  "l1_only_correct": 0.0303,
+  "both_wrong": 0.4502,
+  "both_correct": 0.3983,
+  "l2_only_correct": 0.1212
+ },
+ "per_gt_class_tactic": {
+  "benign/both_correct": 118,
+  "benign/both_wrong": 16,
+  "benign/l1_only_correct": 2,
+  "benign/l2_only_correct": 3,
+  "credential_access/both_correct": 21,
+  "credential_access/both_wrong": 7,
+  "credential_access/l1_only_correct": 2,
+  "credential_access/l2_only_correct": 10,
+  "initial_access/both_wrong": 48,
+  "initial_access/l1_only_correct": 1,
+  "initial_access/l2_only_correct": 3
+ },
+ "quadrant_full439_tactic": {
+  "l2_only_correct": 134,
+  "l1_only_correct": 5,
+  "both_wrong": 99,
+  "both_correct": 201
+ },
+ "quadrant_full439_exact": {
+  "l2_only_correct": 119,
+  "l1_only_correct": 13,
+  "both_wrong": 166,
+  "both_correct": 141
+ },
+ "quadrant_full439_tactic_pct": {
+  "l2_only_correct": 0.3052,
+  "l1_only_correct": 0.0114,
+  "both_wrong": 0.2255,
+  "both_correct": 0.4579
+ },
+ "quadrant_full439_exact_pct": {
+  "l2_only_correct": 0.2711,
+  "l1_only_correct": 0.0296,
+  "both_wrong": 0.3781,
+  "both_correct": 0.3212
+ },
+ "per_gt_class_tactic_full439": {
+  "benign/both_correct": 174,
+  "benign/both_wrong": 16,
+  "benign/l1_only_correct": 2,
+  "benign/l2_only_correct": 6,
+  "credential_access/both_correct": 27,
+  "credential_access/both_wrong": 8,
+  "credential_access/l1_only_correct": 2,
+  "credential_access/l2_only_correct": 10,
+  "initial_access/both_wrong": 50,
+  "initial_access/l1_only_correct": 1,
+  "initial_access/l2_only_correct": 3
+ },
+ "quadrant_dual_layer_299_tactic": {
+  "l1_only_correct": 5,
+  "both_wrong": 74,
+  "both_correct": 201,
+  "l2_only_correct": 19
+ },
+ "quadrant_dual_layer_299_exact": {
+  "l1_only_correct": 13,
+  "both_wrong": 113,
+  "both_correct": 141,
+  "l2_only_correct": 32
+ },
+ "quadrant_dual_layer_299_tactic_pct": {
+  "l1_only_correct": 0.0167,
+  "both_wrong": 0.2475,
+  "both_correct": 0.6722,
+  "l2_only_correct": 0.0635
+ },
+ "quadrant_dual_layer_299_exact_pct": {
+  "l1_only_correct": 0.0435,
+  "both_wrong": 0.3779,
+  "both_correct": 0.4716,
+  "l2_only_correct": 0.107
+ },
+ "per_gt_class_tactic_dual_layer_299": {
+  "benign/both_correct": 174,
+  "benign/both_wrong": 16,
+  "benign/l1_only_correct": 2,
+  "benign/l2_only_correct": 6,
+  "credential_access/both_correct": 27,
+  "credential_access/both_wrong": 8,
+  "credential_access/l1_only_correct": 2,
+  "credential_access/l2_only_correct": 10,
+  "initial_access/both_wrong": 50,
+  "initial_access/l1_only_correct": 1,
+  "initial_access/l2_only_correct": 3
+ },
+ "configs": {
+  "L1_only": {
+   "n": 299,
+   "tactic": 0.689,
+   "exact": 0.5151
+  },
+  "L1_to_L2_cascade": {
+   "n": 299,
+   "tactic": 0.7258,
+   "exact": 0.5853
+  },
+  "L2_only(conditional,231 escalated windows)": {
+   "n": 231,
+   "tactic": 0.671,
+   "exact": 0.5195
+  },
+  "L2_only(non-rule 299, dual-layer)": {
+   "n": 299,
+   "tactic": 0.7358,
+   "exact": 0.5786
+  },
+  "L2_only(full 439, E-2 backfilled)": {
+   "n": 439,
+   "tactic": 0.7631,
+   "exact": 0.5923
+  }
+ },
+ "complementarity": {
+  "escalated_windows_L2_rescues_tactic": 16,
+  "escalated_windows_L2_loses_tactic": 5,
+  "net_tactic_gain_on_escalated": -11,
+  "net_tactic_gain_share": -0.0476,
+  "full439_dual_layer_windows": 299,
+  "full439_l2_wins_l1_loses_tactic": 19,
+  "full439_l1_wins_l2_loses_tactic": 5,
+  "full439_tie_or_both_same_tactic": 275
+ }
+}
