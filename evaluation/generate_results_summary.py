@@ -101,8 +101,12 @@ add('B MiniCPM-gen',     f'{UNI}/analysis_b-gen_development.json', f'{UNI}/analy
 add('C MiniCPM-opt',     f'{UNI}/analysis_c-logprobs_development.json', f'{UNI}/analysis_c-logprobs_test.json', p50=p50_from_jsonl(f'{UNI}/results_c-logprobs_test.jsonl'))
 # D：test 无 json（产物为运行报告），dev 有 json；P50 取报告值并注明
 Dd = accs_from_json(f'{CJ}/analysis_cloud-jev_dev.json')
-Dt = dict(tactic=0.636, urgent=0.843, severity=0.670, action=0.260, exact=0.148)  # 溯源 CLOUD-JEV-439/REPORT.md（无 json）
-R.append(('D Jev 1.13 (cloud)', Dd, Dt, 0.338, 0.284, '1.6\\,s（REPORT）', 'test/ECE 溯源 CLOUD-JEV-439/REPORT.md'))
+Dt = accs_from_json(f'{CJ}/analysis_cloud-jev_test.json')
+De = jload(f'{CJ}/analysis_cloud-jev_dev.json')['ece']['tactic']['ece']
+Dte = jload(f'{CJ}/analysis_cloud-jev_test.json')['ece']['tactic']['ece']
+Dp = p50_from_jsonl(f'{CJ}/predictions.jsonl')
+R.append(('D Jev 1.13 (cloud)', Dd, Dt, De, Dte, Dp,
+          'dev/test=analysis_cloud-jev_{dev,test}.json（2026-11-20 网关 439 窗实跑,json 已从镜像拷回主树）;P50=predictions.jsonl 现算'))
 add('E1 NanoJev-zs',     f'{UNI}/analysis_e1-nanojev_development.json', f'{UNI}/analysis_e1-nanojev_test.json', p50=p50_from_jsonl(f'{UNI}/results_e1-nanojev_test.jsonl'))
 add('E2 laya-zs',        f'{UNI}/analysis_e2-laya_development.json', f'{UNI}/analysis_e2-laya_test.json', p50=p50_from_jsonl(f'{UNI}/results_e2-laya_test.jsonl'))
 add('F1 GLM-5.3',        f'{UNI}/analysis_f1-glm_development.json', f'{UNI}/analysis_f1-glm_test.json', p50=p50_from_jsonl(f'{UNI}/results_f1-glm_test.jsonl'))

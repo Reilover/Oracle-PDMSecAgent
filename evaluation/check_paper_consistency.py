@@ -97,9 +97,11 @@ for l in lines:
     m2 = re.search(r'([\\d.]+)\\,?(ms|s)?', ptxt.replace('\\',''))
     if m2 and m2.group(1).replace('.','').isdigit():
         pv = float(m2.group(1)) * (1000 if (m2.group(2) == 's' and float(m2.group(1)) < 10) else 1)
+    unit_s = bool(m2 and m2.group(2) == 's')
     if isinstance(p50, (int, float)) and pv is not None:
-        if abs(pv - p50) > (5 if pv >= 100 else 1.5):
-            bad(f'{key} P50: 表 {pv} vs 产物 {round(p50,1)}')
+        tol = 50 if unit_s else (5 if pv >= 100 else 1.5)
+        if abs(pv - p50) > tol:
+            bad(f'{key} P50: 表 {pv} vs 产物 {round(p50,1)} (tol={tol})')
         else: n_cells += 1
 ok(f'表格数值 {n_cells} 格对账')
 
