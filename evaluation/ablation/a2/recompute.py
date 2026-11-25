@@ -6,7 +6,7 @@ kev-4B head.pt T=2.0467 (方法A) vs T=1.0，oracle-v3 test rows.json（raw logi
 import json, math, os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-ROWS = "/home/xxl/MySecAgent/lab/experiments/oracle/T1-KEV4B/round3-v3/bench-test/rows.json"
+ROWS = "/home/user/MySecAgent/lab/experiments/oracle/T1-KEV4B/round3-v3/bench-test/rows.json"
 T_FIT = 2.04674778399355
 
 def softmax(v):
