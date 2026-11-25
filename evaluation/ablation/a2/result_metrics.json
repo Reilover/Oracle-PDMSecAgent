@@ -1,0 +1,27 @@
+{
+ "model": "kev-4B v3 (runs/oracle-kev4b-v3)",
+ "data": "oracle-v3 test 439 窗 (T1-KEV4B/round3-v3/bench-test/rows.json), 协议=seed_methodA.py 同款",
+ "temperature_methodA": 2.04674778399355,
+ "with_temperature_calibration_T2.0467": {
+  "n": 1756,
+  "acc": 0.7875854214123007,
+  "ece": 0.17689575613761505,
+  "brier": 0.408563969538692,
+  "nll": 0.8701285919619888,
+  "mean_conf": 0.7576059231038885,
+  "confident_error_rate": 0.08086560364464693,
+  "coverage_at_5pct_error": 0.0,
+  "aurc": 0.2875647566245242
+ },
+ "without_temperature_calibration_T1.0": {
+  "n": 1756,
+  "acc": 0.7875854214123007,
+  "ece": 0.15039265325050388,
+  "brier": 0.39253428055193207,
+  "nll": 1.2643798144717708,
+  "mean_conf": 0.9033768421850464,
+  "confident_error_rate": 0.14635535307517084,
+  "coverage_at_5pct_error": 0.0,
+  "aurc": 0.2830862776992422
+ }
+}

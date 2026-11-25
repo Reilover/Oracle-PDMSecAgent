@@ -1,0 +1,118 @@
+{
+  "n": 220,
+  "shipped_temperature": [
+    1.0
+  ],
+  "workload_temperature": 2.04674778399355,
+  "fold_temperatures": [
+    2.04674778399355,
+    1.909683207820833,
+    1.9999999999999998,
+    2.1435469250725863,
+    2.193649959389252
+  ],
+  "arms": {
+    "raw": {
+      "n": 220,
+      "acc": 0.8454545454545455,
+      "ece": 0.1395594451894037,
+      "brier": 0.29820595226030067,
+      "nll": 0.9260035479453838,
+      "mean_conf": 0.9294819336873905,
+      "confident_error_rate": 0.12272727272727273,
+      "coverage_at_5pct_error": 0.004545454545454545,
+      "aurc": 0.19405755004378397
+    },
+    "shipped": {
+      "n": 220,
+      "acc": 0.8454545454545455,
+      "ece": 0.1395594451894037,
+      "brier": 0.29820595226030067,
+      "nll": 0.9260035479453838,
+      "mean_conf": 0.9294819336873905,
+      "confident_error_rate": 0.12272727272727273,
+      "coverage_at_5pct_error": 0.004545454545454545,
+      "aurc": 0.19405755004378397
+    },
+    "workload": {
+      "n": 220,
+      "acc": 0.8454545454545455,
+      "ece": 0.14760730869657807,
+      "brier": 0.31699427269085045,
+      "nll": 0.678357729719297,
+      "mean_conf": 0.7820051592955426,
+      "confident_error_rate": 0.05,
+      "coverage_at_5pct_error": 0.0,
+      "aurc": 0.18747282146113184
+    },
+    "workload_oof": {
+      "n": 220,
+      "acc": 0.8454545454545455,
+      "ece": 0.15048595657777272,
+      "brier": 0.31904134076563584,
+      "nll": 0.6881940750240809,
+      "mean_conf": 0.7802520730170396,
+      "confident_error_rate": 0.05454545454545454,
+      "coverage_at_5pct_error": 0.0,
+      "aurc": 0.19354697591773412
+    }
+  },
+  "oof_vs_shipped": {
+    "ece": {
+      "micro_ece_delta": 0.010926511388369087,
+      "ci95": [
+        -0.03158246460098549,
+        0.07013327393642234
+      ],
+      "samples": 1000,
+      "groups": 55,
+      "aggregation": "micro",
+      "unit": "source-stratified original record; sibling questions stay together",
+      "method": "paired cluster percentile bootstrap; full statistic recomputed in each resample"
+    },
+    "brier": {
+      "micro_brier_delta": 0.02083538850533523,
+      "ci95": [
+        -0.0065300107533321754,
+        0.04549734382250529
+      ],
+      "samples": 1000,
+      "groups": 55,
+      "aggregation": "micro",
+      "unit": "source-stratified original record; sibling questions stay together",
+      "method": "paired cluster percentile bootstrap; full statistic recomputed in each resample"
+    },
+    "coverage_at_5pct_error": {
+      "micro_coverage_at_5pct_error_delta": -0.004545454545454545,
+      "ci95": [
+        -0.01818181818181818,
+        0.022727272727272707
+      ],
+      "samples": 1000,
+      "groups": 55,
+      "aggregation": "micro",
+      "unit": "source-stratified original record; sibling questions stay together",
+      "method": "paired cluster percentile bootstrap; full statistic recomputed in each resample"
+    },
+    "aurc": {
+      "micro_aurc_delta": -0.0005105741260498509,
+      "ci95": [
+        -0.015411484496237946,
+        0.010345810475502482
+      ],
+      "samples": 1000,
+      "groups": 55,
+      "aggregation": "micro",
+      "unit": "source-stratified original record; sibling questions stay together",
+      "method": "paired cluster percentile bootstrap; full statistic recomputed in each resample"
+    }
+  },
+  "fit": {
+    "aggregation": "micro",
+    "points": 121
+  },
+  "folds": 5,
+  "seed": 0,
+  "note": "argmax and accuracy are temperature-invariant; workload is in-sample, workload_oof is the held-out estimate",
+  "rows": "/home/xxl/MySecAgent/lab/experiments/oracle/T1-KEV4B/round3-v3/bench-calib/rows.json"
+}

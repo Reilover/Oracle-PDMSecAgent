@@ -1,0 +1,18 @@
+{
+ "model": "kev-4B v3 (runs/oracle-kev4b-v3)",
+ "data": "oracle-v3 test 439 窗 (bench-test rows.json, raw logits)",
+ "with_temperature_calibration (T=2.0467)": {
+  "n_windows": 439,
+  "tactic_acc": 0.8497,
+  "exact_acc": 0.6287,
+  "ece_question_level": 0.1803,
+  "mean_conf": 0.7576
+ },
+ "without_temperature_calibration (T=1.0)": {
+  "n_windows": 439,
+  "tactic_acc": 0.8497,
+  "exact_acc": 0.6287,
+  "ece_question_level": 0.149,
+  "mean_conf": 0.9034
+ }
+}
