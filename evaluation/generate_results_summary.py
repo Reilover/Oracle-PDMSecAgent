@@ -244,14 +244,19 @@ gate = {
 }
 for k, v in gate.items(): L.append(f'- **{k}**：{v}')
 L += ['', '## 3. 历史口径修正审计链（叙事，非数据）', '',
-      '1. NanoJev dev exact ".455" 无据 → "--"；2. laya test 470 窗旧列 → 同约定值；3. dev 列 59 窗残值三处（E1/I1/I2）→ 55 窗值；4. G 行 test ECE .118(470 窗) → .103；5. 正文 DeepSeek 0.552 早期残值清除；6. 摘要 72ms→25ms、引言 72–195→25–173+1.1s；7. ORACLE 4B 延迟三处三数→173ms、0.8B 120 旧值→114ms；8. 表内 ECE 单值口径混杂→统一 dev/test；9. syscmp 两点陈旧值修正。',
+      '1. NanoJev dev exact ".455" 无据 → "--"；2. laya test 470 窗旧列 → 同约定值；3. dev 列 59 窗残值三处（E1/I1/I2）→ 55 窗值；4. G 行 test ECE .118(470 窗) → .103；5. 正文 DeepSeek 0.552 早期残值清除；6. 摘要 72ms→25ms、引言 72–195→25–173+1.1s；7. ORACLE 4B 延迟三处三数→173ms、0.8B 120 旧值→114ms；8. 表内 ECE 单值口径混杂→统一 dev/test；9. syscmp 两点陈旧值修正；10. V dev 0.025 无据→补跑实为 0.000、dev 四格补全（ECE .342）；11. §6.3 重层 ECE 标签装反（raw .149/withT .180）；12. A2b 重放 470 窗旧口径→439 窗重跑（gate 439/439 pred 全等）；13. D 行 test 产物从镜像拷回主树、生成器改 json 现算；14. MB test 补跑（消‡，与 D9 交叉验证一致，exact .681 列最优）+O 行 ECE 换 dev/test 对（消∥，等频 15bin 现算）。',
       '', '## 4. 延迟阶梯（产物直算 P50）', '',
-      'rules ~0.1ms < laya-ORACLE 25ms ≈ laya-zs 25ms < MB 14ms(dev) < kev08-zs 112ms ≈ ORACLE-0.8B 114ms < NanoJev-zs 138ms < ORACLE-NanoJev 151.4ms < kev4b-zs 172.5ms ≈ ORACLE-4B 173.2ms < C-opt ~1.14s < D-Jev 1.6s < F1-GLM 1.7s < G-Qwen 2.7s；云：DSK 775ms < GLM 1697ms。CPU 降级：NanoJev ~55s、laya 4.9s、LLM 行 Q8 5.8–21.6s、MB 273ms。冷启动：kev/进程内 7–10s；vLLM 精测 52.2/72.3s；llama.cpp 备胎 1.5–2.1s。',
+      'rules ~0.1ms < laya-ORACLE 25ms ≈ laya-zs 25ms < MB 14ms(dev/test) < kev08-zs 112ms ≈ ORACLE-0.8B 114ms < NanoJev-zs 138ms < ORACLE-NanoJev 151.4ms < kev4b-zs 172.5ms ≈ ORACLE-4B 173.2ms < C-opt ~1.14s < D-Jev 1.6s < F1-GLM 1.7s < G-Qwen 2.7s；云：DSK 775ms < GLM 1697ms。CPU 降级：NanoJev ~55s、laya 4.9s、LLM 行 Q8 5.8–21.6s、MB 273ms。冷启动：kev/进程内 7–10s；vLLM 精测 52.2/72.3s；llama.cpp 备胎 1.5–2.1s。',
       '', '## 5. 溯源目录索引', '',
       '| 内容 | 目录 |', '|---|---|',
       '| 统一重测九行+gate | EVAL/UNIFORM-BF16/ |', '| 敏感性因素 0–8 | EVAL/CONFIG-SENSITIVITY/ |',
       '| MB 温度阶段 bf16（D9） | EVAL/BERT-CALIB/bert-bf16-test/ |', '| vLLM 冷启动精测（D10） | EVAL/GPU-LATENCY/coldstart/vllm-coldstart-precise.json |',
       '| kev4b-zs dev 补测 | EVAL/V3-TEST-BASELINE/（analysis_kev4b-zs_dev_v3.*） |', '| ORACLE 三线 P50 | EVAL/GPU-LATENCY/coldstart/oracle_p50.json |',
+      '| MB test 补跑（消‡，2026-11-25） | EVAL/UNIFORM-BF16/results_mb-bf16_test.jsonl |',
+      '| A2b-v3 门控重放重跑（439 窗） | EVAL/ABLATION/a2b-v3/ |',
+      '| 云 Jev 439 窗补测（D 行） | EVAL/CLOUD-JEV-439/ |',
+      '| Verdict dev 55 窗补测 | EVAL/UNIFORM-BF16/results_verdict_v-dev_development.jsonl |',
+      '| 论文一致性总闸 | EVAL/check_paper_consistency.py（209 格+13 列+30 图点+49 绊线） |',
       '', '> 更新纪律：任何补测/换数后重跑 `generate_results_summary.py` 再生成本文件，commit 注明。']
 
 out = f'{EVAL}/RESULTS-SUMMARY.md'
