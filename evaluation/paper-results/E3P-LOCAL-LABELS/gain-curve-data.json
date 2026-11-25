@@ -1,0 +1,23 @@
+{
+  "0": {
+    "tactic": 0.7818,
+    "urgent": 0.7818,
+    "severity": 0.6727,
+    "action": 0.6909,
+    "exact": 0.5818
+  },
+  "50": {
+    "tactic": 0.8182,
+    "urgent": 0.7818,
+    "severity": 0.6727,
+    "action": 0.7455,
+    "exact": 0.5818
+  },
+  "187": {
+    "tactic": 0.8727,
+    "urgent": 0.7818,
+    "severity": 0.7455,
+    "action": 0.7273,
+    "exact": 0.6545
+  }
+}
