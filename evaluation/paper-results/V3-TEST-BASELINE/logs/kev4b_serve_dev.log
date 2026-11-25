@@ -1,0 +1,70 @@
+Loading weights:   0%|          | 0/426 [00:00<?, ?it/s]Loading weights:   0%|          | 1/426 [00:00<01:19,  5.37it/s]Loading weights:  23%|██▎       | 100/426 [00:00<00:00, 423.17it/s]Loading weights:  37%|███▋      | 156/426 [00:00<00:00, 447.35it/s]Loading weights:  49%|████▉     | 209/426 [00:00<00:00, 425.97it/s]Loading weights:  60%|██████    | 257/426 [00:00<00:00, 434.77it/s]Loading weights:  71%|███████▏  | 304/426 [00:00<00:00, 420.18it/s]Loading weights:  82%|████████▏ | 349/426 [00:00<00:00, 391.43it/s]Loading weights:  92%|█████████▏| 390/426 [00:01<00:00, 393.38it/s]Loading weights: 100%|██████████| 426/426 [00:01<00:00, 389.35it/s]
+INFO:     Started server process [2239857]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8028 (Press CTRL+C to quit)
+serving jaredpalmer/kev-4b (/disk1/models/xxl-model/kev/hf-cache/hub/models--jaredpalmer--kev-4b/snapshots/485ace8703592fcf405488b262449990824cfed1) on cuda via torch (bfloat16) :8028
+INFO:     127.0.0.1:51550 - "GET /v1/models HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51566 - "GET /v1/models HTTP/1.1" 200 OK
+[transformers] `causal_conv1d_fn` is falling back to its reference PyTorch implementation because `causal_conv1d` is not installed. This is correct but much slower; install `causal_conv1d` for the optimized kernel.
+[transformers] `chunk_gated_delta_rule` is falling back to its reference PyTorch implementation because `flash-linear-attention` is not installed. This is correct but much slower; install `flash-linear-attention` for the optimized kernel.
+INFO:     127.0.0.1:48744 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42356 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42362 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42378 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42382 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42384 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42400 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42402 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42418 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42434 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42444 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42460 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42474 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42484 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42500 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42504 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42520 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42524 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42532 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42546 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42562 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42578 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42586 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42592 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42606 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59496 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59508 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59520 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59526 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59540 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59556 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59560 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59574 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59590 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59594 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59604 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59614 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59618 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59620 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59632 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59648 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59658 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59660 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59672 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59674 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59686 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59688 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59704 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59718 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59732 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59734 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59736 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59738 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59740 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59744 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59750 - "POST /v1/systemone HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [2239857]
