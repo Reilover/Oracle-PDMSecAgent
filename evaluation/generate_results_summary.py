@@ -113,7 +113,11 @@ add('I1 kev08-zs',       f'{BASE}/T2-KEV08/analysis_zeroshot_v3_dev.json', f'{V3
 add('I2 kev4b-zs',       f'{V3}/analysis_kev4b-zs_dev_v3.json', f'{V3}/analysis_kev4b-zs_test_v3.json',
     p50=jload(f'{GL}/coldstart/oracle_p50.json')['kev4b-zs-fresh']['p50_ms'], note='P50=coldstart/oracle_p50 kev4b-zs-fresh')
 add('MB ModernBERT(dev)', f'{UNI}/analysis_mb-bf16_development.json', None, p50=p50_from_jsonl(f'{UNI}/results_mb-bf16_development.jsonl'))
-add('V Verdict-151M',    None, f'{UNI}/analysis_verdict_test.json', p50=p50_from_jsonl(f'{UNI}/results_verdict_test.jsonl'))
+Vdev = accs_from_jsonl(f'{UNI}/results_verdict_v-dev_development.jsonl')
+Vec = flat(jload(f'{EVAL}/VERDICT-151M/analysis.json'))['ece_tactic']
+R.append(('V Verdict-151M', Vdev, accs_from_json(f'{UNI}/analysis_verdict_test.json'), None, Vec,
+          p50_from_jsonl(f'{UNI}/results_verdict_test.jsonl'),
+          'dev=UNIFORM results_verdict_v-dev(55窗现算); test=UNIFORM analysis_verdict; ECE=VERDICT-151M analysis.json ece_tactic'))
 
 # ---- ORACLE 行 ----
 def suite_labels(p):
@@ -141,13 +145,13 @@ S = f'{BASE}/suites/oracle-v3'
 O1d = calc_from_predictions(f'{BASE}/T1-KEV4B/round3-v3/bench/predictions.jsonl', f'{S}/development.jsonl')
 O1t = calc_from_predictions(f'{BASE}/T1-KEV4B/round3-v3/bench-test/predictions.jsonl', f'{S}/test.jsonl')
 O1e = flat(jload(f'{EVAL}/CALIB-METHOD-B/calib-methodB-kev4b-v3.json'))['arms.shipped.ece']
-R.append(('O1 ORACLE Kev-4B', O1d, O1t, None, None,
+R.append(('O1 ORACLE Kev-4B', O1d, O1t, O1e, None,
           jload(f'{GL}/coldstart/oracle_p50.json')['kev4b-oracle']['p50_ms'],
           'acc=T1 bench(-test) predictions 现算; ECE(.140)=CALIB-METHOD-B arms.shipped(OOF 口径); P50=oracle_p50'))
 O2d = calc_from_predictions(f'{BASE}/T2-KEV08/v3-bench/predictions.jsonl', f'{S}/development.jsonl')
 O2t = calc_from_predictions(f'{BASE}/T2-KEV08/v3-bench-test/predictions.jsonl', f'{S}/test.jsonl')
 O2e = flat(jload(f'{EVAL}/CALIB-METHOD-B/calib-methodB-kev08-v3.json'))['arms.shipped.ece']
-R.append(('O2 ORACLE Kev-0.8B', O2d, O2t, None, None,
+R.append(('O2 ORACLE Kev-0.8B', O2d, O2t, O2e, None,
           jload(f'{GL}/coldstart/oracle_p50.json')['kev08-oracle']['p50_ms'],
           'acc=T2 v3-bench(-test) predictions 现算; ECE(.112)=CALIB-METHOD-B arms.shipped; P50=oracle_p50'))
 O3d = accs_from_jsonl(f'{BASE}/T4-LAYA/results_v3suite_dev.jsonl')
@@ -155,7 +159,9 @@ O3t = accs_from_jsonl(f'{EVAL}/LAYA-FAMILY/zeroshot_ours_v3.jsonl')
 O3p50 = p50_from_jsonl(f'{EVAL}/LAYA-FAMILY/zeroshot_ours_v3.jsonl')
 R.append(('O3 ORACLE laya', O3d, O3t, 0.123, None, O3p50 or 25, 'dev=T4 results_v3suite(55窗)/test=LAYA-FAMILY zeroshot_ours_v3(439窗) 现算; ECE(dev)=.123 溯源 T4 REPORT-V3 RLCD 原生口径'))
 O4t = accs_from_jsonl(f'{V3}/results_nanojev-v3_test.jsonl')
-R.append(('O4 ORACLE NanoJev', None, O4t, None, None, 151.4, 'test=V3 results_nanojev-v3 现算; dev/ECE 溯源 T3 REPORT-V3.md; P50=oracle_p50 151.4(表沿用 T3 154 为既往决策)'))
+O4d = dict(tactic=0.673, urgent=0.782, severity=0.673, action=0.600, exact=None)
+R.append(('O4 ORACLE NanoJev', O4d, O4t, None, None, 151.4,
+          'test=V3 results_nanojev-v3 现算; dev=T3 REPORT-V3.md 四任务表(md 报告源); P50=oracle_p50 151.4(表沿用 T3 154 为既往决策)'))
 
 # ---- 生成 markdown ----
 L = ['# ORACLE 实验结果总汇总（RESULTS-SUMMARY）',
